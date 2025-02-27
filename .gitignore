@@ -1,0 +1,23 @@
+# General
+*/node_modules/
+.DS_Store
+.env
+*.log
+
+# Nuxt.js
+.nuxt/
+dist/
+nuxt-content/
+.output/
+
+# VSCode
+.vscode/
+
+# Package manager
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# System files
+Thumbs.db
+node_modules
