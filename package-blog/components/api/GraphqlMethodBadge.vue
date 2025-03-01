@@ -8,7 +8,7 @@
 import { cn } from '@/lib/utils';
 import type {HTMLAttributes} from 'vue'
 import {computed} from 'vue'
-import type {GraphqlOpTypeStr} from "~/utils/api/desc";
+import type {GraphqlOpTypeStr} from "~/lib/models/api-request";
 
 
 const props = withDefaults(defineProps<{

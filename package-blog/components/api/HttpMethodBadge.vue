@@ -14,7 +14,7 @@
 import { cn } from '@/lib/utils';
 import { computed } from 'vue'
 import type { HTMLAttributes } from 'vue'
-import type {HttpMethodStr} from "~/utils/api/desc";
+import type {HttpMethodStr} from "~/lib/models/api-request";
 
 type HttpMethod = HttpMethodStr
 

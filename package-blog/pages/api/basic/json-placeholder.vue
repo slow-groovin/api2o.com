@@ -2,46 +2,49 @@
   <GraphQLTemplate :desc="desc" endpoint="/api/v1/jsonplaceholder/graphql">
     <template #after-desc>
       <div>
-        <a href="https://jsonplaceholder.typicode.com/" target="_blank" class="text-blue-800 underline">JSONPlaceholder comes with a set of 6 common resources, is a free online REST API.</a>
+        <a href="https://jsonplaceholder.typicode.com/" target="_blank" class="text-blue-800 underline">JSONPlaceholder
+          comes with a set of 6 common resources, is a free online REST API.</a>
       </div>
     </template>
   </GraphQLTemplate>
 </template>
 
 <script setup lang="ts">
-import {type GraphqlOpTypeStr, type GraphqlReqDesc} from "~/utils/api/desc";
+import { type GraphqlOpTypeStr, type GraphqlReqDesc } from "~/lib/models/api-request";
 import GraphQLTemplate from "~/components/api/GraphQLTemplate.vue";
+import { useSeoMeta } from "#imports";
+import { usePageScopedI18n } from "~/lib/i18n";
 
-const {tPage}=usePageScopedI18n({
-  zh:{
-    desc:'GraphQL 版本的 JSONPlaceholder！免费在线 GraphQL API，用于测试和原型开发。',
-    postsDesc:'批量查询 posts',
-    commentsDesc:'批量查询 comments',
-    todosDesc:'批量查询 todos',
-    usersDesc:'批量查询 users',
-    albumsDesc:'批量查询 albums',
-    photosDesc:'批量查询 photos',
-    postDesc:'查询单个 post',
-    userDesc:'查询单个 user',
-    albumDesc:'查询单个 album',
-    photoDesc:'查询单个 photo',
-    commentDesc:'查询单个 comment',
-    postsAnnotation:'批量查询 posts, start: 起始的id(从1开始), limit: 查询结果的数量'
+const { tPage } = usePageScopedI18n({
+  zh: {
+    desc: 'GraphQL 版本的 JSONPlaceholder！免费在线 GraphQL API，用于测试和原型开发。',
+    postsDesc: '批量查询 posts',
+    commentsDesc: '批量查询 comments',
+    todosDesc: '批量查询 todos',
+    usersDesc: '批量查询 users',
+    albumsDesc: '批量查询 albums',
+    photosDesc: '批量查询 photos',
+    postDesc: '查询单个 post',
+    userDesc: '查询单个 user',
+    albumDesc: '查询单个 album',
+    photoDesc: '查询单个 photo',
+    commentDesc: '查询单个 comment',
+    postsAnnotation: '批量查询 posts, start: 起始的id(从1开始), limit: 查询结果的数量'
   },
-  en:{
-    desc:  "GraphQL version of JSONPlaceholder! Free fake online GraphQL API for testing and prototyping GraphQL.",
-    postsDesc:'Batch query posts',
-    commentsDesc:'Batch query comments',
-    todosDesc:'Batch query todos',
-    usersDesc:'Batch query users',
-    albumsDesc:'Batch query albums',
-    photosDesc:'Batch query photos',
-    postDesc:'Query a single post',
-    userDesc:'Query a single user',
-    albumDesc:'Query a single album',
-    photoDesc:'Query a single photo',
-    commentDesc:'Query a single comment',
-    postsAnnotation:'Batch query posts, start: starting id (starting from 1), limit: number of results to retrieve.'
+  en: {
+    desc: "GraphQL version of JSONPlaceholder! Free fake online GraphQL API for testing and prototyping GraphQL.",
+    postsDesc: 'Batch query posts',
+    commentsDesc: 'Batch query comments',
+    todosDesc: 'Batch query todos',
+    usersDesc: 'Batch query users',
+    albumsDesc: 'Batch query albums',
+    photosDesc: 'Batch query photos',
+    postDesc: 'Query a single post',
+    userDesc: 'Query a single user',
+    albumDesc: 'Query a single album',
+    photoDesc: 'Query a single photo',
+    commentDesc: 'Query a single comment',
+    postsAnnotation: 'Batch query posts, start: starting id (starting from 1), limit: number of results to retrieve.'
   }
 })
 
@@ -60,7 +63,7 @@ const desc: GraphqlReqDesc = {
       title: "posts",
       desc: tPage.postsDesc,
       body:
-          `query {
+        `query {
     posts(start: 1, limit: 10) {
         id
         userId
@@ -80,7 +83,7 @@ const desc: GraphqlReqDesc = {
       title: "comments",
       desc: tPage.commentsDesc,
       body:
-          `query {
+        `query {
     comments(start: 1, limit: 10) {
         id
         postId
@@ -98,7 +101,7 @@ const desc: GraphqlReqDesc = {
       title: "todos",
       desc: tPage.todosDesc,
       body:
-          `query {
+        `query {
     todos(start: 1, limit: 10) {
         id
         title
@@ -114,7 +117,7 @@ const desc: GraphqlReqDesc = {
       title: "users",
       desc: tPage.usersDesc,
       body:
-          `query {
+        `query {
     users(start: 1, limit: 10) {
         id
         name
@@ -128,7 +131,7 @@ const desc: GraphqlReqDesc = {
       title: "albums",
       desc: tPage.albumsDesc,
       body:
-          `query {
+        `query {
     albums(start: 1, limit: 10) {
         id
         userId
@@ -140,7 +143,7 @@ const desc: GraphqlReqDesc = {
       title: "photos",
       desc: tPage.photosDesc,
       body:
-          `query {
+        `query {
     photos(start: 1, limit: 10) {
         id
         title
@@ -158,7 +161,7 @@ const desc: GraphqlReqDesc = {
       title: "post",
       desc: tPage.postDesc,
       body:
-          `query {
+        `query {
     post(id: 1) {
         id
         title
@@ -174,7 +177,7 @@ const desc: GraphqlReqDesc = {
       title: "user",
       desc: tPage.userDesc,
       body:
-          `query {
+        `query {
     user(id: 1) {
         id
         name
@@ -203,7 +206,7 @@ const desc: GraphqlReqDesc = {
       title: "album",
       desc: tPage.albumDesc,
       body:
-          `query {
+        `query {
     album(id: 1) {
         id
         title
@@ -223,7 +226,7 @@ const desc: GraphqlReqDesc = {
       title: "photo",
       desc: tPage.photoDesc,
       body:
-          `query {
+        `query {
     photo(id: 1) {
         id
         title
@@ -243,7 +246,7 @@ const desc: GraphqlReqDesc = {
       title: "comment",
       desc: tPage.commentDesc,
       body:
-          `query {
+        `query {
     comment(id: 1) {
         id
         body
@@ -275,7 +278,7 @@ const desc: GraphqlReqDesc = {
     {
       title: "Post",
       content:
-          `type Post{
+        `type Post{
     userId: Int
     id: Int
     title: String
@@ -286,7 +289,7 @@ const desc: GraphqlReqDesc = {
     {
       title: "Comment",
       content:
-          `type Comment{
+        `type Comment{
     postId: Int
     id: Int
     name: String
@@ -298,7 +301,7 @@ const desc: GraphqlReqDesc = {
     {
       title: "User",
       content:
-          `type User{
+        `type User{
     id: Int
     name: String
     username: String
@@ -335,7 +338,7 @@ type Company{
     {
       title: "Todo",
       content:
-          `type Todo{
+        `type Todo{
     userId: Int
     id: Int
     title: String
@@ -346,7 +349,7 @@ type Company{
     {
       title: "Album",
       content:
-          `type Album{
+        `type Album{
     userId: Int
     id: Int
     title: String
@@ -358,7 +361,7 @@ type Company{
     {
       title: "Photo",
       content:
-          `type Photo{
+        `type Photo{
     albumId: Int
     id: Int
     title: String
@@ -379,27 +382,26 @@ function codeToOperations(code: string, type: GraphqlOpTypeStr): {
   annotation?: string
 }[] {
   return code
-      .split('\n')
-      .map(line => line.trim())
-      .filter(line => line.length > 0)
-      .map(line => {
-        const index = line.indexOf('#')
-        if(index!==-1){
-          return {
-            content: line.substring(0, index),
-            annotation: line.substring(index + 1),
-            type: type
-          }
-        }else{
-          return {
-            content: line,
-            type: type
-          }
+    .split('\n')
+    .map(line => line.trim())
+    .filter(line => line.length > 0)
+    .map(line => {
+      const index = line.indexOf('#')
+      if (index !== -1) {
+        return {
+          content: line.substring(0, index),
+          annotation: line.substring(index + 1),
+          type: type
         }
+      } else {
+        return {
+          content: line,
+          type: type
+        }
+      }
 
-      })
+    })
 }
 </script>
 
-<style scoped lang="postcss">
-</style>
+<style scoped lang="postcss"></style>

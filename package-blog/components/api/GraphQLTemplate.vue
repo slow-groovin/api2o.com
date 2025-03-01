@@ -79,7 +79,7 @@
 
 <script setup lang="ts">
 import {ref} from 'vue';
-import {type GraphqlReqDesc} from "~/utils/api/desc";
+import {type GraphqlReqDesc} from "~/lib/models/api-request";
 import {Switch} from "~/components/ui/switch";
 import {useLocalStorage} from "@vueuse/core"
 import GraphqlMethodBadge from "~/components/api/GraphqlMethodBadge.vue";
@@ -87,7 +87,8 @@ import GraphqlSvg from "~/components/svg/GraphqlSvg.vue";
 import CopyButton from "~/components/code/CopyButton.vue";
 import GitHubStyleTabs from "~/components/container/GitHubStyleTabs.vue";
 import TryItBlock from "~/components/api/graphql/TryItBlock.vue";
-import {usePageScopedI18n} from "~/utils/i18n";
+import {usePageScopedI18n} from "~/lib/i18n";
+import { useRuntimeConfig } from '#imports';
 
 
 const {public: {apiBaseUrl}} = useRuntimeConfig()
@@ -103,6 +104,27 @@ function types2CodeGroup(items: { content: string, title: string }[]) {
     lang: 'graphql'
   }))
 }
+
+const toggleOnlineRequestBuilderOpen = useLocalStorage('toggleOnlineRequestBuilderOpen', false)
+const toggleOnlineRequestBuilderOpenRef = ref(toggleOnlineRequestBuilderOpen.value)
+const {tPage} = usePageScopedI18n(
+    {
+      en: {
+        InPageReq: 'Try It',
+        def: 'Definition:',
+        operations: 'operations:',
+        types: 'types:',
+        toggleInPageReqOpenDefault: 'open this by default',
+      },
+      zh: {
+        InPageReq: 'Try It',
+        def: '定义:',
+        operations: '操作operations:',
+        types: '类型types:',
+        toggleInPageReqOpenDefault: '默认打开`Try it`页',
+      }
+    }
+)
 
 /**
  * 给我一个自定义的ts函数, 把文本comments(start:Int!, limit:Int!):[Comments!]分割
@@ -146,26 +168,6 @@ function renderGraphQLType(typeString: string): string {
   return `${formattedName}<span style="margin-left:0.25rem">(</span>${formattedParams}<span>)</span>: <span style="margin: 0 4px;">${formattedReturnType}</span>`;
 }
 
-const toggleOnlineRequestBuilderOpen = useLocalStorage('toggleOnlineRequestBuilderOpen', false)
-const toggleOnlineRequestBuilderOpenRef = ref(toggleOnlineRequestBuilderOpen.value)
-const {tPage} = usePageScopedI18n(
-    {
-      en: {
-        InPageReq: 'Try It',
-        def: 'Definition:',
-        operations: 'operations:',
-        types: 'types:',
-        toggleInPageReqOpenDefault: 'open this by default',
-      },
-      zh: {
-        InPageReq: 'Try It',
-        def: '定义:',
-        operations: '操作operations:',
-        types: '类型types:',
-        toggleInPageReqOpenDefault: '默认打开`Try it`页',
-      }
-    }
-)
 
 </script>
 

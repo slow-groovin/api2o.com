@@ -11,13 +11,13 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
 import type { ClassValue } from 'clsx'
-
+import {cn} from '~/lib/utils'
 interface Props {
   class?: HTMLAttributes['class']
 }
 
 const props = defineProps<Props>()
 
-declare function cn(...inputs: ClassValue[]): string
+
 
 </script>

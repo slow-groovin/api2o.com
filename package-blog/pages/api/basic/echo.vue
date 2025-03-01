@@ -1,31 +1,33 @@
 <template class="">
   <div>
-    <RestTemplate :desc="reqDesc"/>
+    <RestTemplate :desc="reqDesc" />
 
   </div>
 </template>
 <script setup lang="ts">
-import {type RestReqDesc, RestReqSampleImpl} from "~/utils/api/desc";
+import { useRuntimeConfig, } from "#app";
+import { useI18n, useSeoMeta } from "#imports";
 import RestTemplate from "~/components/api/RestTemplate.vue";
-import UncompletedBadge from "~/components/hint/badge/UncompletedBadge.vue";
+import { usePageScopedI18n } from "~/lib/i18n";
+import { type RestReqDesc, RestReqSampleImpl } from "~/lib/models/api-request";
 
 const runtimeConfig = useRuntimeConfig()
-const {locale}=useI18n()
-const {tPage}=usePageScopedI18n({
-  zh:{
-    desc:'直接返回输入的msg',
+const { locale } = useI18n()
+const { tPage } = usePageScopedI18n({
+  zh: {
+    desc: '直接返回输入的msg',
   },
-  en:{
-    desc:'directly return the request param msg',
+  en: {
+    desc: 'directly return the request param msg',
   }
 })
 
 useSeoMeta({
   title: 'echo | API',
-  description: tPage.desc+', public free rest API of api2o.com',
+  description: tPage.desc + ', public free rest API of api2o.com',
 })
 
-const reqDescZh:RestReqDesc={
+const reqDescZh: RestReqDesc = {
   name: "echo",
   desc: tPage.desc,
   methods: ['GET'],
@@ -36,7 +38,7 @@ const reqDescZh:RestReqDesc={
   }),
   paramOrBodyDescList: [
     {
-      title:'全部参数',
+      title: '全部参数',
       content: '?msg=你好,api2o&resp_type=text',
       contentWithAnnotation: `?msg=hello&resp_type=text
 //msg:string  返回的消息
@@ -62,7 +64,7 @@ const reqDescZh:RestReqDesc={
 
 
 
-const reqDescEn:RestReqDesc={
+const reqDescEn: RestReqDesc = {
   name: "echo",
   desc: tPage.desc,
   methods: ['GET'],
@@ -73,7 +75,7 @@ const reqDescEn:RestReqDesc={
   }),
   paramOrBodyDescList: [
     {
-      title:'all param',
+      title: 'all param',
       content: '?msg=hello,api2o&resp_type=text',
       contentWithAnnotation: `?msg=hello&resp_type=text
 //msg:string  the return msg(same to request param msg)
@@ -96,8 +98,7 @@ const reqDescEn:RestReqDesc={
     }
   ],
 }
-const reqDesc=locale.value==='zh'?reqDescZh:reqDescEn
+const reqDesc = locale.value === 'zh' ? reqDescZh : reqDescEn
 //
 </script>
-<style scoped lang="postcss">
-</style>
+<style scoped lang="postcss"></style>

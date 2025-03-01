@@ -13,6 +13,7 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
+import ApiSidebar from '~/components/api/ApiSidebar.vue';
 
 const {path,fullPath}=useRoute()
 const apiPath=path.replace(/\w+\/api\//,'')

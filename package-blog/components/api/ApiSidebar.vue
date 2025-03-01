@@ -49,60 +49,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import HttpMethodBadge from "~/components/api/HttpMethodBadge.vue";
-import type {GraphqlOpTypeStr, HttpMethodStr} from "~/utils/api/desc";
-import GraphqlMethodBadge from "~/components/api/GraphqlMethodBadge.vue";
+import type { HttpMethodStr} from "~/lib/models/api-request";
 import GraphqlSvg from "~/components/svg/GraphqlSvg.vue";
+import { useLocalePath } from '#imports';
+import { apiRouters } from '~/lib/configs/api/router';
 const localePath=useLocalePath()
 
-interface Link {
-  id: number
-  name: string
-  url: string
-  method: HttpMethodStr|GraphqlOpTypeStr
-  type: 'rest'|'graphql'
-}
-
-interface Category {
-  id: number
-  name: string
-  expanded: boolean
-  links: Link[]
-}
 
 const collapsed = ref(false)
 
-const categories = ref<Category[]>([
-  {
-    id: 1,
-    name: 'sample',
-    expanded: true,
-    links: [
-      { id: 11, name: 'echo', url: '/basic/echo', method:'GET' , type:'rest'},
-      { id: 12, name: 'ping', url: '/basic/ping', method:'GET' , type:'rest'},
-      { id: 14, name: 'post', url: '/basic/post', method:'POST', type:'rest' },
-      { id: 13, name: 'rand/thing', url: '/basic/rand-thing',method:'GET', type:'rest' },
-      { id: 15, name: 'jsonplaceholder', url: '/basic/json-placeholder', method:'query' , type:'graphql'},
-    ],
-  },
-  // {
-  //   id: 2,
-  //   name: 'test',
-  //   expanded: true,
-  //   links: [
-  //     { id: 21, name: '项目 A', url: '#project-a' },
-  //     { id: 22, name: '项目 B', url: '#project-b' },
-  //   ],
-  // },
-  // {
-  //   id: 3,
-  //   name: 'graphql',
-  //   expanded: true,
-  //   links: [
-  //     { id: 31, name: '个人信息', url: '#profile' },
-  //     { id: 32, name: '偏好设置', url: '#preferences' },
-  //   ],
-  // },
-])
+const categories = ref(apiRouters)
 
 const toggleCategory = (categoryId: number) => {
   const category = categories.value.find(c => c.id === categoryId)

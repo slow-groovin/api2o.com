@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
 	compatibilityDate: '2024-11-01',
 	devtools: { enabled: true },
+
 	modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-gtag', '@nuxtjs/i18n'],
 	imports: {
 		autoImport: false,
@@ -57,8 +58,8 @@ export default defineNuxtConfig({
 		runtimeConfig: {
 			public: {
 				apiBaseUrl: 'http://localhost:3001',
+				logo: '/icon/dev-logo1.png'
 				// apiBaseUrl: 'http://localhost:3000',
-				logo: '/icon/dev.png'
 			}
 		},
 	},

@@ -87,12 +87,14 @@
 
 <script setup lang="ts">
 import {ref} from 'vue';
-import {convertHttpRequest} from "~/utils/api/request-gen";
-import {type BodyItemDesc, type RestReqDesc} from "~/utils/api/desc";
+import {convertHttpRequest} from "~/lib/request-gen";
+import {type BodyItemDesc, type RestReqDesc} from "~/lib/models/api-request";
 import {Switch} from "~/components/ui/switch";
 import InPageRequestSender from "~/components/api/InPageRequestSender.vue"
 import {useLocalStorage} from "@vueuse/core"
 import HttpMethodBadge from "~/components/api/HttpMethodBadge.vue";
+import { useI18n } from '#imports';
+import CodeGroup from '../code/CodeGroup.vue';
 
 
 const {locale} = useI18n()

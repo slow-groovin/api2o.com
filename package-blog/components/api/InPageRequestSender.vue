@@ -32,12 +32,19 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
-import {RestReqSampleImpl, } from "~/utils/api/desc";
+import {computed, onMounted, ref} from 'vue'
+import {RestReqSampleImpl, } from "~/lib/models/api-request";
 import {Input} from '~/components/ui/input'
-import {codeToHtml} from "shiki";
+
 import {Textarea} from "~/components/ui/textarea";
-import {debounce} from "~/utils/page/common";
+import {debounce} from "~/lib/common-utils";
+import { codeToHtml } from 'shiki';
+
+
+onMounted(async()=>{
+  blankBodyHtml=await codeToHtml('\n\n\n',{lang:'json',theme:'github-dark'})
+  responseBodyHtml.value=blankBodyHtml
+})
 
 const prop = defineProps<{ reqSample: RestReqSampleImpl }>()
 const url = ref(prop.reqSample.url)
@@ -46,8 +53,9 @@ const textAreaHeightStyle=computed(()=>{
   const bodyLen=body.value.split('\n').length
   return `height: ${bodyLen+5}em`
 })
-const blankBodyHtml=await codeToHtml('\n\n\n',{lang:'json',theme:'github-dark'})
-const responseBodyHtml = ref(blankBodyHtml)
+let blankBodyHtml=''
+
+const responseBodyHtml = ref('')
 
 const pending= ref(false)
 

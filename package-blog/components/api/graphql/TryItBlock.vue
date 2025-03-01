@@ -44,15 +44,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { type GraphqlReqSample, } from "~/utils/api/desc";
-import { Input } from '~/components/ui/input'
-import { codeToHtml } from "shiki";
-import { Textarea } from "~/components/ui/textarea";
-import { debounce } from "~/utils/page/common";
-import GraphqlSvg from "~/components/svg/GraphqlSvg.vue";
+import { computed, ref } from 'vue';
+import { Input } from '~/components/ui/input';
+import { type GraphqlReqSample, } from "~/lib/models/api-request";
+import { useRuntimeConfig } from '#app';
+import { codeToHtml } from 'shiki';
 import LoadingAnimSvg from "~/components/svg/LoadingAnimSvg.vue";
 import SendRequestIconSvg from "~/components/svg/SendRequestIconSvg.vue";
+import { Textarea } from "~/components/ui/textarea";
+import { debounce } from "~/lib/common-utils";
+
 
 const prop = withDefaults(defineProps<{ sample: GraphqlReqSample, endpoint: string }>(), {
   sample: {

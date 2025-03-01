@@ -40,9 +40,8 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { codeToHtml } from 'shiki';
-import CopySvg from "~/components/svg/CopySvg.vue";
 import CopyButton from "~/components/code/CopyButton.vue";
+import {codeToHtml} from 'shiki'
 
 interface CodeBlock {
   fileName: string;

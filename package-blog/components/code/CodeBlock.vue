@@ -32,8 +32,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import {codeToHtml} from "shiki";
+import { codeToHtml } from 'shiki';
+import { ref, useTemplateRef } from 'vue';
+
 
 interface Props {
   fileName?: string;

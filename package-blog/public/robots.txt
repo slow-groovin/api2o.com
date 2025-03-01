@@ -1,1 +1,9 @@
+User-agent: Bingbot
+Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: *
+Disallow: /
+Sitemap: https://www.api2o.com/sitemap.xml
