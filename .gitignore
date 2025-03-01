@@ -9,7 +9,7 @@
 dist/
 nuxt-content/
 .output/
-
+package-blog/content
 # VSCode
 .vscode/
 

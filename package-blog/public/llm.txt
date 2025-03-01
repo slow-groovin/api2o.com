@@ -1,0 +1,10 @@
+## dev
+for local dev,  create a link of content dir for hot-reload of page in content repo.
+windows(CMD ADMIN):
+```
+ mklink /D content  D:\xxxxxxx\api2o-contents\ 
+```
+
+## hisotry
+2025-02-28
+re-construct the project, change to nuxt-content@3, repository storaged articles

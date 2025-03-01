@@ -1,0 +1,158 @@
+@layer base{
+    :root{
+        --custom-code-padding-l: 1rem;
+        --custom-code-padding-r: 0.5rem;
+        --custom-code-padding-t: 2rem;
+        --custom-code-padding-b: 1rem;
+    }
+}
+
+@layer components {
+    * {
+        scroll-behavior: smooth; /*必须这么设置才有用*/
+        scroll-margin-top: 4em; /*hash跳转位置*/
+    }
+
+    /* 自定义的博客样式 */
+    /* 文件名: custom-prose.css */
+    /* 样式设置 */
+    .prose {
+        counter-reset: h2counter;
+
+        @apply leading-relaxed;
+
+        h1 {
+            @apply text-5xl font-extrabold
+        }
+
+        h2::before {
+            counter-increment: h2counter;
+            content: counter(h2counter) ". ";;
+        }
+
+        h2 {
+            @apply text-3xl font-bold mb-4 mt-8   ;
+            counter-reset: h3counter;
+        }
+
+        h3::before {
+            counter-increment: h3counter;
+            content: counter(h2counter) "." counter(h3counter) ". ";
+        }
+
+        h3 {
+            @apply text-xl font-semibold mb-3 mt-4 ;
+        }
+
+
+        h4 {
+            @apply text-lg font-semibold mb-2  ;
+        }
+
+
+        h5 {
+            @apply text-lg font-bold mb-2;
+        }
+
+        h6 {
+            @apply text-base font-semibold mb-2;
+        }
+
+
+        a:not(h2 a):not(h3 a):not(h4 a):not(h5 a) {
+            @apply text-blue-500 underline;
+        }
+
+        a:hover {
+            @apply underline;
+        }
+
+        p {
+            @apply mb-4  ;
+        }
+
+        ul {
+            @apply list-disc pl-9 my-4;
+
+            li {
+                @apply mb-2;
+
+                &::marker {
+                    @apply text-primary dark:text-blue-200;
+                }
+            }
+        }
+
+        ol {
+            @apply list-decimal pl-9 my-4;
+
+            li {
+                @apply mb-2;
+
+                &::marker {
+                    @apply text-primary ;
+                }
+            }
+        }
+
+        blockquote p {
+            @apply p-2 mb-6 border-l-4 border-blue-500 bg-gray-100 dark:border-blue-300 dark:bg-slate-700;
+        }
+
+        :not(pre) > code {
+            @apply bg-neutral-200 dark:bg-neutral-500 p-0.5 rounded border border-primary mx-0.5;
+        }
+
+        table {
+            @apply w-fit border-collapse my-6;
+
+            th {
+                @apply bg-gray-200 font-semibold dark:bg-neutral-600;
+            }
+
+            th, td {
+                @apply border border-gray-300 p-2 dark:border-gray-200;
+            }
+        }
+
+        img {
+            @apply max-w-full h-auto rounded-sm;
+        }
+
+        /*没有被shiki高亮的代码配置*/
+
+        pre {
+            @apply bg-code text-white dark:text-black  overflow-auto max-w-full   rounded p-4;
+        }
+
+    }
+
+
+
+    /*shiki  for markdown/all code */
+    pre.shiki {
+        @apply rounded overflow-x-auto;
+        padding: var(--custom-code-padding-t) var(--custom-code-padding-r) var(--custom-code-padding-b) var(--custom-code-padding-l);
+        code .line{/*强制覆盖inline, 缘由: 更新nuxt-content版本后, ProseCode.vue的代码中的样式强制制定了 pre code .line {   display: block;    min-height: 1rem;}, 导致每行代码占两行 */
+                display: inline;
+        }
+    }
+
+    .show-line-number {
+        code {
+            counter-reset: step;
+            counter-increment: step 0;
+        }
+
+        code .line::before {
+            content: counter(step);
+            counter-increment: step;
+            width: 1rem;
+            margin-right: 1.5rem;
+            display: inline-block;
+            text-align: right;
+            color: rgba(207, 207, 207, 0.56)
+        }
+    }
+
+}
