@@ -10,6 +10,9 @@
       <div class="font-extralight italic text-gray-600 dark:text-gray-200 max-w-[16em] mb-4">
         {{ i18nVal('description') }}
       </div>
+      <div v-if="errorHint" class="text-red-500">
+        {{ errorHint }}
+      </div>
       <input
           v-model.trim="inputId"
           type="text"
@@ -50,9 +53,7 @@
           <div class="border-y">{{ parsedDate.toLocaleString() }}</div>
         </div>
       </div>
-      <div v-if="errorHint">
-        {{ errorHint }}
-      </div>
+
     </div>
     <!--    history column-->
     <ClientOnly>
@@ -107,9 +108,10 @@
 </template>
 
 <script lang="ts" setup>
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 import {useClipboard, useLocalStorage} from "@vueuse/core";
 import OfflineBadge from "~/components/hint/badge/OfflineBadge.vue";
+import { useI18n, useSeoMeta } from '#imports';
 
 
 const {t} = useI18n()

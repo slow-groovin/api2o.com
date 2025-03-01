@@ -2,15 +2,7 @@
 export default defineNuxtConfig({
 	compatibilityDate: '2024-11-01',
 	devtools: { enabled: true },
-	modules: [
-		'@nuxt/content',
-		'@nuxtjs/tailwindcss',
-		'shadcn-nuxt',
-		'@nuxt/icon',
-		'@vueuse/nuxt',
-		'nuxt-gtag',
-		'@nuxtjs/i18n'
-	],
+	modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-gtag', '@nuxtjs/i18n'],
 	imports: {
 		autoImport: false,
 		scan: false,
@@ -96,13 +88,13 @@ export default defineNuxtConfig({
 	},
 	shadcn: {
 		/**
-		 * Prefix for all the imported component
-		 */
+			* Prefix for all the imported component
+			*/
 		prefix: '',
 		/**
-		 * Directory that the component lives in.
-		 * @default "./components/ui"
-		 */
+			* Directory that the component lives in.
+			* @default "./components/ui"
+			*/
 		componentDir: './components/ui'
 	},
 	i18n: {

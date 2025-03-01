@@ -16,7 +16,6 @@ package-blog/content
 # Package manager
 package-lock.json
 yarn.lock
-pnpm-lock.yaml
 
 # System files
 Thumbs.db
