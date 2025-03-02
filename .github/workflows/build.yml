@@ -27,10 +27,6 @@ jobs:
         run: |
           pwd
           ls -alh
-          curl -fsSL https://get.pnpm.io/install.sh | bash 
-          corepack enable && corepack prepare pnpm@latest --activate
-          pnpm setup
-          pnpm add -g node-gyp 
           cd package-blog
           echo $(jq -r '.version' package.json)
           echo "VERSION=$(jq -r '.version' package.json)" >> $GITHUB_ENV
@@ -50,7 +46,6 @@ jobs:
         env:
           VAR_IN_STEP2: "<var in step2>"
         with:
-          context: ./package-blog
           platforms: linux/amd64
           cache-from: type=gha
           cache-to: type=gha,mode=max
