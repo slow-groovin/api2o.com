@@ -22,6 +22,8 @@ WORKDIR /usr/build/
 # 复制项目文件
 COPY . .
 
+ENV PNPM_HOME=/usr/local/bin
+
 RUN npm i -g corepack@latest
 RUN corepack enable && corepack prepare pnpm@latest --activate
 RUN pnpm setup

@@ -1,7 +1,7 @@
 {
-  "name": "monorepo-project",
+  "name": "api2o.com",
   "version": "1.0.0",
-  "description": "pnpm monorepo project",
+  "description": "api2o.com monorepo",
   "license": "MIT",
   "private": true,
   "workspaces": [
