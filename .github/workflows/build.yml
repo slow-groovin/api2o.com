@@ -27,6 +27,8 @@ jobs:
         env:
           VAR_IN_STEP1: "<var in step1>"
         run: |
+          pwd
+          ls -alh
           echo $(jq -r '.version' package.json)
           echo "VERSION=$(jq -r '.version' package.json)" >> $GITHUB_ENV
         
