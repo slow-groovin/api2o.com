@@ -2,10 +2,10 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 import path from 'path'
 // const options= import.meta.env.NODE_ENV==='development' ? { cwd: path.resolve(import.meta.env.LOCAL_CONTENT_PATH) } : { repository: import.meta.env.REMOTE_CONTENT_REPO }
 
-const buildSource = (category: string) => {
-  const source = import.meta.env.NODE_ENV === 'development' ? `${category}/**/*.md` : {
+const buildSource = (path: string) => {
+  const source = import.meta.env.NODE_ENV === 'development' ? path : {
     repository: import.meta.env.REMOTE_CONTENT_REPO,
-    include: `${category}/**`,
+    include: path,
     prefix: '/',
     authToken: process.env.GITHUB_AUTH_TOKEN,
   }
@@ -17,7 +17,7 @@ export default defineContentConfig({
   collections: {
     blog: defineCollection({
       type: 'page',
-      source: buildSource('blog'),
+      source: buildSource('blog/**/*.md'),
       schema: z.object({
         date: z.date(),
         /**
@@ -31,7 +31,7 @@ export default defineContentConfig({
 
     handbook: defineCollection({
       type: 'page',
-      source: buildSource('handbook'),
+      source: buildSource('handbook/**/*.md'),
       schema: z.object({
         date: z.date(),
         /**
@@ -43,5 +43,17 @@ export default defineContentConfig({
         _locale: z.enum(['en', 'zh'])
       })
     }),
+
+    handbookNav: defineCollection({
+      type: 'data',
+      source: buildSource('handbook/nav.json'),
+      schema: z.object({
+        books: z.array(
+          z.object({
+            name: z.string(),
+            icon: z.string()
+          }))
+      })
+    })
   }
 })

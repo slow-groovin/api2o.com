@@ -9,13 +9,13 @@
   -->
 
   <!-- 主容器：响应式网格布局 -->
-  <div class="container">
+  <div class="container" v-if="data">
     <div class="bg-white dark:bg-gray-800 rounded-lg p-8  space-y-4 ">
       <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">📚{{ t('handbook') }}</h1>
       <div class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{ t('handbookDesc') }}</div>
     </div>
     <div :class="cn('grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] p-8 gap-4', props.class)">
-      <template v-for="book in nav.books" :key="book.name">
+      <template v-for="book in data.books" :key="book.name">
         <NuxtLink :to="`/${locale}/handbook/${book.name}`" class="underline text-green-500">
           <div>
             <!-- <div :class="cn('grid grid-cols-[repeat(3,1fr)] gap-4', props.class)"> -->
@@ -38,20 +38,15 @@
 </template>
 
 <script setup lang="ts">
-import { type HTMLAttributes } from 'vue'
+import { onMounted, type HTMLAttributes } from 'vue'
 import { cn } from '~/lib/utils'
-import nav from '@/content/handbook/nav.json'
-import { useHead, useI18n } from '#imports'
+import { queryCollection, useAsyncData, useHead, useI18n } from '#imports'
 const { t, locale } = useI18n()
+
 
 useHead({
   title: t('handbook')
 })
-// 定义工具项接口
-interface Tool {
-  name: string
-  icon: string
-}
 
 // 组件属性接口
 interface Props {
@@ -60,4 +55,13 @@ interface Props {
 
 // 定义组件属性
 const props = defineProps<Props>()
+
+const { data, } = useAsyncData('nav.json', () => queryCollection('handbookNav').first())
+onMounted(() => {
+  console.log('data.value', data.value)
+
+})
+
+
+
 </script>
