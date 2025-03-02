@@ -4,7 +4,8 @@ LABEL org.opencontainers.image.description="api2o.com blog"
 
 
 
-
+ARG CONTENT_SOURCE
+ARG REMOTE_CONTENT_REPO
 RUN --mount=type=secret,id=GITHUB_AUTH_TOKEN,env=GITHUB_AUTH_TOKEN
 
 RUN echo "$GITHUB_AUTH_TOKEN  $CONTENT_SOURCE $REMOTE_CONTENT_REPO"
