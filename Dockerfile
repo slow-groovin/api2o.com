@@ -8,6 +8,7 @@ LABEL org.opencontainers.image.description="api2o.com blog"
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+RUN npm install -g corepack@latest
 RUN corepack --version
 RUN corepack enable
 RUN pnpm --version
