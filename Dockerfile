@@ -5,10 +5,14 @@ LABEL org.opencontainers.image.description="api2o.com blog"
 
 
 
+RUN --mount=type=secret,id=GITHUB_AUTH_TOKEN,env=GITHUB_AUTH_TOKEN
+
+RUN echo "$GITHUB_AUTH_TOKEN  $CONTENT_SOURCE $REMOTE_CONTENT_REPO"
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN npm install -g corepack@latest  
+
 RUN corepack enable
 RUN pnpm add -g node-gyp 
 

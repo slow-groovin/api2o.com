@@ -6,7 +6,7 @@ const buildSource = (path: string) => {
     console.error('CONTENT_SOURCE must be "local" or "github", You should not see this error in production running(It can appear in building).','contentSource:',contentSource)
   }
   console.log('contentSource:',contentSource)
-  const source = process.env.CONTENT_SOURCE === 'local' ? path : {
+  const source = process.env.CONTENT_SOURCE !== 'github' ? path : {
     repository: process.env.REMOTE_CONTENT_REPO,
     include: path,
     prefix: '/',
