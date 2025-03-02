@@ -22,8 +22,11 @@ RUN pnpm add -g node-gyp
 FROM base AS build
 COPY . /usr/build
 WORKDIR /usr/build
+
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
-RUN pnpm run -r build
+RUN --mount=type=secret,id=SOURCE_AUTH_TOKEN,env=SOURCE_AUTH_TOKEN \
+    --mount=type=secret,id=GTAG_ID,env=GTAG_ID \
+    pnpm run -r build
 
 FROM base AS app-blog
 WORKDIR /app
