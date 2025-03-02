@@ -36,7 +36,8 @@ const { data: count } = await useAsyncData('blog-count', () => queryCollection('
 
 <template>
   <div class="flex flex-col  container gap-y-4">
-    <h1 class="text-4xl font-bold mb-4">{{ t('timeline') }}</h1>
+    <h1 class="text-3xl font-bold mb-1">
+      📰{{ t('timeline') }}</h1>
     <BlogTimeLine v-if="data" :docs="data" />
 
     <Pagination class="" v-slot="{ page }" v-if="count" :total="count" :items-per-page="10" :sibling-count="1"

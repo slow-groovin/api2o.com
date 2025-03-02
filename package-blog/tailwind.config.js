@@ -72,6 +72,9 @@ export default {
 				'github-card': {
 					DEFAULT: "var(--github-card)",
 				},
+				'illustration-light':{
+					DEFAULT: "var(--illustration-light)",
+				},
 				code: "var(--code)"
 			},
 			borderRadius: {

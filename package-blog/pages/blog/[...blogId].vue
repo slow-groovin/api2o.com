@@ -3,6 +3,7 @@
 import { computed, useAsyncData, useAsyncState, useI18n } from '#imports';
 import { useLocalStorage } from '@vueuse/core';
 import BlogBottomButtons from '~/components/blog/BlogBottomButtons.vue';
+import BlogFooter from '~/components/blog/BlogFooter.vue';
 import BlogHead from '~/components/blog/BlogHead.vue';
 import MarkdownToc from '~/components/blog/MarkdownToc.vue';
 import AITranslationBadge from '~/components/hint/badge/AITranslationBadge.vue';

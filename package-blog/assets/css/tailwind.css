@@ -123,6 +123,7 @@
     --radius: 0.75rem;
 
     --github-card: #f6f8fa;
+    --illustration-light: #7c7b7bee;
   }
 
   .dark {
@@ -154,6 +155,8 @@
     --input:0, 0%, 97%;
     --ring:142.4 71.8% 29.2%;
     --github-card: rgba(33, 37, 43, 0.85);
+    --illustration-light: #b3b1b1ee;
+
     /*color: hsl(0, 0%, 97%)*/
   }
   /*custom*/

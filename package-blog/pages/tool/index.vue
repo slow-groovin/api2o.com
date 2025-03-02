@@ -1,8 +1,8 @@
 
 
 <template>
-  <div class="container">
-    <h1 class="text-5xl font-extrabold mb-5">{{t('tool')}}</h1>
+  <div class="container p-8">
+    <h1 class="text-3xl font-extrabold mb-2">🛠️{{t('tool')}}</h1>
     <div class="flex flex-col gap-y-4">
       <div v-for="item in toolItems">
         <NuxtLink :to="localePath(`/tool/${item.id}`)" class="flex flex-col gap-2 underline text-primary">
