@@ -10,7 +10,7 @@ const buildSource = (path: string) => {
     repository: process.env.REMOTE_CONTENT_REPO,
     include: path,
     prefix: '/',
-    authToken: process.env.GITHUB_AUTH_TOKEN,
+    authToken: process.env.SOURCE_AUTH_TOKEN,
   }
   return source
 }
