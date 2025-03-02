@@ -23,7 +23,7 @@ WORKDIR /usr/build/
 COPY . .
 
 
-RUN pnpm install && pnpm run build
+RUN npm i -g pnpm && pnpm install && pnpm run build
     
 
 # 继续final镜像
