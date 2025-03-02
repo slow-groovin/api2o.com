@@ -23,7 +23,11 @@ WORKDIR /usr/build/
 COPY . .
 
 
-RUN npm i -g pnpm && pnpm i -g node-gyp && pnpm install && pnpm run build
+RUN npm i -g pnpm && \
+    pnpm setup &&\
+    pnpm i -g node-gyp &&  \
+    pnpm install &&  \
+    pnpm run build
     
 
 # 继续final镜像
