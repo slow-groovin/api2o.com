@@ -46,6 +46,7 @@ jobs:
         env:
           VAR_IN_STEP2: "<var in step2>"
         with:
+          context: ./package-blog
           platforms: linux/amd64
           cache-from: type=gha
           cache-to: type=gha,mode=max
