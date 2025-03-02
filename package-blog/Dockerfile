@@ -22,10 +22,11 @@ WORKDIR /usr/build/
 # 复制项目文件
 COPY . .
 
+RUN npm i -g corepack@latest
 RUN corepack enable && corepack prepare pnpm@latest --activate
-RUN pnpm add -g node-gyp &&  \
-    pnpm install &&  \
-    pnpm run build
+RUN pnpm add -g node-gyp 
+RUN pnpm install 
+RUN pnpm run build
     
 
 # 继续final镜像
