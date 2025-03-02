@@ -8,7 +8,9 @@ LABEL org.opencontainers.image.description="api2o.com blog"
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack --version
 RUN corepack enable
+RUN pnpm --version
 RUN pnpm add -g node-gyp 
 
 FROM base AS build
