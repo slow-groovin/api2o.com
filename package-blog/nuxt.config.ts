@@ -35,7 +35,6 @@ export default defineNuxtConfig({
 			prerender: {
 				autoSubfolderIndex: false
 			},
-			// preset: 'cloudflare_pages'  //似乎是没用的, cf+git部署已经启用了这个
 			preset: 'node-server'
 		},
 		runtimeConfig: {

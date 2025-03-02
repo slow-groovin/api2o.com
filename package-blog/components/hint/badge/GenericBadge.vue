@@ -26,7 +26,7 @@
 
 <script lang="ts" setup>
 import {onMounted, onUnmounted, ref, useTemplateRef} from 'vue';
-
+import { Icon } from "#components";
 const {
   tooltip = 'tooltip',
   leftText = 'left',

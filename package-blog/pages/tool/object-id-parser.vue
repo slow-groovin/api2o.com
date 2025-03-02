@@ -112,7 +112,7 @@ import {computed, ref} from 'vue';
 import {useClipboard, useLocalStorage} from "@vueuse/core";
 import OfflineBadge from "~/components/hint/badge/OfflineBadge.vue";
 import { useI18n, useSeoMeta } from '#imports';
-
+import { Icon } from "#components";
 
 const {t} = useI18n()
 const i18nVal = (subKey: string) => t('tools.object-id-parser.' + subKey)

@@ -5,7 +5,7 @@ import {useI18n,} from "vue-i18n";
 import { useSwitchLocalePath } from "#imports";
 const {availableLocales, locale, t} = useI18n()
 const switchLocalePath = useSwitchLocalePath()
-
+import { Icon } from "#components";
 // console.log('LangSwitchButton', availableLocales, locale.value, switchLocalePath('zh'))
 </script>
 

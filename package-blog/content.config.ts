@@ -1,6 +1,4 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
-import path from 'path'
-// const options= import.meta.env.NODE_ENV==='development' ? { cwd: path.resolve(import.meta.env.LOCAL_CONTENT_PATH) } : { repository: import.meta.env.REMOTE_CONTENT_REPO }
 
 const buildSource = (path: string) => {
   const source = import.meta.env.NODE_ENV === 'development' ? path : {
@@ -12,7 +10,6 @@ const buildSource = (path: string) => {
   return source
 }
 
-console.log('[content][load]options test:', import.meta.env.NODE_ENV, buildSource('blog'))
 export default defineContentConfig({
   collections: {
     blog: defineCollection({
