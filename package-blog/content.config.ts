@@ -1,8 +1,13 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 const buildSource = (path: string) => {
-  const source = import.meta.env.NODE_ENV === 'development' ? path : {
-    repository: import.meta.env.REMOTE_CONTENT_REPO,
+  const contentSource=process.env.CONTENT_SOURCE
+  if(contentSource!=='local' && contentSource!=='github'){
+    throw new Error('CONTENT_SOURCE must be "local" or "github"')
+  }
+  console.log('contentSource:',contentSource)
+  const source = process.env.CONTENT_SOURCE === 'local' ? path : {
+    repository: process.env.REMOTE_CONTENT_REPO,
     include: path,
     prefix: '/',
     authToken: process.env.GITHUB_AUTH_TOKEN,
