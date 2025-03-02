@@ -24,6 +24,7 @@ COPY . .
 
 RUN npm i -g corepack@latest
 RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN pnpm setup
 RUN pnpm add -g node-gyp 
 RUN pnpm install 
 RUN pnpm run build
