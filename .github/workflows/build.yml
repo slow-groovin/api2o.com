@@ -47,7 +47,6 @@ jobs:
           VAR_IN_STEP2: "<var in step2>"
         with:
           platforms: linux/amd64
-          context: .
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: true
