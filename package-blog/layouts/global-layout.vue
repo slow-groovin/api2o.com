@@ -10,7 +10,7 @@
         <div class="container flex items-center gap-x-4 ">
           <!-- Logo -->
           <div class="flex items-center">
-            <NuxtLink to="/">
+            <NuxtLink :to="localePath('/index')">
               <img class="h-8 mr-1  p-1 " :src="logo" alt="api2o" />
             </NuxtLink>
           </div>
@@ -87,7 +87,7 @@ import { ref, useI18n, useLocalePath } from "#imports";
 import ColorSwitchButton from "~/components/nav/ColorSwitchButton.vue";
 import GotoTop from "~/components/nav/GotoTop.vue";
 import LangSwitchButton from "~/components/nav/LangSwitchButton.vue";
-
+import { Icon } from "#components";
 const { t } = useI18n()
 const localePath = useLocalePath()
 const { public: { logo } } = useRuntimeConfig()

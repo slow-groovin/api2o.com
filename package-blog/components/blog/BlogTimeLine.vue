@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import { Icon } from "#components";
 import { genBlogPath } from "~/lib/blog-util";
 import { useI18n } from "#imports";
 const {locale}=useI18n()

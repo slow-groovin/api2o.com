@@ -1,5 +1,6 @@
 {
-  "name": "nuxt-app",
+  "name": "api2o.com-blog",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -7,7 +8,9 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "run:gen-sitemap": " tsx z-dev-scripts/gen-sitemap-xml",
+    "run:exec-indexNow": " tsx z-dev-scripts/indexNow/exec-indexNow.ts"
   },
   "dependencies": {
     "@nuxt/content": "^3.2.2",
@@ -30,6 +33,8 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.13.1",
+    "dotenv": "^16.4.7",
+    "gray-matter": "^4.0.3",
     "shadcn-nuxt": "^1.0.1",
     "shiki": "2.5.0"
   }

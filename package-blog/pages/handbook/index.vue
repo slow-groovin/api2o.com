@@ -58,7 +58,6 @@ const props = defineProps<Props>()
 
 const { data, } = useAsyncData('nav.json', () => queryCollection('handbookNav').first())
 onMounted(() => {
-  console.log('data.value', data.value)
 
 })
 

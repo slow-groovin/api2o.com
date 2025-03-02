@@ -7,12 +7,12 @@
 </template>
 
 <script setup lang="ts">
-import { useHeadSafe } from '@unhead/vue';
-import { useI18n } from 'vue-i18n';
+import { useHead } from '#imports';
+import { useI18n } from '#imports';
 
 const {locale}=useI18n()
 
-useHeadSafe({
+useHead({
   title:'api2o.com',
   titleTemplate: (title) => `${title} | api2o`,
   htmlAttrs:{

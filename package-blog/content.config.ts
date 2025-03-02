@@ -1,18 +1,21 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
-import path from 'path'
-// const options= import.meta.env.NODE_ENV==='development' ? { cwd: path.resolve(import.meta.env.LOCAL_CONTENT_PATH) } : { repository: import.meta.env.REMOTE_CONTENT_REPO }
+
+console.log('contentSource:',process.env.CONTENT_SOURCE)
 
 const buildSource = (path: string) => {
-  const source = import.meta.env.NODE_ENV === 'development' ? path : {
-    repository: import.meta.env.REMOTE_CONTENT_REPO,
+  const contentSource=process.env.CONTENT_SOURCE
+  if(contentSource!=='local' && contentSource!=='github'){
+    console.error('CONTENT_SOURCE must be "local" or "github", You should not see this error in production running(It can appear in building).','contentSource:',contentSource)
+  }
+  const source = process.env.CONTENT_SOURCE !== 'github' ? path : {
+    repository: process.env.REMOTE_CONTENT_REPO,
     include: path,
     prefix: '/',
-    authToken: process.env.GITHUB_AUTH_TOKEN,
+    authToken: process.env.SOURCE_AUTH_TOKEN,
   }
   return source
 }
 
-console.log('[content][load]options test:', import.meta.env.NODE_ENV, buildSource('blog'))
 export default defineContentConfig({
   collections: {
     blog: defineCollection({

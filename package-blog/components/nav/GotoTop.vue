@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-
+import { Icon } from "#components";
 
 const props = defineProps<{ topAnchorId?: string }>()
 

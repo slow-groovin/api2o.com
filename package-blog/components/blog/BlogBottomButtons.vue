@@ -2,6 +2,7 @@
 
 import BottomButtonsContainer from "~/components/nav/BottomButtonsContainer.vue";
 import {useLocalStorage} from "@vueuse/core";
+import { Icon } from "#components";
 const showToc=useLocalStorage('blog-show-toc',true)
 const viewPortWide=useLocalStorage('blog-viewport-wide',false)
 </script>

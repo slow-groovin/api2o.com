@@ -2,7 +2,7 @@
 import { cn } from '@/lib/utils'
 import { computed, ref } from 'vue'
 import type { HTMLAttributes } from 'vue'
-
+import { Icon } from "#components";
 interface Props {
   // 侧边栏是否打开
   isOpen?: boolean

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useLocalePath } from '#imports';
 import type { BlogCollectionItem } from '@nuxt/content';
-
+import { Icon } from "#components";
 
 const props=defineProps<{
   doc:BlogCollectionItem,

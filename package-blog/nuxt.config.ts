@@ -1,3 +1,4 @@
+import {writeFileSync} from 'node:fs'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	compatibilityDate: '2024-11-01',
@@ -12,7 +13,13 @@ export default defineNuxtConfig({
 		clientFallback: true,
 	},
 
+	runtimeConfig: {
+		public:{
+			customContentSource: process.env.CONTENT_SOURCE,
+		}
+	},
 	$production: {
+		// debug: true,
 		sourcemap: false,
 		//
 		routeRules: {
@@ -26,6 +33,9 @@ export default defineNuxtConfig({
 				swr: 5400,
 				cors: true
 			},
+			'/':{
+				redirect:'/index',  //current version of nuxt and nuxt/i18n has bugs in handling `/` route, so mannually redirect it here
+			},
 			// '/api/v1/graphql': { cors: true },
 			// '/zh/blog/sample': {
 			// 	prerender: true
@@ -35,7 +45,6 @@ export default defineNuxtConfig({
 			prerender: {
 				autoSubfolderIndex: false
 			},
-			// preset: 'cloudflare_pages'  //似乎是没用的, cf+git部署已经启用了这个
 			preset: 'node-server'
 		},
 		runtimeConfig: {
@@ -44,9 +53,18 @@ export default defineNuxtConfig({
 				logo: '/icon/word-logo1.svg'
 			}
 		},
+		hooks:{
+			'nitro:build:before'() {
+				const indexNowKey=process.env.INDEX_NOW_KEY ?? 'indexNowToken-NotFound'
+				
+				writeFileSync(`public/${indexNowKey}.txt`, `${indexNowKey}`, 'utf-8');
+				console.log('Generated indexNow .txt during build.');
+			}
+		},
 		ignore: [
 			"pages/debug/*.*",
 		],
+
 
 	},
 
@@ -107,8 +125,14 @@ export default defineNuxtConfig({
 		{
 			useCookie: false,
 			cookieKey: 'i18n_redirected',
-			redirectOn: 'root' // recommended
+			
+			redirectOn: 'root', // recommended,
+			alwaysRedirect: true
 		},
+	},
+	gtag: {
+		enabled: process.env.NODE_ENV === 'production',
+		id: process.env.GTAG_ID,
 	},
 
 })
