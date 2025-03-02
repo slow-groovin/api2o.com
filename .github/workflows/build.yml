@@ -27,7 +27,7 @@ jobs:
         run: |
           pwd
           ls -alh
-          npm i -g corepack@latest
+          curl -fsSL https://get.pnpm.io/install.sh | bash 
           corepack enable && corepack prepare pnpm@latest --activate
           pnpm setup
           pnpm add -g node-gyp 
