@@ -3,7 +3,7 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 const buildSource = (path: string) => {
   const contentSource=process.env.CONTENT_SOURCE
   if(contentSource!=='local' && contentSource!=='github'){
-    throw new Error('CONTENT_SOURCE must be "local" or "github"')
+    console.error('CONTENT_SOURCE must be "local" or "github", You should not see this error in production running(It can appear in building).','contentSource:',contentSource)
   }
   console.log('contentSource:',contentSource)
   const source = process.env.CONTENT_SOURCE === 'local' ? path : {
