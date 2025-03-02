@@ -23,12 +23,14 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      - uses: pnpm/action-setup@v4
       - name: set some variables
         env:
           VAR_IN_STEP1: "<var in step1>"
         run: |
           pwd
           ls -alh
+          whereis pnpm
           echo $(jq -r '.version' package.json)
           echo "VERSION=$(jq -r '.version' package.json)" >> $GITHUB_ENV
         
