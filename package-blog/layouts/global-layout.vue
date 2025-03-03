@@ -27,17 +27,21 @@
           <!--        nav-button-group-->
           <div class="flex flex-row gap-x-2 items-center">
             <!--          search-->
-            <NuxtLink :to="localePath('search')" target="_blank"
+            <!-- <NuxtLink :to="localePath('search')" target="_blank"
               class="border-2 border-border rounded h-8 w-8 flex items-center justify-center hover:ring-1">
               <span class="sr-only">Search</span>
               <Icon name="material-symbols:search" />
-            </NuxtLink>
+            </NuxtLink> -->
+
             <!--          language switch-->
             <!--          color switch dark/light-->
-            <ColorSwitchButton class="w-8 h-8 ring-2 ring-ring" />
+            <ColorSwitchButton class="w-8 h-8 border" />
             <LangSwitchButton />
-
-
+            <!-- Github Link -->
+            <a href="https://github.com/slow-groovin/api2o.com" target="_blank" class="rounded size-8 text-foreahead hover:bg-accent/50"
+              aria-label="Github" title="Github">
+              <Icon name="mdi:github" class="size-full"/>
+            </a>
           </div>
         </div>
       </div>
@@ -60,7 +64,7 @@
 
     <!-- Main Content (Replace this with your blog content) -->
 
-    <div class=" flex flex-col flex-1 ">
+    <div class=" flex flex-col flex-1">
       <slot />
     </div>
     <!-- Footer -->
@@ -88,6 +92,8 @@ import ColorSwitchButton from "~/components/nav/ColorSwitchButton.vue";
 import GotoTop from "~/components/nav/GotoTop.vue";
 import LangSwitchButton from "~/components/nav/LangSwitchButton.vue";
 import { Icon } from "#components";
+import { Button } from "~/components/ui/button";
+
 const { t } = useI18n()
 const localePath = useLocalePath()
 const { public: { logo } } = useRuntimeConfig()

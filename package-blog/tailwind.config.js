@@ -5,10 +5,10 @@ export default {
 	safelist: ["dark"],
 	prefix: "",
 
-	// content: [
-  //   './components/**/*.{vue,tsx}',
-  //   './pages/**/*.{vue,tsx}',
-  // ],
+	content: [
+    './components/**/*.{vue,tsx}',
+    './pages/**/*.{vue,tsx}',
+  ],
 	theme: {
 		container: {
 			center: true,

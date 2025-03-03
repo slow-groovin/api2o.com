@@ -81,7 +81,11 @@ export default defineNuxtConfig({
 			}
 		},
 	},
-
+	routeRules: {
+		'/':{
+			redirect:'/index',  //current version of nuxt and nuxt/i18n has bugs in handling `/` route, so mannually redirect it here
+		}
+	},
 	content: {
 		build: {
 			markdown: {
@@ -95,9 +99,9 @@ export default defineNuxtConfig({
 					// OR
 					theme: {
 						default: 'slack-dark',
-						dark: 'slack-ochin',
+						dark: 'slack-dark',
 						// Theme used if `html.sepia`
-						sepia: 'monokai'
+						// sepia: 'monokai'
 					},
 					langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'lua', 'graphql', 'java', 'sh', 'vue', 'toml', 'rust', 'python']
 
@@ -127,7 +131,7 @@ export default defineNuxtConfig({
 			cookieKey: 'i18n_redirected',
 			
 			redirectOn: 'root', // recommended,
-			alwaysRedirect: true
+			// alwaysRedirect: true
 		},
 	},
 	gtag: {

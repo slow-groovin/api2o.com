@@ -11,7 +11,7 @@ import { Icon } from "#components";
 
 <template>
   <DropdownMenu>
-    <DropdownMenuTrigger as-child class="w-8 h-8 p-1 ring-2 ring-ring">
+    <DropdownMenuTrigger as-child class="w-8 h-8 p-1 border">
       <Button variant="outline" class="bg-transparent">
         <Icon name="mdi:language" size="1em" mode="svg"/>
       </Button>

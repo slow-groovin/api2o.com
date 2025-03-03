@@ -40,9 +40,12 @@ const props = withDefaults(defineProps<Props>(), {
   )">
     <!-- 内容展示区 -->
     <div class="p-6">
+      <h1 class="mb-8 text-2xl font-semibold w-full text-center"> {{ doc?.title }}</h1>
+      <hr>
       <ContentRenderer v-if="doc" :value="doc" class="prose"></ContentRenderer>
       <ArticleNotFound v-else />
     </div>
+    <!-- 上一篇/下一篇 -->
 
 
 

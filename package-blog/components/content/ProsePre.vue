@@ -78,4 +78,8 @@ const { copy, copied, isSupported} = useClipboard({source: props.code})
 pre code .line {
   display: block;
 }
+pre{
+  --custom-code-padding-t: 1rem;
+
+}
 </style>

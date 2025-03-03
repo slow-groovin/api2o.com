@@ -9,24 +9,24 @@
   -->
 
   <!-- 主容器：响应式网格布局 -->
-  <div class="container" v-if="data">
-    <div class="bg-white dark:bg-gray-800 rounded-lg p-8  space-y-4 ">
+  <div class="container min-h-[80vh]" v-if="data">
+    <div class="rounded-lg p-8  space-y-4 ">
       <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">📚{{ t('handbook') }}</h1>
       <div class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{ t('handbookDesc') }}</div>
     </div>
-    <div :class="cn('grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] p-8 gap-4', props.class)">
+    <div :class="cn('grid grid-cols-[repeat(auto-fill,minmax(12rem,1fr))] p-8 gap-16', props.class)">
       <template v-for="book in data.books" :key="book.name">
         <NuxtLink :to="`/${locale}/handbook/${book.name}`" class="underline text-green-500">
           <div>
             <!-- <div :class="cn('grid grid-cols-[repeat(3,1fr)] gap-4', props.class)"> -->
             <!-- 工具卡片循环 -->
             <div
-              class="flex items-center gap-3 p-4  rounded-lg bg-amber-200/30 shadow-sm hover:shadow-md transition-shadow">
+              class="flex items-center gap-3 p-4  rounded-lg bg-blue-200/30 shadow-sm hover:shadow-md transition-shadow">
               <!-- 工具图标 -->
               <img :src="book.icon" :alt="book.name" class="w-12 h-12 rounded-full object-cover" />
               <!-- 工具名称 -->
-              <span :to="`/${locale}/handbook/${book.name}`" class="underline text-green-500">{{ book.name }}
-              </span>
+              <div :to="`/${locale}/handbook/${book.name}`" class="underline text-2xl text-green-500">{{ book.name }}
+              </div>
             </div>
           </div>
         </NuxtLink>

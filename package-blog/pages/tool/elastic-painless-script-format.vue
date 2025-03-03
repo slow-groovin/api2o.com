@@ -26,11 +26,15 @@
             </svg>
 
             {{ i18nVal('title') }}
+
           </h1>
           <!--          徽章区域-->
           <div class="m-1 flex gap-2">
+
             <!--            <UncompletedBadge/>-->
             <OfflineBadge />
+            <GithubSourceLink relativepath="pages/tool/object-id-parser.vue" class="text-sm" />
+
           </div>
 
           <!--          说明区域-->
@@ -112,6 +116,7 @@ import UncompletedBadge from "~/components/hint/badge/UncompletedBadge.vue";
 import OfflineBadge from "~/components/hint/badge/OfflineBadge.vue";
 // import {js_beautify} from 'js-beautify'
 import { useI18n, useHead, useSeoMeta } from '#imports';
+import GithubSourceLink from '~/components/hint/GithubSourceLink.vue';
 declare global {
   interface Window {
     js_beautify: (arg1: string, opt: any) => string;

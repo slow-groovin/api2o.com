@@ -38,7 +38,8 @@ export async function useHandbookOutline(locale: 'zh' | 'en') {
    */
   const articles = await queryCollectionWithPathLike(book as string)
     .where('_locale', '=', locale)
-    .select('_id', 'title', '_order', '_group', 'path')
+    .where('_id', '<>', 'index')
+    .select('_id', 'title', '_order', '_group')
     .all()
   articles.sort((a, b) => (a._order ?? 0) - (b._order ?? 0))
   let noNameGroup: HandbookChapterGroup = { name: '', chapters: [] }

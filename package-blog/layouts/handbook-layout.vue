@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-row">
-    <HandbookSidebar class="w-fit"/>
-    <div class="flex-1 min-h-[calc(100vh-4em-4em)]">
+  <div class="flex flex-row max-lg:flex-col container">
+    <HandbookSidebar class="w-fit m-2"/>
+    <div class="flex-1 min-h-[calc(100vh-4em-4em)] max-lg:max-w-full">
       <slot/>
       
 <!--      footer text description. for seo-->
@@ -13,9 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
 import HandbookSidebar from '~/components/handbook/HandbookSidebar.vue';
 
-const {path,fullPath}=useRoute()
-const apiPath=path.replace(/\w+\/api\//,'')
 </script>

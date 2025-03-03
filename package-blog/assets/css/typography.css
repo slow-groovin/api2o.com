@@ -103,7 +103,7 @@
         }
 
         :not(pre)>code {
-            @apply bg-neutral-200 dark:bg-neutral-500 p-0.5 rounded border border-primary mx-0.5;
+            @apply bg-[#818b981f] font-[85%] py-[0.2rem] px-[0.4rem] text-[#1f2328] rounded dark:bg-neutral-600 dark:text-white;
         }
 
         table {
@@ -126,7 +126,7 @@
         /*没有被shiki高亮的代码配置*/
 
         pre {
-            @apply bg-code text-white dark:text-black overflow-auto max-w-full rounded p-4;
+            @apply bg-code text-neutral-200  overflow-auto max-w-full rounded p-4;
         }
 
     }

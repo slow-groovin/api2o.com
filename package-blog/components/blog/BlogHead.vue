@@ -33,7 +33,7 @@ const img=props.doc.meta.image as {src:string,alt:string}
   <div class="flex flex-col border-b mb-4">
     <div v-if="img" class="h-64 rounded-xl shadow-xl shadow-foreground/35 mb-3  ">
       <img :src="img.src" :alt="img.alt"
-           class="object-cover object-left-top !h-full !w-full"
+           class="object-contain object-top !h-full w-full"
       >
     </div>
 

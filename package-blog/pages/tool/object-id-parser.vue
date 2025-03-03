@@ -1,8 +1,11 @@
 <template>
-  <div class="mr-2  flex flex-row justify-center max-lg:flex-col  gap-10 min-h-[50vh] ">
+  <div class="mt-8 mr-2  flex flex-row justify-center max-lg:flex-col  gap-10 min-h-[50vh] ">
     <!--    parse column-->
     <div class="min-w-[26em]">
-      <h1 class="text-2xl font-bold ">{{ i18nVal('title') }}</h1>
+      <h1 class="text-2xl font-bold flex flex-row justify-between items-center ">
+        <div>{{ i18nVal('title') }}</div>
+        <GithubSourceLink relativepath="pages/tool/object-id-parser.vue" class="text-sm"/>
+      </h1>
       <div class="m-1 flex gap-2">
         <!--            <UncompletedBadge/>-->
         <OfflineBadge/>
@@ -113,6 +116,8 @@ import {useClipboard, useLocalStorage} from "@vueuse/core";
 import OfflineBadge from "~/components/hint/badge/OfflineBadge.vue";
 import { useI18n, useSeoMeta } from '#imports';
 import { Icon } from "#components";
+import GithubSourceLink from '../../components/hint/GithubSourceLink.vue';
+
 
 const {t} = useI18n()
 const i18nVal = (subKey: string) => t('tools.object-id-parser.' + subKey)

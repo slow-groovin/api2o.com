@@ -24,7 +24,7 @@ const viewPortWide=useLocalStorage('blog-viewport-wide',false)
 </script>
 <template>
   <div v-if="doc" :style="viewPortWide?{width:'99vw',maxWidth:'100vw'}:{}"
-    class="relative portrait:max-w-screen-sm max-lg:max-w-full max-w-[min(60vw,60rem)] mx-auto blog-container justify-center h-full  gap-3 ">
+    class="relative portrait:max-w-screen-sm max-lg:max-w-full max-w-[min(60vw,60rem)] mx-auto justify-center h-full  gap-3 ">
 
 
 
