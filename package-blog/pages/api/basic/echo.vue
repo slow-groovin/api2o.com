@@ -15,16 +15,16 @@ const runtimeConfig = useRuntimeConfig()
 const { locale } = useI18n()
 const { tPage } = usePageScopedI18n({
   zh: {
-    desc: '直接返回输入的msg',
+    desc: '一个简单的HTTP API, 通过query参数输入一个内容, 直接返回输入的内容',
   },
   en: {
-    desc: 'directly return the request param msg',
+    desc: 'a very simple HTTP API, input a query param, directly return the input param msg',
   }
 })
 
 useSeoMeta({
   title: 'echo | API',
-  description: tPage.desc + ', public free rest API of api2o.com',
+  description: tPage.desc ,
 })
 
 const reqDescZh: RestReqDesc = {

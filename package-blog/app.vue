@@ -10,11 +10,11 @@
 import { useHead } from '#imports';
 import { useI18n } from '#imports';
 
-const {locale}=useI18n()
+const {t,locale}=useI18n()
 
 useHead({
-  title:'api2o.com',
-  titleTemplate: (title) => `${title} | api2o`,
+  title:'API2O',
+  titleTemplate: (title) => `${title} - ${t('titlePostfix')}`, //Do not use this if you are doing SEO
   htmlAttrs:{
     lang:locale.value
   },

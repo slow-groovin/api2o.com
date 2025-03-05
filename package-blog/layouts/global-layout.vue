@@ -75,7 +75,7 @@
 
         <!-- Footer Links -->
         <nav class="space-x-4">
-          <a href="#" class="hover:underline">based on nuxt</a>
+          <a href="https://github.com/slow-groovin/api2o.com" target="_blank" class="hover:underline">https://github.com/slow-groovin/api2o.com</a>
         </nav>
       </div>
     </footer>

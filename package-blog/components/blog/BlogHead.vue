@@ -51,7 +51,7 @@ const img=props.doc.meta.image as {src:string,alt:string}
         <div v-if="doc?.tags && doc?.tags.length>0">
           <Icon name="mdi:tag-outline"/>
           <NuxtLink class="underline mr-3 inline-block text-primary"
-              v-for="(tag,index) in doc?.tags" :key="tag" target="blank" :to="localePath(`/blog/tags/${tag}`)">
+              v-for="(tag,index) in doc?.tags" :key="tag" target="blank" to="#">
             {{tag}}<span v-if="index+1!==doc?.tags?.length">, </span>
           </NuxtLink>
         </div>

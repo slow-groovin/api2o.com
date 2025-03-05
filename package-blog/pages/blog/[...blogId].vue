@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { computed, useAsyncData, useAsyncState, useI18n } from '#imports';
+import { computed, useAsyncData, useAsyncState, useHead, useI18n } from '#imports';
 import { useLocalStorage } from '@vueuse/core';
 import BlogBottomButtons from '~/components/blog/BlogBottomButtons.vue';
 import BlogFooter from '~/components/blog/BlogFooter.vue';
@@ -20,6 +20,12 @@ const previous = computed(()=>data.value?.previous)
  */
 const viewPortWide=useLocalStorage('blog-viewport-wide',false)
 
+useHead({
+  title: doc.value?.title,
+  meta:[
+    {name:'description',content:doc.value?.description},
+  ]
+})
 
 </script>
 <template>

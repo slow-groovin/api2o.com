@@ -16,13 +16,13 @@ const { tPage } = usePageScopedI18n({
     desc: '直接返回"pong"',
   },
   en: {
-    desc: 'return "pong"',
+    desc: 'a very simple HTTP API, directly return "pong"',
   }
 })
 
 useSeoMeta({
   title: 'ping | API',
-  description: tPage.desc + ', public free rest API of api2o.com',
+  description: tPage.desc,
 })
 
 

@@ -6,11 +6,12 @@ export default defineI18nConfig(() => ({
 	fallbackLocale: 'en',
 	messages: {
 		zh:{
+			titlePostfix: '开发者技术博客网站',
 			welcome: '欢迎',
 			blog:'博客',
 			handbook:'小册',
 			tool:'工具',
-			api:'API',
+			api:'API接口',
 			lang:'语言',
 			toc: '目录',
 			'no-trans-so-default':'此文章没有您语言对应的翻译,因此显示默认原始内容',
@@ -20,16 +21,16 @@ export default defineI18nConfig(() => ({
 			constructingTitle:'页面建设中',
 			constructingContent:'我们正在努力建设这个页面，敬请期待。',
 			handbookDesc:'技术主题的文章集合，涵盖了实用指南、模式、故障排除、技巧等内容。',
-			toolDesc: '高效便捷的在线工具，助您轻松完成各种任务。简单操作，提升效率，节省时间.',
-			apiDesc:'免费在线REST/GraphQL API,用于数据获取/mock假数据/调试/测试',
+			toolDesc: 'api2o.com原创开发的一系列网页版工具， 提供简单方便便捷的功能, 帮助用户提升效率，节省时间.',
+			apiDesc:'HTTP在线接口, 包括RESTful接口和GraphQL接口, 用于开发者进行数据获取/mock假数据/调试/测试, 免费, 无需鉴权',
 			previous:'上一篇',
 			next:'下一篇',
 			noPrevious:'没有上一篇',
 			noNext:'没有下一篇',
 			tools:{
 				'object-id-parser':{
-					title:'在线 ObjectId 解析器',
-					description:'网页内解析 ObjectId 的时间戳(timestamp),随机数(rand),计数器(counter)部分',
+					title:'ObjectId 在线解析',
+					description:'网页版ObjectId解析工具, 解析来自MongoDB等软件中的 ObjectId, 展示其中的时间戳(timestamp),随机数(rand),计数器(counter)等部分',
 					doParse:'解析',
 					inputNot24BitHint:'请确保输入的 ObjectId 长度为 24 个字符。',
 					result:"解析结果",
@@ -50,6 +51,7 @@ export default defineI18nConfig(() => ({
 			}
 		},
 		en: {
+			titlePostfix: 'Developer Technology Blog Website',
 			welcome: 'Welcome',
 			blog:'Blog',
 			handbook:'Handbook',
@@ -64,8 +66,8 @@ export default defineI18nConfig(() => ({
 			constructingTitle:'Under Construction',
 			constructingContent:'We are working on this page, please wait for a while.',
 			handbookDesc:'Handbooks are collections of articles for specific technologies, covering practical guide, pattern, troubleshooting, trick. ',
-			toolDesc: 'Efficient and convenient online tools that help you complete various tasks effortlessly. Easy to use, boost your productivity, and save time.',
-			apiDesc:'free online REST/Graphql API that you can use for data fetch/fake mock data/debug/testing.',
+			toolDesc: 'Html tools(entirely run in browser) that help you complete various tasks effortlessly. Easy to use, efficient and convenient, and save time. ',
+			apiDesc:'many HTTP api, RESTful API or GraphQL API, for developer to fetch data/fake mock data/debug/testing, free, public, no auth',
 			previous:'prev',
 			next:'next',
 			noPrevious:'no prev',
@@ -73,7 +75,7 @@ export default defineI18nConfig(() => ({
 			tools:{
 				'object-id-parser':{
 					title:' ObjectId Parser/Converter',
-					description:' Parse/convert ObjectId to parts: timestamp, random ,counter. (offline tool)',
+					description:' Parse/convert ObjectId to parts: timestamp, random ,counter. (entirely offline)',
 					doParse:'PARSE it',
 					inputNot24BitHint:'please ensure the input ObjectId length is 24。',
 					result:"Result",
@@ -85,7 +87,7 @@ export default defineI18nConfig(() => ({
 				},
 				'elastic-painless-script-format':{
 					title:'ElasticSearch Painless Script Simple Formater',
-					description:'format/beautifier/prettier ElasticSearch Painless script "source" field content, multiline to single line, or single line to multiline, for build elastic request field "source"',
+					description:'format/beautifier/prettier ElasticSearch Painless script "source" field content, multiline to single line, or single line to multiline, for build elastic request field "source"  (entirely offline)',
 					inlineFormat:'SingleLLine -> Multiline',
 					multilineFormat: 'Multiline -> SingleLine',
 					placeholder:'please input Painless script',
