@@ -1,7 +1,7 @@
 <template>
   <div class="mt-5   ">
     <Separator class="w-full h-1   bg-foreground"/>
-    <div class="flex justify-between items-center w-full py-4 px-6 bg-muted  rounded-b-2xl border-b border-x ">
+    <div class="flex justify-between items-center w-full py-4 px-6 bg-muted   border-b border-x ">
       <NuxtLink
           v-if="previousArticle"
           :to="previousArticle.link"

@@ -18,8 +18,8 @@ defineProps<{
 </script>
 
 <template>
-  <div class="flex flex-col  items-start  text-nowrap">
-    <div v-for="doc in docs" class="flex  gap-4 p-2 border-b-2   max-w-full ">
+  <div class="grid grid-cols-[auto,1fr] text-nowrap gap-x-2 gap-y-4">
+    <template v-for="doc in docs" class="flex gap-4 p-2 border-b-2 max-w-full">
 <!--      date prefix-->
       <div class="font-bold ">
         {{ new Date(doc.date).toLocaleDateString() }}
@@ -43,9 +43,8 @@ defineProps<{
             <div v-if="index!==Math.min(MAX_TAG_LEN,doc.tags.length)-1">,</div>
           </div>
         </div>
-
       </div>
-    </div>
+    </template>
   </div>
 
 </template>

@@ -3,13 +3,14 @@
 import { cn } from "@/lib/utils";
 import type { HTMLAttributes } from 'vue';
 import { computed } from 'vue';
-import { useAsyncData, useHead, useI18n } from '#imports';
+import { showError, useAsyncData, useHead, useI18n } from '#imports';
 import { useHandbook } from '~/composables/handbook';
 import ArticleNotFound from "./ArticleNotFound.vue";
 
 const { locale } = useI18n()
 
 const { data } = await useAsyncData('handbook-article', () => useHandbook(locale.value))
+if(!data.value) showError({statusCode:404})
 const doc = computed(() => data.value?.markdownItem)
 
 useHead({

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import { computed, useAsyncData, useAsyncState, useHead, useI18n } from '#imports';
+import { computed, createError, showError, useAsyncData, useAsyncState, useError, useHead, useI18n } from '#imports';
 import { useLocalStorage } from '@vueuse/core';
 import BlogBottomButtons from '~/components/blog/BlogBottomButtons.vue';
 import BlogFooter from '~/components/blog/BlogFooter.vue';
@@ -8,28 +8,34 @@ import BlogHead from '~/components/blog/BlogHead.vue';
 import MarkdownToc from '~/components/blog/MarkdownToc.vue';
 import AITranslationBadge from '~/components/hint/badge/AITranslationBadge.vue';
 import { useBlog } from '~/composables/blog';
-const { t,locale } = useI18n()
-const { data} = await useAsyncData('blog',()=>useBlog(locale.value))
-const doc = computed(()=>data.value?.markdownItem)
-const next = computed(()=>data.value?.next)
-const previous = computed(()=>data.value?.previous)
+const { t, locale } = useI18n()
+const { data, error } = await useAsyncData('blog', () => useBlog(locale.value))
+if(!data.value) showError({statusCode:404})
+
+
+
+const doc = computed(() => data.value?.markdownItem)
+const next = computed(() => data.value?.next)
+const previous = computed(() => data.value?.previous)
 
 
 /**
  * if width is full screen
  */
-const viewPortWide=useLocalStorage('blog-viewport-wide',false)
+const viewPortWide = useLocalStorage('blog-viewport-wide', false)
 
 useHead({
   title: doc.value?.title,
-  meta:[
-    {name:'description',content:doc.value?.description},
+  meta: [
+    { name: 'description', content: doc.value?.description },
   ]
 })
 
+
+
 </script>
 <template>
-  <div v-if="doc" :style="viewPortWide?{width:'99vw',maxWidth:'100vw'}:{}"
+  <div v-if="doc" :style="viewPortWide ? { width: '99vw', maxWidth: '100vw' } : {}"
     class="relative portrait:max-w-screen-sm max-lg:max-w-full max-w-[min(60vw,60rem)] mx-auto justify-center h-full  gap-3 ">
 
 
@@ -54,7 +60,7 @@ useHead({
         </main>
 
 
-        <BlogFooter :next-article="next" :previous-article="previous"/>
+        <BlogFooter :next-article="next" :previous-article="previous" />
 
       </main>
       <!--blog footer-->

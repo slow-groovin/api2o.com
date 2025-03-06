@@ -11,7 +11,7 @@
           <!-- Logo -->
           <div class="flex items-center">
             <NuxtLink :to="localePath('/index')">
-              <img class="h-8 mr-1  p-1 " :src="logo" alt="api2o" />
+              <img class="h-8 mr-1 rounded" :src="logo" alt="api2o.com logo" />
             </NuxtLink>
           </div>
 
@@ -71,7 +71,11 @@
     <footer class=" text-gray-300 py-4">
       <div class="container px-4 flex justify-between items-center">
         <!-- Footer Info -->
-        <p>&copy; api2o.com:: a website of blog, tools, APIs. All rights reserved.</p>
+
+        <p >
+            <img class="inline h-4 mr-1 rounded opacity-70" src="/icon/logo-bottom.png" alt="api2o.com logo" />
+          
+          &copy; api2o.com:: a website of blog, tools, APIs. All rights reserved.</p>
 
         <!-- Footer Links -->
         <nav class="space-x-4">

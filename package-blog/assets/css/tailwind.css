@@ -22,11 +22,11 @@
   }
 
   html{
-    @apply font-blog
+    /* @apply font-blog */
   }
 
   html[lang="zh"]{
-    @apply font-blogZh
+    /* @apply font-blogZh */
   }
 
   input{

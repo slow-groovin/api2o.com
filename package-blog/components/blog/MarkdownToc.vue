@@ -19,8 +19,8 @@
             <NuxtLink
                 class="font-normal  hover:text-foreground text-ellipsis  overflow-x-hidden block"
                 :class="{
-                  'selected': hash==='#'+subtitle.id,
-                  'text-muted-foreground': hash!=='#'+subtitle.id,
+                  'selected': currentSection === subtitle.id,
+                  'text-muted-foreground': currentSection !== subtitle.id,
                  }"
                 :to="'#' + subtitle.id"
             >
@@ -35,8 +35,8 @@
               >
                 <NuxtLink :to="`#${childId}`" class="text-ellipsis  overflow-x-hidden block"
                           :class="{
-                  'selected': hash==='#'+childId,
-                  'text-muted-foreground': hash!=='#'+childId,
+                  'selected': currentSection === childId,
+                  'text-muted-foreground': currentSection !== childId,
                  }"
                 >
                    {{ (1 + subIndex) + ". " + childText }}
@@ -50,12 +50,33 @@
   </div>
 </template>
 <script setup lang="ts">
-import type {Toc} from "@nuxt/content";
+import type { Toc } from "@nuxt/content";
 import {useRouteHash} from "@vueuse/router";
 import {useLocalStorage} from "@vueuse/core"
-import { ref, useI18n } from "#imports";
+import { ref, useI18n, onMounted, onUnmounted } from "#imports";
 import { Switch } from "#components";
 const props = defineProps<{ toc: Toc }>()
+
+const currentSection = ref('')
+onMounted(() => {
+  const handleScroll = () => {
+    const headings = document.querySelectorAll('.prose h3[id],h2[id]');
+    let current = '';
+    headings.forEach((heading) => {
+      if ((heading as HTMLElement).offsetTop <= window.scrollY + window.innerHeight / 2) {
+        current = heading.getAttribute('id') || '';
+      }
+    });
+
+    currentSection.value = current;
+  }
+
+  window.addEventListener('scroll', handleScroll)
+
+  onUnmounted(() => {
+    window.removeEventListener('scroll', handleScroll)
+  })
+})
 
 
 const showTocChildren = ref(true)

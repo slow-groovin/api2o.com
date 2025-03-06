@@ -1,5 +1,5 @@
 import { useRoute } from "vue-router";
-import { queryCollection, queryCollectionItemSurroundings } from '#imports';
+import { createError, queryCollection, queryCollectionItemSurroundings, showError } from '#imports';
 
 
 /**
@@ -21,6 +21,9 @@ export async function useBlog(locale:'zh'|'en') {
     .where('_locale', '=', locale)
     .first()
 
+  if(!markdownItem){
+    throw createError({statusCode:404})
+  }
   const surroundingItems = await queryCollectionItemSurroundings('blog', markdownItem.path ?? '', { fields: ['_id'] })
     .where('_locale', '=', locale)
     .order('date', 'ASC')
