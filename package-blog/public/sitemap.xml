@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.api2o.com/en/blog/lowcode-platform-compare-dify-n8n-flowise</loc>
+  </url>
+  <url>
     <loc>https://www.api2o.com/zh/blog/lowcode-platform-compare-dify-n8n-flowise</loc>
   </url>
   <url>
@@ -58,22 +61,10 @@
     <loc>https://www.api2o.com/zh/blog/sandboxie-limit-tencent-scan</loc>
   </url>
   <url>
-    <loc>https://www.api2o.com/en/handbook/docker/index</loc>
-  </url>
-  <url>
-    <loc>https://www.api2o.com/zh/handbook/docker/index</loc>
-  </url>
-  <url>
     <loc>https://www.api2o.com/en/handbook/docker/created-network-cant-connect</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/zh/handbook/docker/created-network-cant-connect</loc>
-  </url>
-  <url>
-    <loc>https://www.api2o.com/en/handbook/nodejs/index</loc>
-  </url>
-  <url>
-    <loc>https://www.api2o.com/zh/handbook/nodejs/index</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/handbook/nodejs/mongo-client-cause-program-not-exist</loc>
@@ -100,12 +91,6 @@
     <loc>https://www.api2o.com/zh/handbook/typescript/@-replace-relative-path-like-vue</loc>
   </url>
   <url>
-    <loc>https://www.api2o.com/en/handbook/typescript/index</loc>
-  </url>
-  <url>
-    <loc>https://www.api2o.com/zh/handbook/typescript/index</loc>
-  </url>
-  <url>
     <loc>https://www.api2o.com/en/handbook/typescript/print-final-config</loc>
   </url>
   <url>
@@ -124,10 +109,7 @@
     <loc>https://www.api2o.com/zh/handbook/typescript/typescript-prompts</loc>
   </url>
   <url>
-    <loc>https://www.api2o.com/en/handbook/ubuntu/index</loc>
-  </url>
-  <url>
-    <loc>https://www.api2o.com/zh/handbook/ubuntu/index</loc>
+    <loc>https://www.api2o.com/en/handbook/ubuntu/nmcli-proxy-not-work-in-server</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/zh/handbook/ubuntu/nmcli-proxy-not-work-in-server</loc>
@@ -136,16 +118,10 @@
     <loc>https://www.api2o.com/zh/tool/elastic-painless-script-format</loc>
   </url>
   <url>
-    <loc>https://www.api2o.com/zh/tool/index</loc>
-  </url>
-  <url>
     <loc>https://www.api2o.com/zh/tool/object-id-parser</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/tool/elastic-painless-script-format</loc>
-  </url>
-  <url>
-    <loc>https://www.api2o.com/en/tool/index</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/tool/object-id-parser</loc>
@@ -166,9 +142,6 @@
     <loc>https://www.api2o.com/zh/api/basic/rand-thing</loc>
   </url>
   <url>
-    <loc>https://www.api2o.com/zh/api/index</loc>
-  </url>
-  <url>
     <loc>https://www.api2o.com/en/api/basic/echo</loc>
   </url>
   <url>
@@ -182,8 +155,5 @@
   </url>
   <url>
     <loc>https://www.api2o.com/en/api/basic/rand-thing</loc>
-  </url>
-  <url>
-    <loc>https://www.api2o.com/en/api/index</loc>
   </url>
 </urlset>

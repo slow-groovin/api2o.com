@@ -9,7 +9,7 @@
   -->
 
   <!-- 主容器：响应式网格布局 -->
-  <div class="container min-h-[80vh]" v-if="data">
+  <div class="lg:container min-h-[80vh]" v-if="data">
     <div class="rounded-lg p-8  space-y-4 ">
       <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-100">📚{{ t('handbook') }}</h1>
       <div class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">{{ t('handbookDesc') }}</div>

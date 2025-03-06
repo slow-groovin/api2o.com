@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row max-lg:flex-col container">
+  <div class="flex flex-row max-lg:flex-col lg:container">
     <HandbookSidebar class="w-fit m-2"/>
     <div class="flex-1 min-h-[calc(100vh-4em-4em)] max-lg:max-w-full">
       <slot/>

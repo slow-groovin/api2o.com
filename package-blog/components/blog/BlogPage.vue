@@ -35,7 +35,7 @@ const { data: count } = await useAsyncData('blog-count', () => queryCollection('
 </script>
 
 <template>
-  <div class="flex flex-col  container gap-y-4">
+  <div class="flex flex-col lg:container gap-y-4">
     <h1 class="text-3xl font-bold mb-1">
       📰{{ t('timeline') }}</h1>
     <BlogTimeLine v-if="data" :docs="data" />

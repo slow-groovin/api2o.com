@@ -37,7 +37,7 @@ const img=props.doc.meta.image as {src:string,alt:string}
       >
     </div>
 
-    <h1 class="text-wrap font-bold text-5xl my-5">{{doc?.title}}</h1>
+    <h1 class="text-wrap font-bold text-4xl   my-5">{{doc?.title}}</h1>
 
 
     <p class="italic mb-3 font-extralight"> {{doc?.description}} </p>

@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import type { HTMLAttributes } from 'vue';
 import { computed } from 'vue';
-import { showError, useAsyncData, useHead, useI18n } from '#imports';
+import { showError, useAsyncData, useHead, useI18n, useSeoMeta } from '#imports';
 import { useHandbook } from '~/composables/handbook';
 import ArticleNotFound from "./ArticleNotFound.vue";
 
@@ -17,7 +17,9 @@ useHead({
   title: doc.value?.title,
   titleTemplate: (title) => `${title}`
 })
-
+useSeoMeta({
+  description: doc.value?.description
+})
 
 interface Props {
 

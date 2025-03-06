@@ -43,17 +43,18 @@ export function getAllUrls() {
       const { _locale, _id } = parsed.data
       return `${baseUrl}/${_locale}/handbook/${p.book}/${_id}`
     })
+    .filter(p=> !p.endsWith('/index'))
 
 
   //从page/tool目录读取
   const toolsPaths = getMarkdownFilePaths('pages/tool', '.vue')
-  const zhToolUrls = toolsPaths.map(path => `${baseUrl}/zh/tool/${path}`);
-  const enToolUrls = toolsPaths.map(path => `${baseUrl}/en/tool/${path}`);
+  const zhToolUrls = toolsPaths.filter(path=>path!=='index').map(path => `${baseUrl}/zh/tool/${path}`);
+  const enToolUrls = toolsPaths.filter(path=>path!=='index').map(path => `${baseUrl}/en/tool/${path}`);
 
   //从api目录读取
   const apiPaths = getMarkdownFilePaths('pages/api', '.vue')
-  const zhApiUrls = apiPaths.map(path => `${baseUrl}/zh/api/${path}`);
-  const enApiUrls = apiPaths.map(path => `${baseUrl}/en/api/${path}`);
+  const zhApiUrls = apiPaths.filter(path=>path!=='index').map(path => `${baseUrl}/zh/api/${path}`);
+  const enApiUrls = apiPaths.filter(path=>path!=='index').map(path => `${baseUrl}/en/api/${path}`);
   return [
     ...blogUrls,
     ...handbookUrls,

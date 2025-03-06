@@ -4,6 +4,12 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
+User-agent: Bravebot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
 User-agent: *
 Disallow: /
 Sitemap: https://www.api2o.com/sitemap.xml

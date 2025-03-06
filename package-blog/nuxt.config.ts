@@ -1,8 +1,9 @@
 import {writeFileSync} from 'node:fs'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-	compatibilityDate: '2024-11-01',
 	devtools: { enabled: true },
+
+	compatibilityDate: '2024-11-01',
 
 	modules: ['@nuxt/content', '@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxt/icon', '@vueuse/nuxt', 'nuxt-gtag', '@nuxtjs/i18n'],
 	imports: {
@@ -17,6 +18,10 @@ export default defineNuxtConfig({
 		public:{
 			customContentSource: process.env.CONTENT_SOURCE,
 		}
+	},
+	devServer:{
+		// host: '0.0.0.0'
+
 	},
 	$production: {
 		// debug: true,
@@ -76,7 +81,7 @@ export default defineNuxtConfig({
 		runtimeConfig: {
 			public: {
 				apiBaseUrl: 'http://localhost:3001',
-				logo: '/icon/logo.png'
+				logo: '/icon/dev-logo1.png'
 				// apiBaseUrl: 'http://localhost:3000',
 			}
 		},
