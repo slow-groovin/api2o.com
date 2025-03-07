@@ -23,8 +23,8 @@ const previous = computed(() => data.value?.previous)
 /**
  * if width is full screen
  */
-const viewPortWide = ref(false)
-
+ const viewPortWide=useLocalStorage('blog-viewport-wide',false)
+ 
 useHead({
   title: doc.value?.title,
   meta: [
@@ -72,7 +72,7 @@ useHead({
     <!--      悬浮标题栏-->
     <ClientOnly>
       <MarkdownToc
-        class="fixed top-[24vh] right-0  max-w-52 opacity-80  shrink-[0.3] h-fit  break-all text-nowrap text-ellipsis"
+        class="fixed top-[10vh] right-12  max-w-52 opacity-80  shrink-[0.3] h-fit  break-all text-nowrap text-ellipsis"
         v-if="doc?.body?.toc" :toc="doc?.body?.toc" />
     </ClientOnly>
     <BlogBottomButtons />

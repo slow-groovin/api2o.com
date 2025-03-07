@@ -11,7 +11,7 @@ const viewPortWide=useLocalStorage('blog-viewport-wide',false)
 <BottomButtonsContainer :count="2" class=" text-gray-700 dark:text-gray-300">
   <template #slot1>
     <button class="item hover:bg-neutral-300 rounded" :class="{'text-primary bg-primary/30':viewPortWide}"  @click="viewPortWide=!viewPortWide">
-      <Icon name="tabler:viewport-wide" class="w-6 h-6" mode="svg"/>
+      <Icon name="pixelarticons:viewport-wide" class="w-6 h-6" mode="svg"/>
     </button>
   </template>
   <template #slot2>
