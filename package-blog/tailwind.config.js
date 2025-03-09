@@ -32,8 +32,9 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				blog:'-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"',
-				blogZh:'-apple-system,BlinkMacSystemFont,"siyuan","Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"'
+				blog:' "Source Serif Pro",  "Times New Roman", Times, serif',
+				code: ["Source Code Pro", "sans-serif"],
+				blogZh:'-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Segoe UI,Arial,Roboto,"PingFang SC","miui","Hiragino Sans GB","Microsoft Yahei",sans-serif'
 			},
 			colors: {
 				border: "hsl(var(--border))",

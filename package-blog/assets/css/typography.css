@@ -1,3 +1,4 @@
+
 @layer base {
     :root {
         --custom-code-padding-l: 1rem;
@@ -21,6 +22,7 @@
     .prose {
         counter-reset: h2counter;
 
+
         @apply leading-relaxed;
 
         h1 {
@@ -34,7 +36,7 @@
         }
 
         h2 {
-            @apply text-3xl font-bold mb-6 mt-16;
+            @apply text-3xl font-bold mb-4 mt-8;
             counter-reset: h3counter;
         }
 
@@ -44,7 +46,7 @@
         }
 
         h3 {
-            @apply text-xl font-semibold mb-3 mt-6;
+            @apply text-xl font-semibold mb-2 mt-6;
         }
 
 
@@ -71,10 +73,13 @@
         }
 
         p {
-            @apply mb-6  tracking-wider;
+            @apply mt-4 tracking-tight text-xl/8 font-blog;
+        }
+        p:lang(zh){
+            @apply my-4 font-blogZh text-lg tracking-wide;
         }
 
-        img{
+        img {
             @apply mb-6 shadow-lg block mx-auto;
         }
 
@@ -107,7 +112,11 @@
         }
 
         :not(pre)>code {
-            @apply bg-[#818b981f] font-[85%] py-[0.2rem] px-[0.4rem] text-[#1f2328] rounded dark:bg-neutral-600 dark:text-white;
+            @apply bg-[#818b981f] text-[75%] py-[0.2rem] px-[0.4rem] text-[#1f2328] rounded dark:bg-neutral-600 dark:text-white font-code;
+        }
+
+        :not(pre)>code:lang(zh) {
+            @apply text-[85%];
         }
 
         table {
@@ -130,7 +139,7 @@
         /*没有被shiki高亮的代码配置*/
 
         pre {
-            @apply bg-code text-neutral-200  overflow-auto max-w-full rounded p-4;
+            @apply bg-code text-neutral-200 overflow-auto max-w-full rounded p-4;
         }
 
     }
@@ -142,9 +151,10 @@
         @apply rounded overflow-x-auto;
         padding: var(--custom-code-padding-t) var(--custom-code-padding-r) var(--custom-code-padding-b) var(--custom-code-padding-l);
 
-        .highlight.line{
+        .highlight.line {
             position: relative;
         }
+
         .highlight.line::after {
             content: "";
             position: absolute;

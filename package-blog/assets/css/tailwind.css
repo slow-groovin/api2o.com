@@ -1,5 +1,6 @@
 @import './typography.css';
-
+@import url('https://fonts.cdnfonts.com/css/source-serif-pro');
+@import url('https://fonts.cdnfonts.com/css/source-code-pro');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,31 +8,28 @@
 
 
 @layer base {
-  @font-face {
-    font-family: 'siyuan';
-    src: url('https://cdn.jsdelivr.net/gh/jaywcjlove/free-font@main/docs/fonts/%E6%80%9D%E6%BA%90%E5%AD%97%E4%BD%93%E7%B3%BB%E5%88%97/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93/%E6%80%9D%E6%BA%90%E9%BB%91%E4%BD%93-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
+
 
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 
-  html{
+  html {
     /* @apply font-blog */
   }
 
-  html[lang="zh"]{
+  html[lang="zh"] {
     /* @apply font-blogZh */
   }
 
-  input{
+  input {
     @apply dark:text-input
   }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
@@ -60,6 +58,7 @@
     --radius: 0.5rem;
 
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -117,9 +116,9 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border:240 5.9% 90%;
-    --input:240 5.9% 90%;
-    --ring:142.1 76.2% 36.3%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 142.1 76.2% 36.3%;
     --radius: 0.75rem;
 
     --github-card: #f6f8fa;
@@ -127,43 +126,45 @@
   }
 
   .dark {
-    --background:20 14.3% 4.1%;
-    --foreground:0 0% 95%;
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
 
-    --card:24 9.8% 10%;
-    --card-foreground:0 0% 95%;
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
 
-    --popover:0 0% 9%;
-    --popover-foreground:0 0% 95%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary:142.1 70.6% 45.3%;
-    --primary-foreground:144.9 80.4% 10%;
+    --primary: 142.1 70.6% 45.3%;
+    --primary-foreground: 144.9 80.4% 10%;
 
-    --secondary:240 3.7% 15.9%;
-    --secondary-foreground:0 0% 98%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted:0 0% 15%;
-    --muted-foreground:240 5% 64.9%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent:12 6.5% 15.1%;
-    --accent-foreground:0 0% 98%;
+    --accent: 12 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive:0 62.8% 30.6%;
-    --destructive-foreground:0 85.7% 97.3%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
 
-    --border:240 5% 64.9%;
-    --input:0, 0%, 97%;
-    --ring:142.4 71.8% 29.2%;
+    --border: 240 5% 64.9%;
+    --input: 0, 0%, 97%;
+    --ring: 142.4 71.8% 29.2%;
     --github-card: rgba(33, 37, 43, 0.85);
     --illustration-light: #b3b1b1ee;
 
     /*color: hsl(0, 0%, 97%)*/
   }
+
   /*custom*/
-  :root{
+  :root {
     --code: #232359
   }
-  .dark{
+
+  .dark {
     --code: #232359;
   }
 
@@ -173,11 +174,12 @@
 
 /*custom*/
 @layer base {
-  .selected{
+  .selected {
     @apply text-foreground
   }
-  .selected::before{
+
+  .selected::before {
     content: '.';
-    @apply bg-primary text-primary w-1  rounded mr-1
+    @apply bg-primary text-primary w-1 rounded mr-1
   }
 }

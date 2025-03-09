@@ -2,11 +2,11 @@
 
 
 # api2o.com
-This repository contains the source code for the [www.api2o.com](www.api2o.com).
+This repository contains the source code for the [www.api2o.com](https://www.api2o.com).
 
 ## Description
 
-api2o.com is a website built with Nuxt3, Nuxt Content@3.x, and Tailwind CSS. It is a blog website.
+api2o.com is a website built with `Nuxt3`, `Nuxt Content@3.x`, and `Tailwind CSS`. It is a blog website.
 
 ## Packages
 
