@@ -1,3 +1,20 @@
+## what is api2o.com?
+
+api2o is a website of blog contents, webpage tools, public APIs
+
+Blogs: useful, original and unique content
+Tools: online web page, mostly pure frontend function, original and unique content
+APIs:  restful, graphql, ...
+
+api2o 是一个包含: 博客、在线工具、API 的网站
+博客: 实际有效的内容, 原创独特的内容
+工具: 在线页面方式, (大部分是) 纯前端功能, 无后端请求 原创独特的
+API: 包含 RESTful, GraphQL等类型
+
+It's github repo is https://github.com/slow-groovin/api2o.com
+It's website is  is https://www.api2o.com
+
+
 ## dev
 for local dev,  create a link of content dir for hot-reload of page in content repo.
 windows(CMD ADMIN):
@@ -8,3 +25,63 @@ windows(CMD ADMIN):
 ## hisotry
 2025-02-28
 re-construct the project, change to nuxt-content@3, repository storaged articles
+
+
+##all articles
+https://www.api2o.com/en/blog/lowcode-platform-compare-dify-n8n-flowise
+https://www.api2o.com/zh/blog/lowcode-platform-compare-dify-n8n-flowise
+https://www.api2o.com/en/blog/shelter-usage-summary
+https://www.api2o.com/zh/blog/shelter-usage-summary
+https://www.api2o.com/en/blog/apisix-direct-return-content
+https://www.api2o.com/zh/blog/apisix-direct-return-content
+https://www.api2o.com/en/blog/elastic-bulk-using-jetbrain-http-client
+https://www.api2o.com/zh/blog/elastic-bulk-using-jetbrain-http-client
+https://www.api2o.com/en/blog/sqlite3-concurrent-write-simple-test
+https://www.api2o.com/zh/blog/sqlite3-concurrent-write-simple-test
+https://www.api2o.com/en/blog/gh-action-env-vars-secrets-go-through-everything
+https://www.api2o.com/zh/blog/gh-action-env-vars-secrets-go-through-everything
+https://www.api2o.com/en/blog/local-dev-secure-https-without-modified-certs-file
+https://www.api2o.com/zh/blog/local-dev-secure-https-without-modified-certs-file
+https://www.api2o.com/en/blog/nodejs-proxy
+https://www.api2o.com/zh/blog/nodejs-proxy
+https://www.api2o.com/en/blog/win10-perfect-doh-best-practice
+https://www.api2o.com/zh/blog/win10-perfect-doh-best-practice
+https://www.api2o.com/en/blog/sandboxie-limit-tencent-scan
+https://www.api2o.com/zh/blog/sandboxie-limit-tencent-scan
+https://www.api2o.com/en/handbook/docker/created-network-cant-connect
+https://www.api2o.com/zh/handbook/docker/created-network-cant-connect
+https://www.api2o.com/en/handbook/nodejs/mongo-client-cause-program-not-exist
+https://www.api2o.com/zh/handbook/nodejs/mongo-client-cause-program-not-exist
+https://www.api2o.com/en/handbook/nodejs/npm-install-no-devDependencies
+https://www.api2o.com/zh/handbook/nodejs/npm-install-no-devDependencies
+https://www.api2o.com/en/handbook/nodejs/pnpm-package-reuse-in-diff-repos
+https://www.api2o.com/zh/handbook/nodejs/pnpm-package-reuse-in-diff-repos
+https://www.api2o.com/en/handbook/typescript/@-replace-relative-path-like-vue
+https://www.api2o.com/zh/handbook/typescript/@-replace-relative-path-like-vue
+https://www.api2o.com/en/handbook/typescript/print-final-config
+https://www.api2o.com/zh/handbook/typescript/print-final-config
+https://www.api2o.com/en/handbook/typescript/tsc-single-file
+https://www.api2o.com/zh/handbook/typescript/tsc-single-file
+https://www.api2o.com/en/handbook/typescript/typescript-prompts
+https://www.api2o.com/zh/handbook/typescript/typescript-prompts
+https://www.api2o.com/en/handbook/ubuntu/nmcli-proxy-not-work-in-server
+https://www.api2o.com/zh/handbook/ubuntu/nmcli-proxy-not-work-in-server
+https://www.api2o.com/en/handbook/windows/multi-machines-single-proxy-management-practice
+https://www.api2o.com/zh/handbook/windows/multi-machines-single-proxy-management-practice
+https://www.api2o.com/zh/tool/elastic-painless-script-format
+https://www.api2o.com/zh/tool/object-id-parser
+https://www.api2o.com/en/tool/elastic-painless-script-format
+https://www.api2o.com/en/tool/object-id-parser
+https://www.api2o.com/zh/api/basic/echo
+https://www.api2o.com/zh/api/basic/json-placeholder
+https://www.api2o.com/zh/api/basic/ping
+https://www.api2o.com/zh/api/basic/post
+https://www.api2o.com/zh/api/basic/rand-thing
+https://www.api2o.com/en/api/basic/echo
+https://www.api2o.com/en/api/basic/json-placeholder
+https://www.api2o.com/en/api/basic/ping
+https://www.api2o.com/en/api/basic/post
+https://www.api2o.com/en/api/basic/rand-thing
+https://www.api2o.com/llm.txt
+
+##

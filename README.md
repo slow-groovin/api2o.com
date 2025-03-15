@@ -51,6 +51,7 @@ image:   #article head image
 _locale: 'en'
 ```
 
+
 `nav.json` is outline for handbook's books:
 ```json
 {
@@ -70,6 +71,12 @@ _locale: 'en'
   ]
 }
 ```
+
+Corresponding URLs:
+- `https://www.api2o.com/<zh|en>/blog/<article_id>`
+- `https://www.api2o.com/<zh|en>/handbook/<bookname>/<article_id>`
+
+
 #### Development
 
 To develop the `blog` package locally, follow these steps:

@@ -55,13 +55,18 @@ export function getAllUrls() {
   const apiPaths = getMarkdownFilePaths('pages/api', '.vue')
   const zhApiUrls = apiPaths.filter(path=>path!=='index').map(path => `${baseUrl}/zh/api/${path}`);
   const enApiUrls = apiPaths.filter(path=>path!=='index').map(path => `${baseUrl}/en/api/${path}`);
+
+  const otherUrls=[
+    'llm.txt'
+  ].map(url=>`${baseUrl}/${url}`)
   return [
     ...blogUrls,
     ...handbookUrls,
     ...zhToolUrls,
     ...enToolUrls,
     ...zhApiUrls,
-    ...enApiUrls
+    ...enApiUrls,
+    ...otherUrls
   ]
 }
 

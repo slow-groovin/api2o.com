@@ -115,6 +115,12 @@
     <loc>https://www.api2o.com/zh/handbook/ubuntu/nmcli-proxy-not-work-in-server</loc>
   </url>
   <url>
+    <loc>https://www.api2o.com/en/handbook/windows/multi-machines-single-proxy-management-practice</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/handbook/windows/multi-machines-single-proxy-management-practice</loc>
+  </url>
+  <url>
     <loc>https://www.api2o.com/zh/tool/elastic-painless-script-format</loc>
   </url>
   <url>
@@ -155,5 +161,8 @@
   </url>
   <url>
     <loc>https://www.api2o.com/en/api/basic/rand-thing</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/llm.txt</loc>
   </url>
 </urlset>

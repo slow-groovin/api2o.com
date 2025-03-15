@@ -11,5 +11,9 @@ User-agent: DuckDuckBot
 Allow: /
 
 User-agent: *
+Allow: /llm.txt
+
+User-agent: *
 Disallow: /
+
 Sitemap: https://www.api2o.com/sitemap.xml
