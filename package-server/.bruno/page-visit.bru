@@ -1,0 +1,19 @@
+meta {
+  name: page-visit
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{endpoint}}/visit/counter/page?path=/test/a1
+  body: none
+  auth: none
+}
+
+params:query {
+  path: /test/a1
+}
+
+headers {
+  Authorization: Bearer honoiscool
+}
