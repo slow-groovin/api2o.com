@@ -3,7 +3,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "tsc && tsc-alias"
+    "build": "tsc && tsc-alias",
+    "drizzle-push": "tsx node_modules/drizzle-kit/bin.cjs push"
   },
   "dependencies": {
     "@envelop/response-cache": "^6.3.0",

@@ -1,4 +1,4 @@
-import { pgSchema, text, json } from "drizzle-orm/pg-core";
+import { text, json } from "drizzle-orm/pg-core";
 import {
   integer,
   pgTable,
@@ -6,13 +6,8 @@ import {
   boolean,
   serial,
 } from "drizzle-orm/pg-core";
-import { timestamp } from "drizzle-orm/pg-core/columns";
-// import { generateUniqueString, timestamps } from "./columns.helper";
-import { relations } from "drizzle-orm";
 
-export const jsonplaceholderSchema = pgSchema("jsonplaceholder");
-
-export const post = jsonplaceholderSchema.table("post", {
+export const post = pgTable("jsonplaceholder_post", {
   id: serial("id").primaryKey(),
   userId: integer("userId").notNull(),
   title: varchar("title", { length: 255 }).notNull(),
@@ -21,7 +16,7 @@ export const post = jsonplaceholderSchema.table("post", {
   // user: User @relation(fields: [userId], references: [id])
 });
 
-export const comment = jsonplaceholderSchema.table("comment", {
+export const comment = pgTable("jsonplaceholder_comment", {
   id: serial("id").primaryKey(),
   postId: integer("postId").notNull(),
   name: varchar("name", { length: 255 }).notNull(),
@@ -30,7 +25,7 @@ export const comment = jsonplaceholderSchema.table("comment", {
   // post: Post @relation(fields: [postId], references: [id])
 });
 
-export const user = jsonplaceholderSchema.table("user", {
+export const user = pgTable("jsonplaceholder_user", {
   id: serial("id").primaryKey(),
   name: varchar("name", { length: 255 }).notNull(),
   username: varchar("username", { length: 255 }).notNull(),
@@ -44,7 +39,7 @@ export const user = jsonplaceholderSchema.table("user", {
   // albums: Album[]
 });
 
-export const todo = jsonplaceholderSchema.table("todo", {
+export const todo = pgTable("jsonplaceholder_todo", {
   id: serial("id").primaryKey(),
   userId: integer("userId").notNull(),
   title: varchar("title", { length: 255 }).notNull(),
@@ -52,7 +47,7 @@ export const todo = jsonplaceholderSchema.table("todo", {
   // user: User @relation(fields: [userId], references: [id])
 });
 
-export const album = jsonplaceholderSchema.table("album", {
+export const album = pgTable("jsonplaceholder_album", {
   id: serial("id").primaryKey(),
   userId: integer("userId").notNull(),
   title: varchar("title", { length: 255 }).notNull(),
@@ -60,7 +55,7 @@ export const album = jsonplaceholderSchema.table("album", {
   // photos: Photo[]
 });
 
-export const photo = jsonplaceholderSchema.table("photo", {
+export const photo = pgTable("jsonplaceholder_photo", {
   id: serial("id").primaryKey(),
   albumId: integer("albumId").notNull(),
   title: varchar("title", { length: 255 }).notNull(),
@@ -69,7 +64,7 @@ export const photo = jsonplaceholderSchema.table("photo", {
   // album: Album @relation(fields: [albumId], references: [id])
 });
 
-// export const comments = pgTable("comments", {
+// export const comments = pgTable("jsonplaceholder_comments", {
 //   id: integer().primaryKey().generatedAlwaysAsIdentity(),
 //   title: text().notNull(),
 //   slug: varchar({ length: 16 }).$default(() => generateUniqueString(16)),
