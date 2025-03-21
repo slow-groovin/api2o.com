@@ -9,7 +9,7 @@
       <div class="shadow-md py-1 px-4  backdrop-blur-lg backdrop-blur-custom border-b bg-white/30">
         <div class="lg:container flex flex-wrap items-center gap-x-4 max-lg:gap-x-1 ">
           <!-- Logo -->
-          <NuxtLink :to="localePath('/index')">
+          <NuxtLink to="/">
             <img class="max-lg:hidden h-8 mr-1 rounded object-contain " :src="logo" alt="api2o.com logo" />
             <span class="lg:hidden border rounded p-1 text-primary font-bold">API2O</span>
           </NuxtLink>

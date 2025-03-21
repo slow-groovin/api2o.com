@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { useI18n, useRuntimeConfig } from "#imports"
+import { defineI18nRoute, useI18n, useRuntimeConfig } from "#imports"
 // defineI18nRoute(false)
 const { locale } = useI18n()
 const { public: { logo } } = useRuntimeConfig()
-
+defineI18nRoute(false)
+// console.log('import_meta.browser:', import.meta.browser)
 </script>
 
 <template>
-  <div class=" flex flex-col w-fit  min-h-[50vh] container" >
+  <div class=" flex flex-col w-fit  min-h-[50vh] container">
 
     <div class="ring-2 p-4 my-3 h-fit flex flex-col items-center ">
       <img class="rounded object-contain w-[min(50vw,20rem)] " :src="logo" alt="api2o.com logo" />
