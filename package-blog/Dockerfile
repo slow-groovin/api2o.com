@@ -17,19 +17,19 @@ FROM base AS build
 COPY . /usr/build
 WORKDIR /usr/build
 
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --workspace-root
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install -r package-blog
 RUN --mount=type=secret,id=SOURCE_AUTH_TOKEN,env=SOURCE_AUTH_TOKEN \
     --mount=type=secret,id=GTAG_ID,env=GTAG_ID \
     --mount=type=secret,id=INDEX_NOW_KEY,env=INDEX_NOW_KEY \
-    pnpm run  build
+    pnpm run build -r package-blog
 
 FROM base AS app-blog
 LABEL authors="slow-groovin"
 LABEL org.opencontainers.image.description="api2o.com blog"
 WORKDIR /app
 ENV NODE_ENV=production
-COPY --from=build /usr/build/.output ./.output
-COPY ./entrypoint.sh ./
+COPY --from=build /usr/build/package-blog/.output ./.output
+COPY ./package-blog/entrypoint.sh ./
 # 暴露应用运行的端口
 EXPOSE 3000
 # 启动应用
