@@ -148,7 +148,7 @@ export default defineNuxtConfig({
     componentDir: "./components/ui",
   },
   i18n: {
-    vueI18n: "./i18n.config.ts",
+    vueI18n: "../i18n.config.ts", //@nuxtjs/i18n更新到9.3之后突然出现bug, 原因未知, 为何这样设置未知, https://github.com/nuxt-modules/i18n/issues/3394
     strategy: "prefix",
     locales: ["zh", "en"], // used in URL path prefix
     defaultLocale: "en", // default locale of your project for Nuxt pages and routings,
