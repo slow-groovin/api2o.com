@@ -149,12 +149,9 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: "./i18n.config.ts",
-    strategy: "prefix_and_default",
+    strategy: "prefix",
     locales: ["zh", "en"], // used in URL path prefix
     defaultLocale: "en", // default locale of your project for Nuxt pages and routings,
-    pages: {
-      "/": false,
-    },
     // 经过测试, 没有办法在首次访问时根据`Accept-Language`设置locale. 新版本已经可以
     detectBrowserLanguage: {
       useCookie: false,
@@ -168,4 +165,11 @@ export default defineNuxtConfig({
     enabled: process.env.NODE_ENV === "production",
     id: process.env.GTAG_ID,
   },
+  // vite: {
+  //   build: {
+  //     rollupOptions: {
+  //       external: ["@waline/client/*"],
+  //     },
+  //   },
+  // },
 });
