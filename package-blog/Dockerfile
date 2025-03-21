@@ -21,15 +21,15 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
 RUN --mount=type=secret,id=SOURCE_AUTH_TOKEN,env=SOURCE_AUTH_TOKEN \
     --mount=type=secret,id=GTAG_ID,env=GTAG_ID \
     --mount=type=secret,id=INDEX_NOW_KEY,env=INDEX_NOW_KEY \
-    pnpm run -r build
+    pnpm run  build
 
 FROM base AS app-blog
 LABEL authors="slow-groovin"
 LABEL org.opencontainers.image.description="api2o.com blog"
 WORKDIR /app
 ENV NODE_ENV=production
-COPY --from=build /usr/build/package-blog/.output ./.output
-COPY ./package-blog/entrypoint.sh ./
+COPY --from=build /usr/build/.output ./.output
+COPY ./entrypoint.sh ./
 # 暴露应用运行的端口
 EXPOSE 3000
 # 启动应用
