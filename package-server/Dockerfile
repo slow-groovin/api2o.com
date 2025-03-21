@@ -14,7 +14,6 @@ COPY . .
 
 RUN npm i -g pnpm\
     && pnpm install  \   
-    # && pnpx prisma generate \
     && pnpm run build \
     && pnpm prune --prod
 #在 pnpm 中，和 npm ci 相对应的命令是 pnpm install --frozen-lockfile。 

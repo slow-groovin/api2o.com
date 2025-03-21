@@ -8,10 +8,19 @@ import BlogHead from '~/components/blog/BlogHead.vue';
 import MarkdownToc from '~/components/blog/MarkdownToc.vue';
 import AITranslationBadge from '~/components/hint/badge/AITranslationBadge.vue';
 import { useBlog } from '~/composables/blog';
-const start=Date.now()
+import { Waline } from '@waline/client/component';
+import '@waline/client/style';
+import { useRoute } from 'vue-router';
+
+const walineServerURL = 'https://waline.api2o.com';
+const path = computed(() => useRoute().path);
+
+const isProd = !import.meta.dev
+
+const start = Date.now()
 const { t, locale } = useI18n()
 const { data, error } = await useAsyncData('blog', () => useBlog(locale.value))
-if(!data.value) showError({statusCode:404})
+if (!data.value) showError({ statusCode: 404 })
 
 
 
@@ -23,12 +32,29 @@ const previous = computed(() => data.value?.previous)
 /**
  * if width is full screen
  */
- const viewPortWide=useLocalStorage('blog-viewport-wide',false)
- 
+const viewPortWide = useLocalStorage('blog-viewport-wide', false)
+
 useHead({
   title: doc.value?.title,
   meta: [
     { name: 'description', content: doc.value?.description },
+  ],
+  link: [
+    // { href: 'https://unpkg.com/@waline/client@v3/dist/waline.css', rel: 'stylesheet' }
+
+  ],
+  script: [
+    // {
+    //   type: 'module',
+    //   textContent: `
+    //         import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+    //         init({
+    //           el: '#comment-system',
+    //           serverURL: 'https://waline.api2o.com',
+    //         });
+    //       `
+    // }
   ]
 })
 
@@ -68,6 +94,11 @@ useHead({
     </main>
 
 
+    <ClientOnly v-if="isProd">
+      <section id="comment-system" class="border rounded-xl px-4 mt-8">
+        <Waline :serverURL="walineServerURL" :path="path" :lang="locale" />
+      </section>
+    </ClientOnly>
 
     <!--      悬浮标题栏-->
     <ClientOnly>

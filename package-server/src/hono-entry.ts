@@ -46,14 +46,15 @@ const functionalApp = new Hono().basePath("/api/v1");
 
 functionalApp.get(
   "/visit/counter/page",
-  bearerAuth({ token: "honoiscool" }),
+  bearerAuth({ token: process.env.API_BEAR_TOKEN! }),
   pageVisitsCounter
 );
 
 app.route("/", publicApp);
+app.route("/", functionalApp);
 console.log("[NODE_ENV]", process.env.NODE_ENV);
 if (process.env.NODE_ENV === "development") {
   console.log("[development]bind debug handlers.");
   const { debugApp } = await import("./handler/debug/debugRoutes.js");
-  app.route("/debug", debugApp);
+  app.route("/api/v1/debug", debugApp);
 }

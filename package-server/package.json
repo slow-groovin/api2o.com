@@ -1,5 +1,5 @@
 {
-  "name": "api2o-server",
+  "name": "api2o.com-server",
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
@@ -10,17 +10,17 @@
     "@hono/node-server": "^1.13.7",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.40.1",
-    "pg": "^8.14.1",
     "graphql": "^16.10.0",
     "graphql-yoga": "^5.10.11",
     "hono": "^4.6.19",
     "ioredis": "^5.4.2",
-    "@prisma/client": "^6.3.0"
+    "pg": "^8.14.1",
+    "unstorage": "^1.15.0"
   },
   "devDependencies": {
+    "@types/node": "^20.11.17",
     "@types/pg": "^8.11.11",
     "drizzle-kit": "^0.30.5",
-    "@types/node": "^20.11.17",
     "tsc-alias": "^1.8.10",
     "tsx": "^4.7.1",
     "typescript": "~5.3.0"
