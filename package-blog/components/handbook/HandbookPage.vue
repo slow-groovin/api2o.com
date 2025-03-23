@@ -10,7 +10,7 @@ import ArticleNotFound from "./ArticleNotFound.vue";
 const { locale } = useI18n()
 
 const { data } = await useAsyncData('handbook-article', () => useHandbook(locale.value))
-if(!data.value) showError({statusCode:404})
+if (!data.value) showError({ statusCode: 404 })
 const doc = computed(() => data.value?.markdownItem)
 
 useHead({
@@ -38,7 +38,7 @@ const props = withDefaults(defineProps<Props>(), {
 <template>
   <!-- 内容区域 -->
   <main :class="cn(
-    'flex-1 transition-all duration-300 overflow-auto',
+    'flex-1 transition-all duration-300 overflow-auto border rounded-lg',
     props.class
   )">
     <!-- 内容展示区 -->

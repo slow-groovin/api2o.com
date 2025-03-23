@@ -1,13 +1,13 @@
 <template>
   <nav v-if="data" :class="cn(
-    'overflow-y-auto w-full flex-shrink-0  ',
+    'overflow-y-auto w-full flex-shrink-0 rounded-sm  ',
     props.class
   )">
     <!-- 手册标题 -->
-    <h1 class="text-lg font-semibold rounded-t py-1 px-4 text-white bg-green-500/90">📚 {{ data.book }}</h1>
+    <h1 class="text-lg font-semibold rounded-t  py-1 px-4 text-white bg-green-500/90">📚 {{ data.book }}</h1>
 
     <!-- 章节列表 -->
-    <ul class="space-y-4 border-r">
+    <ul class="space-y-4 border-r border-l">
       <!-- group -->
       <div v-for="group in data.chapterGroups" :key="group.name">
         <div class="font-extralight text-illustration-light ">{{ group.name }}</div>
@@ -38,7 +38,7 @@ const { data } = useAsyncData('handbook-outline', () => useHandbookOutline(local
 const route = useRoute()
 </script>
 <style scoped>
-.thinner{
+.thinner {
   letter-spacing: -0.05rem;
 }
 </style>

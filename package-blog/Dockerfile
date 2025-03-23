@@ -20,6 +20,7 @@ WORKDIR /usr/build
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --filter api2o.com-blog
 RUN --mount=type=secret,id=SOURCE_AUTH_TOKEN,env=SOURCE_AUTH_TOKEN \
     --mount=type=secret,id=GTAG_ID,env=GTAG_ID \
+    --mount=type=secret,id=API_BEARER_TOKEN,env=API_BEARER_TOKEN \
     --mount=type=secret,id=INDEX_NOW_KEY,env=INDEX_NOW_KEY \
     pnpm --filter api2o.com-blog run build
 

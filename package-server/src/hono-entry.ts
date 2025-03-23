@@ -13,20 +13,32 @@ import { bearerAuth } from "hono/bearer-auth";
 
 export const app = new Hono();
 
-app.use(
-  cors({
-    origin: [
-      process.env.NODE_ENV === "development"
-        ? "http://localhost:3000"
-        : process.env.CORS_HOST ?? "https://unknown.unkown.unkown",
-    ],
-    allowHeaders: ["Content-Type"],
-    allowMethods: ["POST", "GET", "OPTIONS"],
-    // exposeHeaders: ['Content-Length', 'X-Kuma-Revision'],
-    maxAge: 600,
-    credentials: true,
-  })
-);
+if (process.env.NODE_ENV === "production") {
+  console.log("[CORS_HOST]", process.env.CORS_HOST);
+  app.use(
+    cors({
+      origin: [process.env.CORS_HOST!],
+      allowHeaders: ["Content-Type"],
+      allowMethods: ["POST", "GET", "OPTIONS"],
+      exposeHeaders: ["access-control-allow-origin"],
+      // exposeHeaders: ['Content-Length', 'X-Kuma-Revision'],
+      maxAge: 600,
+      credentials: true,
+    })
+  );
+} else {
+  // always allow origin in dev environment(for that http diff port fetch will not send origin header)
+  app.use(async (c, next) => {
+    c.header("Access-Control-Allow-Origin", process.env.CORS_HOST!);
+    c.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    c.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    if (c.req.method === "OPTIONS") {
+      return c.body(null, 200);
+    }
+    return next();
+  });
+}
+
 /**
  * public endpoint /api/v1
  */
@@ -44,9 +56,9 @@ publicApp.post("/jsonplaceholder/graphql", jsonPlaceholderHandlers);
  */
 const functionalApp = new Hono().basePath("/api/v1");
 
-functionalApp.get(
+functionalApp.post(
   "/visit/counter/page",
-  bearerAuth({ token: process.env.API_BEAR_TOKEN! }),
+  bearerAuth({ token: process.env.API_BEARER_TOKEN! }),
   pageVisitsCounter
 );
 

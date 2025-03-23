@@ -4,7 +4,7 @@ meta {
   seq: 3
 }
 
-get {
+options {
   url: {{endpoint}}/visit/counter/page?path=/test/a1
   body: none
   auth: none
@@ -15,5 +15,7 @@ params:query {
 }
 
 headers {
-  Authorization: Bearer honoiscool
+  Authorization: Bearer honoiscool2025
+  origin: http://localhost:3000
+  referer: http://localhost:3000
 }

@@ -11,6 +11,7 @@ import { useBlog } from '~/composables/blog';
 import { Waline } from '@waline/client/component';
 import '@waline/client/style';
 import { useRoute } from 'vue-router';
+import PageVisitCounter from '~/components/blog/PageVisitCounter.vue';
 
 const walineServerURL = 'https://waline.api2o.com';
 const path = computed(() => useRoute().path);
@@ -66,7 +67,12 @@ useHead({
     class="relative max-lg:max-w-full  max-w-[min(60vw,60rem)] mx-auto justify-center h-full  gap-3 ">
 
 
-
+    <!--      悬浮标题栏-->
+    <ClientOnly>
+      <MarkdownToc
+        class="fixed top-[10vh] right-12 max-lg:static max-lg:max-w-full max-w-52 opacity-80  shrink-[0.3] h-fit  break-all text-nowrap text-ellipsis"
+        v-if="doc?.body?.toc" :toc="doc?.body?.toc" />
+    </ClientOnly>
 
     <!--      主体-->
     <main class="flex flex-col max-xl:max-w-full flex-grow mt-3">
@@ -100,12 +106,7 @@ useHead({
       </section>
     </ClientOnly>
 
-    <!--      悬浮标题栏-->
-    <ClientOnly>
-      <MarkdownToc
-        class="fixed top-[10vh] right-12  max-w-52 opacity-80  shrink-[0.3] h-fit  break-all text-nowrap text-ellipsis"
-        v-if="doc?.body?.toc" :toc="doc?.body?.toc" />
-    </ClientOnly>
+
     <BlogBottomButtons />
   </div>
 </template>

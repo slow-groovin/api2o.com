@@ -13,7 +13,7 @@ export const pageVisitsCounter = async (c: Context) => {
 
 async function incrPagePathVisit(path: string) {
   const redis = getRedisClient();
-  console.debug("visit:", path);
+  // console.debug("visit:", path);
 
   // 增加总访问计数
   redis.incr(visitKey.pageTotal()).catch((err) => {
@@ -26,7 +26,7 @@ async function incrPagePathVisit(path: string) {
   });
 
   // 记录当天的访问量
-  redis.incr(visitKey.apiDate()).catch((err) => {
+  redis.incr(visitKey.pageDate()).catch((err) => {
     console.error(`Redis daily ${visitKey.apiDate()} visits incr error:`, err);
   });
 }

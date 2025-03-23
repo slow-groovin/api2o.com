@@ -25,6 +25,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       customContentSource: process.env.CONTENT_SOURCE,
+      apiBearerToken: process.env.API_BEARER_TOKEN,
     },
   },
   devServer: {

@@ -9,9 +9,9 @@
       <div class="shadow-md py-1 px-4  backdrop-blur-lg backdrop-blur-custom border-b bg-white/30">
         <div class="lg:container flex flex-wrap items-center gap-x-4 max-lg:gap-x-1 ">
           <!-- Logo -->
-          <NuxtLink to="/">
-            <img class="max-lg:hidden h-8 mr-1 rounded object-contain " :src="logo" alt="api2o.com logo" />
-            <span class="lg:hidden border rounded p-1 text-primary font-bold">API2O</span>
+          <NuxtLink to="/" class="border border-primary/50 rounded px-0.5 text-primary font-semibold ">
+            <!-- <img class="max-lg:hidden h-8 mr-1 rounded object-contain " :src="logo" alt="api2o.com logo" /> -->
+            <span class="">API2O</span>
           </NuxtLink>
 
           <!-- Navigation Links -->
@@ -75,17 +75,23 @@
     <GotoTop class="w-8 h-8 bottom-8 right-8" />
 
 
+    <ClientOnly>
+      <PageVisitCounter :key="route.path" />
+    </ClientOnly>
   </div>
 </template>
 <script setup lang="ts">
 import { useRuntimeConfig } from "#app";
 import { Icon } from "#components";
 import { onMounted, ref, useI18n, useLocalePath } from "#imports";
+import { useRoute } from "vue-router";
+import PageVisitCounter from "~/components/blog/PageVisitCounter.vue";
 import ColorSwitchButton from "~/components/nav/ColorSwitchButton.vue";
 import GotoTop from "~/components/nav/GotoTop.vue";
 import LangSwitchButton from "~/components/nav/LangSwitchButton.vue";
 
 const { t } = useI18n()
+const route = useRoute()
 const localePath = useLocalePath()
 const { public: { logo } } = useRuntimeConfig()
 
