@@ -5,13 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
-    "build": "nuxt build",
+    "build": "pnpm run prebuild-gen && nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "analyze": "nuxt analyze",
+    "prebuild-gen":"pnpm run run:gen-sitemap && pnpm run run:gen-llm.txt && pnpm run run:gen-rss ",
     "run:gen-sitemap": " tsx z-dev-scripts/gen-sitemap-xml",
     "run:gen-llm.txt": " tsx z-dev-scripts/gen-llm-txt.ts",
+    "run:gen-rss": " tsx z-dev-scripts/gen-rss-xml.ts",
     "run:exec-indexNow": " tsx z-dev-scripts/indexNow/exec-indexNow.ts"
   },
   "dependencies": {
@@ -38,6 +40,7 @@
     "@waline/client": "^3.5.6",
     "dotenv": "^16.4.7",
     "gray-matter": "^4.0.3",
-    "shadcn-nuxt": "^1.0.1"
+    "shadcn-nuxt": "^1.0.1",
+    "tsx": "^4.19.3"
   }
 }
