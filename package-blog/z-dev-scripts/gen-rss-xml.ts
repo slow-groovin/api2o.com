@@ -33,8 +33,9 @@ function beginGenRss() {
     locale: 'zh-CN',
   });
 
-  writeFileSync("public/rss-api2o-blog-en.xml", enRss)
-  writeFileSync("public/rss-api2o-blog-zh.xml", zhRss)
+  writeFileSync("public/rss.xml", enRss)
+  writeFileSync("public/rss-en.xml", enRss)
+  writeFileSync("public/rss-zh.xml", zhRss)
 }
 
 export function getBlogs() {

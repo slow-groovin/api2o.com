@@ -44,11 +44,20 @@
             <ColorSwitchButton class="w-8 h-8 border" />
             <!--          language switch-->
             <LangSwitchButton />
+
+            <!-- RSS -->
+            <a :href="`/rss-${locale}.xml`" target="_blank" class="rounded-lg size-8 border p-1 hover:bg-accent/50"
+              aria-label="RSS" title="RSS">
+              <Icon name="mdi:rss" class="size-full" />
+
+            </a>
             <!-- Github Link -->
             <a href="https://github.com/slow-groovin/api2o.com" target="_blank"
               class="rounded size-8 text-foreahead hover:bg-accent/50" aria-label="Github" title="Github">
               <Icon name="mdi:github" class="size-full" />
             </a>
+
+
           </div>
 
         </div>
@@ -76,6 +85,13 @@
         <nav class="space-x-4">
           <a href="https://github.com/slow-groovin/api2o.com" target="_blank"
             class="hover:underline">https://github.com/slow-groovin/api2o.com</a>
+
+          <a :href="`/rss-${locale}.xml`" target="_blank" class="rounded-lg  border p-1 hover:bg-accent/50"
+            aria-label="RSS" title="RSS">
+            RSS
+            <Icon name="mdi:rss" class="h-4 w-4" />
+
+          </a>
         </nav>
       </div>
     </footer>
@@ -92,13 +108,14 @@
 import { useRuntimeConfig } from "#app";
 import { Icon } from "#components";
 import { onMounted, ref, useI18n, useLocalePath } from "#imports";
+import { RssIcon } from "lucide-vue-next";
 import { useRoute } from "vue-router";
 import PageVisitCounter from "~/components/blog/PageVisitCounter.vue";
 import ColorSwitchButton from "~/components/nav/ColorSwitchButton.vue";
 import GotoTop from "~/components/nav/GotoTop.vue";
 import LangSwitchButton from "~/components/nav/LangSwitchButton.vue";
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const route = useRoute()
 const localePath = useLocalePath()
 const { public: { logo } } = useRuntimeConfig()

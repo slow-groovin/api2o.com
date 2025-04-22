@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"  xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>api2o.com blogs</title>
+  <link>https://www.api2o.com</link>
+  <description>api2o.com blogs RSS Feed</description>
+  <language>en-US</language> 
+  <pubDate>Tue, 22 Apr 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>Using jsr2npm to Clone Packages from jsr.io to npm Registry</title>
+      <link>https://www.api2o.com/en/blog/intro-jsr2npm</link>
+      <guid>https://www.api2o.com/en/blog/intro-jsr2npm</guid>
+      <description>jsr2npm allows developers to mirror and clone packages from jsr.io to npm registry. This article explains how to use jsr2npm.</description>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Unstorage-mcp: MCP Server for simultaneously operate multiple key-value storage databases (Redis, MongoDB, memory, file system, etc.)</title>
+      <link>https://www.api2o.com/en/blog/intro-unstorage-mcp</link>
+      <guid>https://www.api2o.com/en/blog/intro-unstorage-mcp</guid>
+      <description>unstorage-mcp is a key-value CRUD MCP server that can operate multiple KV databases (memory, file system, Redis, MongoDB, etc.)</description>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Why Choose MCP Protocol Instead of HTTP for AI Access</title>
+      <link>https://www.api2o.com/en/blog/why-mcp-but-not-http</link>
+      <guid>https://www.api2o.com/en/blog/why-mcp-but-not-http</guid>
+      <description>Both can serve as LLM tools, but what are the differences between MCP and HTTP? Why choose MCP over the well-established HTTP protocol for developing LLM tools?</description>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Tutorial: Installing MCP Server in Cline on Windows</title>
+      <link>https://www.api2o.com/en/blog/windows-client-install-mcp-tutorial</link>
+      <guid>https://www.api2o.com/en/blog/windows-client-install-mcp-tutorial</guid>
+      <description>Windows+Cline: MCP Server installation tutorial. Fix common errors like spawn npx ENOENT and provides multiple configuration methods for different situations, helping you to install MCP Server successfully.</description>
+      <pubDate>Tue, 25 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Webpage-summary: An AI-powered browser extension for summarizing webpages. Open-source and free, using configured AI APIs.</title>
+      <link>https://www.api2o.com/en/blog/intro-webpage-summary</link>
+      <guid>https://www.api2o.com/en/blog/intro-webpage-summary</guid>
+      <description>webpage-summary is an open-source AI webpage summarization browser extension. It uses user-configured APIs, avoiding the need for logins and subscriptions likie commercial extensions. Focused on webpage summarization only, it's lightweight, privacy-focused, and flexible. It can be used as an open-source alternative to the summarization features in plugins like sider.ai, briefy.ai, and monica.ai. This article introduces webpage-summary's usage, history, and development challenges.</description>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Dify vs. n8n vs. Flowise: LLM Application Low-Code Platform Workflow Comparison. </title>
+      <link>https://www.api2o.com/en/blog/lowcode-platform-compare-dify-n8n-flowise</link>
+      <guid>https://www.api2o.com/en/blog/lowcode-platform-compare-dify-n8n-flowise</guid>
+      <description>To quickly prototype, validate, and debug AI applications, the author experimented with different AI low-code platforms: Dify, n8n, and Flowise. This article is an evaluation of these products from a developer perspective.</description>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Environment Variables/Variables/Secrets in GitHub Actions: Configuration, Reading, and Passing</title>
+      <link>https://www.api2o.com/en/blog/gh-action-env-vars-secrets-go-through-everything</link>
+      <guid>https://www.api2o.com/en/blog/gh-action-env-vars-secrets-go-through-everything</guid>
+      <description>This article demonstrates how to use (configure, read, and pass) variables, environment variables and encrypted secrets at different scope/level/aspect in GitHub Actions, the Docker image automatic construction example project, showcasing variable usage through configuration and printing results.</description>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Summary Of Using Android Clone App Application Shelter</title>
+      <link>https://www.api2o.com/en/blog/shelter-usage-summary</link>
+      <guid>https://www.api2o.com/en/blog/shelter-usage-summary</guid>
+      <description>After a period of use, summarizing the shortcomings of Shelter</description>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Best Practices for Using Sandboxie to Restrict Rogue Software's Disk Access</title>
+      <link>https://www.api2o.com/en/blog/sandboxie-limit-tencent-scan</link>
+      <guid>https://www.api2o.com/en/blog/sandboxie-limit-tencent-scan</guid>
+      <description>A summary of practical methods to limit certain rogue software from scanning the hard disk in the background using Sandboxie.</description>
+      <pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Implementing Secure HTTPS Access to Local Services Without Importing Certificates</title>
+      <link>https://www.api2o.com/en/blog/local-dev-secure-https-without-modified-certs-file</link>
+      <guid>https://www.api2o.com/en/blog/local-dev-secure-https-without-modified-certs-file</guid>
+      <description>Achieving secure HTTPS access to local services through DNS records and acme.sh</description>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Two Ways for Apisix to Return Static Content Directly via Built-in Plugins (echo or serverless plugin)</title>
+      <link>https://www.api2o.com/en/blog/apisix-direct-return-content</link>
+      <guid>https://www.api2o.com/en/blog/apisix-direct-return-content</guid>
+      <description>Apisix returns static content without the need for an additional nginx process/container, achieved through Apisix built-in plugins.</description>
+      <pubDate>Sun, 23 Jun 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Win10 Global DoH Solution: Best Practice</title>
+      <link>https://www.api2o.com/en/blog/win10-perfect-doh-best-practice</link>
+      <guid>https://www.api2o.com/en/blog/win10-perfect-doh-best-practice</guid>
+      <description>This article introduces the idea and successful implementation of global DoH (DNS over HTTPS) on Windows 10, by setting up a local DNScrypt service. The article explains how to configure DNScrypt-proxy, and the steps for testing and verification to ensure the configuration takes effect. Since Microsoft does not directly provide global DoH configuration for Windows 10 like Windows 11, this article is suitable for users who want to improve the network security of Windows 10.</description>
+      <pubDate>Mon, 15 Apr 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Simple Concurrent Testing of SQLite3</title>
+      <link>https://www.api2o.com/en/blog/sqlite3-concurrent-write-simple-test</link>
+      <guid>https://www.api2o.com/en/blog/sqlite3-concurrent-write-simple-test</guid>
+      <description>Concurrency read/write test on SQLite3 at the application level with default configuration</description>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Build Bulk Request(Multi-line JSON HTTP Requests) Of Elastic Search with JetBrains Http Client </title>
+      <link>https://www.api2o.com/en/blog/elastic-bulk-using-jetbrain-http-client</link>
+      <guid>https://www.api2o.com/en/blog/elastic-bulk-using-jetbrain-http-client</guid>
+      <description>Provides a solution using external json file to use the es _bulk API or other similar HTTP requests (multi-line JSON) in JetBrains Http Client.</description>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>nodejs proxy cheat sheet</title>
+      <link>https://www.api2o.com/en/blog/nodejs-proxy</link>
+      <guid>https://www.api2o.com/en/blog/nodejs-proxy</guid>
+      <description>some commands for copy</description>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
+    </item>
+
+</channel>
+</rss>
