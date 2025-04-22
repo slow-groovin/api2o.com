@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"  xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>api2o.com 博客</title>
+  <link>https://www.api2o.com</link>
+  <description>api2o.com 博客 RSS Feed</description>
+  <language>zh-CN</language> 
+  <pubDate>Tue, 22 Apr 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>使用 jsr2npm 把发布在 jsr.io 上的 package 克隆到 npm registry 中</title>
+      <link>https://www.api2o.com/zh/blog/intro-jsr2npm</link>
+      <guid>https://www.api2o.com/zh/blog/intro-jsr2npm</guid>
+      <description>jsr让开发者在享受纯typescript开发体验的同时可以将包发布给任何用户使用，jsr2npm可以让开发者将发布到jsr.io中的包镜像克隆复制一份到 npm registry，本文介绍了如何使用 jsr2npm </description>
+      <pubDate>Tue, 22 Apr 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Unstorage-mcp: 同时操作管理多种键值存储数据库的的MCP server</title>
+      <link>https://www.api2o.com/zh/blog/intro-unstorage-mcp</link>
+      <guid>https://www.api2o.com/zh/blog/intro-unstorage-mcp</guid>
+      <description>unstorage-mcp是一款 key-value 的增删改查 mcp-server, 能够同时操作管理多种 kv 数据库（内存、文件系统、Redis、MongoDB 等)</description>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>AI接入为什么选择MCP协议而不是HTTP协议</title>
+      <link>https://www.api2o.com/zh/blog/why-mcp-but-not-http</link>
+      <guid>https://www.api2o.com/zh/blog/why-mcp-but-not-http</guid>
+      <description>都可以作为llm tool, MCP与HTTP有何不同? 为什么要选择MCP而不是已经很完善的HTTP协议来发展llm tool?</description>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Windows下Cline中安装 Mcp server 教程</title>
+      <link>https://www.api2o.com/zh/blog/windows-client-install-mcp-tutorial</link>
+      <guid>https://www.api2o.com/zh/blog/windows-client-install-mcp-tutorial</guid>
+      <description>Windows+Cline下的 MCP Server 安装教程，解决常见报错如spawn npx ENOENT，针对不同的场景提供多种配置方法，帮助您在 Windows 下成功安装 MCP Server。</description>
+      <pubDate>Tue, 25 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Webpage-summary：一款基于AI的网页总结浏览器扩展. 开源免费，使用自配置大模型API而不是订阅或者用量付费</title>
+      <link>https://www.api2o.com/zh/blog/intro-webpage-summary</link>
+      <guid>https://www.api2o.com/zh/blog/intro-webpage-summary</guid>
+      <description>webpage-summary 是一款开源的AI网页总结浏览器扩展插件，它是一个使用用户配置的API的工具，而不是需要登录和订阅付费的大型商业插件， 它只完成网页总结的职责，因此具有轻量、隐私安全、配置灵活等特点， 可以作为sider.ai, briefy.ai, monica.ai等插件中的总结功能的开源替代品。本文介绍了 webpage-summary 的使用方式， 项目产生历史， 开发难点等信息。</description>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Dify vs. n8n vs. Flowise: LLM应用低代码平台workflow使用对比</title>
+      <link>https://www.api2o.com/zh/blog/lowcode-platform-compare-dify-n8n-flowise</link>
+      <guid>https://www.api2o.com/zh/blog/lowcode-platform-compare-dify-n8n-flowise</guid>
+      <description>为了针对ai应用进行原型快速构建和验证调试, 作者尝试使用了不同的AI低代码平台: Dify, n8n, Flowise. 这篇文章是从开发者的角度对这几款产品的评价</description>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>GitHub Actions 中环境变量使用总结: 配置,读取,传递</title>
+      <link>https://www.api2o.com/zh/blog/gh-action-env-vars-secrets-go-through-everything</link>
+      <guid>https://www.api2o.com/zh/blog/gh-action-env-vars-secrets-go-through-everything</guid>
+      <description>本文展示了在 GitHub Actions 中, 如何使用(配置,读取,传递)不同层面的环境变量和加密凭据，以一个 Docker 镜像自动构建项目为例, 通过配置和打印结果展示变量的使用</description>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>安卓双开软件Shelter使用总结</title>
+      <link>https://www.api2o.com/zh/blog/shelter-usage-summary</link>
+      <guid>https://www.api2o.com/zh/blog/shelter-usage-summary</guid>
+      <description>经过一段时间的使用, 总结Shelter的缺点</description>
+      <pubDate>Wed, 09 Oct 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Sandboxie限制流氓软件读盘行为最佳实践</title>
+      <link>https://www.api2o.com/zh/blog/sandboxie-limit-tencent-scan</link>
+      <guid>https://www.api2o.com/zh/blog/sandboxie-limit-tencent-scan</guid>
+      <description>总结使用sandboxie限制某些流氓软件后台扫描硬盘的实践</description>
+      <pubDate>Mon, 23 Sep 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>非导入证书方式实现secure https访问本地服务</title>
+      <link>https://www.api2o.com/zh/blog/local-dev-secure-https-without-modified-certs-file</link>
+      <guid>https://www.api2o.com/zh/blog/local-dev-secure-https-without-modified-certs-file</guid>
+      <description>通过dns记录和acme.sh实现secure https访问本地服务</description>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Apisix通过内置基本插件直接返回静态内容的两种方式(echo或serverless插件)</title>
+      <link>https://www.api2o.com/zh/blog/apisix-direct-return-content</link>
+      <guid>https://www.api2o.com/zh/blog/apisix-direct-return-content</guid>
+      <description>apisix返回静态内容, 不需要额外的nginx进程/容器, 通过apisix内置插件实现</description>
+      <pubDate>Sun, 23 Jun 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>win10使用全局DoH最佳实践</title>
+      <link>https://www.api2o.com/zh/blog/win10-perfect-doh-best-practice</link>
+      <guid>https://www.api2o.com/zh/blog/win10-perfect-doh-best-practice</guid>
+      <description>本文介绍在Windows 10使用全局DoH (DNS over HTTPS) 的想法和成功实施方案, 通过搭建本地DNScrypt服务，实现全局DNS加密。文章详细讲解了DNScrypt-proxy如何配置, 如何测试和验证的步骤，确保配置生效。由于微软对 Windows10 没有像 Windows11 直接提供全局DoH配置, 这篇文章适用于希望提升Win10网络安全性的用户。</description>
+      <pubDate>Mon, 15 Apr 2024 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>sqlite3并发简单测试</title>
+      <link>https://www.api2o.com/zh/blog/sqlite3-concurrent-write-simple-test</link>
+      <guid>https://www.api2o.com/zh/blog/sqlite3-concurrent-write-simple-test</guid>
+      <description>在默认配置下,应用层面对sqlite3进行并发读写测试</description>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>用JetBrains Http Client发送 elastic search bulk(多行json的http请求)</title>
+      <link>https://www.api2o.com/zh/blog/elastic-bulk-using-jetbrain-http-client</link>
+      <guid>https://www.api2o.com/zh/blog/elastic-bulk-using-jetbrain-http-client</guid>
+      <description>提供一种解决方法, 使用外部文件的方式, 可以在JetBrains Http Client使用es的_bulk api,或者其它此类型的http请求(包含多行json)</description>
+      <pubDate>Sat, 02 Sep 2023 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>nodejs proxy cheat sheet 笔记</title>
+      <link>https://www.api2o.com/zh/blog/nodejs-proxy</link>
+      <guid>https://www.api2o.com/zh/blog/nodejs-proxy</guid>
+      <description>some commands for copy</description>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 GMT</pubDate>
+    </item>
+
+</channel>
+</rss>

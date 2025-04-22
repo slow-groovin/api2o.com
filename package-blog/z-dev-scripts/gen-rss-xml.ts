@@ -1,6 +1,7 @@
 import { readdirSync, statSync, writeFileSync, readFileSync } from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { timestamp } from "@vueuse/core";
 
 type DataType = {
   _id: string,
@@ -8,6 +9,7 @@ type DataType = {
   description: string,
   tags: string[],
   date: string,
+  timestamp: number,
   _locale: 'zh' | 'en'
   url: string,
 }
@@ -47,15 +49,16 @@ export function getBlogs() {
       const parsed = matter(fileContent);
       const { _locale, _id, date: dateStr } = parsed.data;
       const url = `${baseUrl}/${_locale}/blog/${_id}`;
-      const date = new Date(dateStr).toUTCString()
       return {
         ...parsed.data,
         url,
-        date
+        date: new Date(dateStr).toUTCString(),
+        timestamp: new Date(dateStr).getTime()
       } as any as DataType
     });
-  const zhBlogs = blogData.filter(item => item._locale === 'zh').sort((a, b) => a.date < b.date ? -1 : 1).slice(0, MAX_COUNT);
-  const enBlogs = blogData.filter(item => item._locale === 'en').sort((a, b) => a.date < b.date ? -1 : 1).slice(0, MAX_COUNT);
+  // timestamp desc sort
+  const zhBlogs = blogData.filter(item => item._locale === 'zh').sort((a, b) => b.timestamp - a.timestamp).slice(0, MAX_COUNT);
+  const enBlogs = blogData.filter(item => item._locale === 'en').sort((a, b) => b.timestamp - a.timestamp).slice(0, MAX_COUNT);
   return { zhBlogs, enBlogs }
 }
 

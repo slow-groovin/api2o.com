@@ -5,15 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "nuxt dev",
-    "build": "pnpm run prebuild-gen && nuxt build",
+    "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "analyze": "nuxt analyze",
-    "prebuild-gen":"pnpm run run:gen-sitemap && pnpm run run:gen-llm.txt && pnpm run run:gen-rss ",
-    "run:gen-sitemap": " tsx z-dev-scripts/gen-sitemap-xml",
-    "run:gen-llm.txt": " tsx z-dev-scripts/gen-llm-txt.ts",
-    "run:gen-rss": " tsx z-dev-scripts/gen-rss-xml.ts",
+    "prebuild-gen":"tsx z-dev-scripts/gen-sitemap-xml && tsx z-dev-scripts/gen-llm-txt.ts && tsx z-dev-scripts/gen-rss-xml.ts ",
     "run:exec-indexNow": " tsx z-dev-scripts/indexNow/exec-indexNow.ts"
   },
   "dependencies": {
