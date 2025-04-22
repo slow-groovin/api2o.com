@@ -75,9 +75,11 @@
         p {
             @apply mt-4 tracking-tight text-xl/8 font-blog;
         }
+
         p:lang(zh){
             @apply my-4 font-blogZh text-lg tracking-wide;
         }
+
 
         img {
             @apply mb-6 shadow-lg block mx-auto;

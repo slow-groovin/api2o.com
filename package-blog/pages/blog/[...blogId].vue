@@ -1,13 +1,13 @@
 <script setup lang="ts">
 
-import { computed, createError, onMounted, ref, showError, useAsyncData, useAsyncState, useError, useHead, useI18n } from '#imports';
+import { computed, createError, onMounted, queryCollection, ref, showError, useAsyncData, useAsyncState, useError, useHead, useI18n } from '#imports';
 import { useLocalStorage } from '@vueuse/core';
 import BlogBottomButtons from '~/components/blog/BlogBottomButtons.vue';
 import BlogFooter from '~/components/blog/BlogFooter.vue';
 import BlogHead from '~/components/blog/BlogHead.vue';
 import MarkdownToc from '~/components/blog/MarkdownToc.vue';
 import AITranslationBadge from '~/components/hint/badge/AITranslationBadge.vue';
-import { useBlog } from '~/composables/blog';
+import { queryBlog } from '~/composables/blog';
 import { Waline } from '@waline/client/component';
 import '@waline/client/style';
 import { useRoute } from 'vue-router';
@@ -20,9 +20,10 @@ const isProd = !import.meta.dev
 
 const start = Date.now()
 const { t, locale } = useI18n()
-const { data, error } = await useAsyncData('blog', () => useBlog(locale.value))
-if (!data.value) showError({ statusCode: 404 })
+let { params: { blogId } } = useRoute()
 
+const { data, error } = await useAsyncData('blog', () => queryBlog(locale.value, blogId))
+if (!data.value) showError({ statusCode: 404 })
 
 
 const doc = computed(() => data.value?.markdownItem)

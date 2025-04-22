@@ -6,9 +6,9 @@ export default {
 	prefix: "",
 
 	content: [
-    './components/**/*.{vue,tsx}',
-    './pages/**/*.{vue,tsx}',
-  ],
+		'./components/**/*.{vue,tsx}',
+		'./pages/**/*.{vue,tsx}',
+	],
 	theme: {
 		container: {
 			center: true,
@@ -32,9 +32,13 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				blog:' "Source Serif Pro",  "Times New Roman", Times, serif',
+				blog: ["Source Serif Pro", '-apple-system', 'BlinkMacSystemFont', "Times New Roman", 'Times', 'serif'],
 				code: ["Source Code Pro", "sans-serif"],
-				blogZh:'-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Segoe UI,Arial,Roboto,"PingFang SC","miui","Hiragino Sans GB","Microsoft Yahei",sans-serif'
+				blogZh: ['-apple-system', 'BlinkMacSystemFont',
+					"Times New Roman",
+					"Helvetica Neue", 'Helvetica', 'Segoe UI', 'Arial', 'Roboto', "PingFang SC",
+					"Source Serif Pro",
+					'sans-serif']
 			},
 			colors: {
 				border: "hsl(var(--border))",
@@ -73,7 +77,7 @@ export default {
 				'github-card': {
 					DEFAULT: "var(--github-card)",
 				},
-				'illustration-light':{
+				'illustration-light': {
 					DEFAULT: "var(--illustration-light)",
 				},
 				code: "var(--code)"
@@ -86,20 +90,20 @@ export default {
 			},
 			keyframes: {
 				"accordion-down": {
-					from: {height: 0},
-					to: {height: "var(--radix-accordion-content-height)"},
+					from: { height: 0 },
+					to: { height: "var(--radix-accordion-content-height)" },
 				},
 				"accordion-up": {
-					from: {height: "var(--radix-accordion-content-height)"},
-					to: {height: 0},
+					from: { height: "var(--radix-accordion-content-height)" },
+					to: { height: 0 },
 				},
 				"collapsible-down": {
-					from: {height: 0},
-					to: {height: 'var(--radix-collapsible-content-height)'},
+					from: { height: 0 },
+					to: { height: 'var(--radix-collapsible-content-height)' },
 				},
 				"collapsible-up": {
-					from: {height: 'var(--radix-collapsible-content-height)'},
-					to: {height: 0},
+					from: { height: 'var(--radix-collapsible-content-height)' },
+					to: { height: 0 },
 				},
 			},
 			animation: {

@@ -5,7 +5,7 @@ import { Pagination, PaginationEllipsis, PaginationList, PaginationListItem } fr
 import BlogTimeLine from "./BlogTimeLine.vue";
 
 
-const DEFAULT_PAGE_SIZE = 10
+const DEFAULT_PAGE_SIZE = 20
 const { locale, t } = useI18n()
 
 const props = defineProps<{ pageNo: number }>()
@@ -28,8 +28,8 @@ const { data } = await useAsyncData('blog', () => queryCollection('blog')
   .limit(DEFAULT_PAGE_SIZE)
   .all())
 const { data: count } = await useAsyncData('blog-count', () => queryCollection('blog')
-.where('_locale', '=', locale.value)
-.count()
+  .where('_locale', '=', locale.value)
+  .count()
 )
 
 </script>
@@ -40,8 +40,8 @@ const { data: count } = await useAsyncData('blog-count', () => queryCollection('
       📰{{ t('timeline') }}</h1>
     <BlogTimeLine v-if="data" :docs="data" />
 
-    <Pagination class="" v-slot="{ page }" v-if="count" :total="count" :items-per-page="10" :sibling-count="1"
-      show-edges :default-page="2" :page="pageNo">
+    <Pagination class="" v-slot="{ page }" v-if="count" :total="count" :items-per-page="DEFAULT_PAGE_SIZE"
+      :sibling-count="1" show-edges :default-page="2" :page="pageNo">
       <PaginationList v-slot="{ items }" class="flex items-center gap-1">
         <template v-for="(item, index) in items">
           <PaginationListItem v-if="item.type === 'page'" :key="index" :value="item.value" as-child>

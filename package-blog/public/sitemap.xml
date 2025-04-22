@@ -61,6 +61,24 @@
     <loc>https://www.api2o.com/zh/blog/nodejs-proxy</loc>
   </url>
   <url>
+    <loc>https://www.api2o.com/en/blog/intro-jsr2npm</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/blog/intro-jsr2npm</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/blog/intro-unstorage-mcp</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/blog/intro-unstorage-mcp</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/blog/intro-webpage-summary</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/blog/intro-webpage-summary</loc>
+  </url>
+  <url>
     <loc>https://www.api2o.com/en/blog/win10-perfect-doh-best-practice</loc>
   </url>
   <url>
@@ -71,6 +89,12 @@
   </url>
   <url>
     <loc>https://www.api2o.com/zh/blog/sandboxie-limit-tencent-scan</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/handbook/bun/publish-executable-to-npm-and-bunx</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/handbook/bun/publish-executable-to-npm-and-bunx</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/handbook/docker/created-network-cant-connect</loc>
@@ -89,6 +113,12 @@
   </url>
   <url>
     <loc>https://www.api2o.com/zh/handbook/nodejs/npm-install-no-devDependencies</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/handbook/nodejs/own-package-npm-publish-npx-not-executable</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/handbook/nodejs/own-package-npm-publish-npx-not-executable</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/handbook/nodejs/pnpm-package-reuse-in-diff-repos</loc>
@@ -143,6 +173,12 @@
   </url>
   <url>
     <loc>https://www.api2o.com/zh/handbook/windows/multi-machines-single-proxy-management-practice</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/handbook/windows/powershell-searching-command-history-autocomplete</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/handbook/windows/powershell-searching-command-history-autocomplete</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/zh/tool/elastic-painless-script-format</loc>

@@ -51,19 +51,13 @@ publicApp.route("/", postHandler);
 publicApp.get("/rand/thing", getRandomThing);
 publicApp.post("/jsonplaceholder/graphql", jsonPlaceholderHandlers);
 
-/**
- * functional endpoint
- */
-const functionalApp = new Hono().basePath("/api/v1");
-
-functionalApp.post(
-  "/visit/counter/page",
+app.post(
+  "/api/v1/visit/counter/page",
   bearerAuth({ token: process.env.API_BEARER_TOKEN! }),
   pageVisitsCounter
 );
-
 app.route("/", publicApp);
-app.route("/", functionalApp);
+
 console.log("[NODE_ENV]", process.env.NODE_ENV);
 if (process.env.NODE_ENV === "development") {
   console.log("[development]bind debug handlers.");

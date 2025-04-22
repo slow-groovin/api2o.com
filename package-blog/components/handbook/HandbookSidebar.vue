@@ -4,7 +4,11 @@
     props.class
   )">
     <!-- 手册标题 -->
-    <h1 class="text-lg font-semibold rounded-t  py-1 px-4 text-white bg-green-500/90">📚 {{ data.book }}</h1>
+    <h1 class="text-lg font-semibold rounded-t  py-1 px-4 text-white bg-green-500/90">
+      <NuxtLink :to="'/' + locale + '/handbook/' + data.book">
+        📚 {{ data.book }}
+      </NuxtLink>
+    </h1>
 
     <!-- 章节列表 -->
     <ul class="space-y-4 border-r border-l">

@@ -7,18 +7,26 @@
     <header class="fixed max-lg:static top-0 left-0 right-0  z-50"
       :class="{ 'scroll-hide': scrollDirection === 'down' }">
       <div class="shadow-md py-1 px-4  backdrop-blur-lg backdrop-blur-custom border-b bg-white/30">
-        <div class="lg:container flex flex-wrap items-center gap-x-4 max-lg:gap-x-1 ">
+        <div class="lg:container flex flex-wrap items-stretch gap-x-4 max-lg:gap-x-1 ">
           <!-- Logo -->
-          <NuxtLink to="/" class="border border-primary/50 rounded px-0.5 text-primary font-semibold ">
+          <NuxtLink to="/" class="border border-primary/50 rounded px-0.5 text-primary font-semibold flex items-center">
             <!-- <img class="max-lg:hidden h-8 mr-1 rounded object-contain " :src="logo" alt="api2o.com logo" /> -->
             <span class="">API2O</span>
           </NuxtLink>
 
           <!-- Navigation Links -->
-          <NuxtLink :to="localePath('blog')" class=" hover:text-gray-900 text-nowrap">📰{{ t('blog') }}</NuxtLink>
-          <NuxtLink :to="localePath('handbook')" class=" hover:text-gray-900">📚{{ t('handbook') }}</NuxtLink>
-          <NuxtLink :to="localePath('tool')" class=" hover:text-gray-900">🛠️{{ t('tool') }}</NuxtLink>
-          <NuxtLink :to="localePath('api')" class=" hover:text-gray-900">🌐{{ t('api') }}</NuxtLink>
+          <NuxtLink :to="localePath('blog')" class="hover:bg-secondary rounded flex items-center px-1"
+            :class="{ 'font-semibold': route.path.startsWith(localePath('blog')) }">📰{{ t('blog') }}
+          </NuxtLink>
+          <NuxtLink :to="localePath('handbook')" class=" hover:bg-secondary rounded flex items-center px-1"
+            :class="{ 'font-semibold': route.path.startsWith(localePath('handbook')) }">📚{{ t('handbook')
+            }}</NuxtLink>
+          <NuxtLink :to="localePath('tool')" class=" hover:bg-secondary rounded flex items-center px-1"
+            :class="{ 'font-semibold': route.path.startsWith(localePath('tool')) }">🛠️{{ t('tool') }}
+          </NuxtLink>
+          <NuxtLink :to="localePath('api')" class=" hover:bg-secondary rounded flex items-center px-1"
+            :class="{ 'font-semibold': route.path.startsWith(localePath('api')) }">🌐{{ t('api') }}
+          </NuxtLink>
 
 
 
