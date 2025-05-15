@@ -62,6 +62,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
       public: {
+        baseUrl: "https://www.api2o.com",
         apiBaseUrl: "https://www.api2o.com",
         logo: "/icon/logo.png",
       },
@@ -85,6 +86,7 @@ export default defineNuxtConfig({
     },
     runtimeConfig: {
       public: {
+        baseUrl: "http://localhost:3000",
         apiBaseUrl: "http://localhost:3001",
         logo: "/icon/dev-logo1.png",
         // apiBaseUrl: 'http://localhost:3000',

@@ -1,17 +1,16 @@
 <script setup lang="ts">
 
-import { computed, createError, onMounted, queryCollection, ref, showError, useAsyncData, useAsyncState, useError, useHead, useI18n } from '#imports';
+import { computed, showError, useAsyncData, useHead, useI18n } from '#imports';
 import { useLocalStorage } from '@vueuse/core';
+import { Waline } from '@waline/client/component';
+import '@waline/client/style';
+import { useRoute } from 'vue-router';
 import BlogBottomButtons from '~/components/blog/BlogBottomButtons.vue';
 import BlogFooter from '~/components/blog/BlogFooter.vue';
 import BlogHead from '~/components/blog/BlogHead.vue';
 import MarkdownToc from '~/components/blog/MarkdownToc.vue';
 import AITranslationBadge from '~/components/hint/badge/AITranslationBadge.vue';
 import { queryBlog } from '~/composables/blog';
-import { Waline } from '@waline/client/component';
-import '@waline/client/style';
-import { useRoute } from 'vue-router';
-import PageVisitCounter from '~/components/blog/PageVisitCounter.vue';
 
 const walineServerURL = 'https://waline.api2o.com';
 const path = computed(() => useRoute().path);
@@ -19,7 +18,10 @@ const path = computed(() => useRoute().path);
 const isProd = !import.meta.dev
 
 const start = Date.now()
+
 const { t, locale } = useI18n()
+
+
 let { params: { blogId } } = useRoute()
 
 const { data, error } = await useAsyncData('blog', () => queryBlog(locale.value, blogId))
@@ -42,7 +44,6 @@ useHead({
     { name: 'description', content: doc.value?.description },
   ],
   link: [
-    // { href: 'https://unpkg.com/@waline/client@v3/dist/waline.css', rel: 'stylesheet' }
 
   ],
   script: [
