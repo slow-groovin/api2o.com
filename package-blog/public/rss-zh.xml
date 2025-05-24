@@ -5,7 +5,21 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com 博客 RSS Feed</description>
   <language>zh-CN</language> 
-  <pubDate>Tue, 22 Apr 2025 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>n8n进阶使用记录</title>
+      <link>https://www.api2o.com/zh/blog/n8n-advanced-usage-record</link>
+      <guid>https://www.api2o.com/zh/blog/n8n-advanced-usage-record</guid>
+      <description>n8n 进阶使用记录：掌握 n8n 的部署、配置、数据库、代理、扩展和封装等方面的细节，利用 mitmproxy 调试 AI Agent，并通过 HTTP 和 MCP 扩展 n8n 功能。</description>
+      <pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>AI时代的Android输入法选择</title>
+      <link>https://www.api2o.com/zh/blog/pinyin-ime-choice</link>
+      <guid>https://www.api2o.com/zh/blog/pinyin-ime-choice</guid>
+      <description>AI时代后，为什么应该抛弃Android端商业输入法，以及该选择什么输入法作为替代</description>
+      <pubDate>Mon, 19 May 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>使用 jsr2npm 把发布在 jsr.io 上的 package 克隆到 npm registry 中</title>
       <link>https://www.api2o.com/zh/blog/intro-jsr2npm</link>
@@ -40,6 +54,20 @@
       <guid>https://www.api2o.com/zh/blog/intro-webpage-summary</guid>
       <description>webpage-summary 是一款开源的AI网页总结浏览器扩展插件，它是一个使用用户配置的API的工具，而不是需要登录和订阅付费的大型商业插件， 它只完成网页总结的职责，因此具有轻量、隐私安全、配置灵活等特点， 可以作为sider.ai, briefy.ai, monica.ai等插件中的总结功能的开源替代品。本文介绍了 webpage-summary 的使用方式， 项目产生历史， 开发难点等信息。</description>
       <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>初识 Coze：与主流开源产品有何不同？</title>
+      <link>https://www.api2o.com/zh/blog/coze-first-time-exploration</link>
+      <guid>https://www.api2o.com/zh/blog/coze-first-time-exploration</guid>
+      <description>为了针对ai应用进行原型快速构建和验证调试, 作者尝试使用了不同的AI低代码平台: Dify, n8n, Flowise. 这篇文章是从开发者的角度对这几款产品的评价</description>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Coze空间 扣子空间初探</title>
+      <link>https://www.api2o.com/zh/blog/coze-space-preview-exploration</link>
+      <guid>https://www.api2o.com/zh/blog/coze-space-preview-exploration</guid>
+      <description></description>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 GMT</pubDate>
     </item>
   <item>
       <title>Dify vs. n8n vs. Flowise: LLM应用低代码平台workflow使用对比</title>

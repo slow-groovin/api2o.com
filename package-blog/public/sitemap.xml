@@ -7,6 +7,12 @@
     <loc>https://www.api2o.com/zh/blog/lowcode-platform-compare-dify-n8n-flowise</loc>
   </url>
   <url>
+    <loc>https://www.api2o.com/en/blog/n8n-advanced-usage-record</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/blog/n8n-advanced-usage-record</loc>
+  </url>
+  <url>
     <loc>https://www.api2o.com/en/blog/why-mcp-but-not-http</loc>
   </url>
   <url>
@@ -17,6 +23,12 @@
   </url>
   <url>
     <loc>https://www.api2o.com/zh/blog/windows-client-install-mcp-tutorial</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/blog/pinyin-ime-choice</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/blog/pinyin-ime-choice</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/blog/shelter-usage-summary</loc>
@@ -89,6 +101,18 @@
   </url>
   <url>
     <loc>https://www.api2o.com/zh/blog/sandboxie-limit-tencent-scan</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/handbook/apisix/apisix-direct-return-content</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/handbook/apisix/apisix-direct-return-content</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/handbook/apisix/apisix-push-log-to-grafana-cloud-loki</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/handbook/apisix/apisix-push-log-to-grafana-cloud-loki</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/handbook/bun/publish-executable-to-npm-and-bunx</loc>

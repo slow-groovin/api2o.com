@@ -9,6 +9,9 @@ import { useRoute } from 'vue-router';
 const { public: { apiBaseUrl, apiBearerToken } } = useRuntimeConfig()
 const { path } = useRoute()
 onMounted(async () => {
+  if (import.meta.dev) {
+    return
+  }
   fetch(apiBaseUrl + '/api/v1/visit/counter/page?path=' + path, {
     headers: {
       Authorization: `Bearer ${apiBearerToken}`,

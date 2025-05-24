@@ -1,6 +1,6 @@
 {
   "name": "api2o.com-blog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,11 +10,11 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "analyze": "nuxt analyze",
-    "prebuild-gen":"tsx z-dev-scripts/gen-sitemap-xml && tsx z-dev-scripts/gen-llm-txt.ts && tsx z-dev-scripts/gen-rss-xml.ts ",
+    "prebuild-gen": "tsx z-dev-scripts/gen-sitemap-xml && tsx z-dev-scripts/gen-llm-txt.ts && tsx z-dev-scripts/gen-rss-xml.ts ",
     "run:exec-indexNow": " tsx z-dev-scripts/indexNow/exec-indexNow.ts"
   },
   "dependencies": {
-    "@nuxt/content": "^3.2.2",
+    "@nuxt/content": "^3.5.1",
     "@nuxt/icon": "1.10.3",
     "@nuxtjs/i18n": "9.3.3",
     "@vueuse/core": "^12.7.0",

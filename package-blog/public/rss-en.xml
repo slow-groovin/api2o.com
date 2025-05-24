@@ -5,7 +5,21 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com blogs RSS Feed</description>
   <language>en-US</language> 
-  <pubDate>Tue, 22 Apr 2025 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>n8n Advanced Usage Record</title>
+      <link>https://www.api2o.com/en/blog/n8n-advanced-usage-record</link>
+      <guid>https://www.api2o.com/en/blog/n8n-advanced-usage-record</guid>
+      <description>Advanced n8n usage record: deployment, configuration, proxy (mitmproxy, https_proxy), extensions (HTTP, MCP, Agent Tool, custom nodes) and other integrations.</description>
+      <pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Android Input Method Choice in the AI Era</title>
+      <link>https://www.api2o.com/en/blog/pinyin-ime-choice</link>
+      <guid>https://www.api2o.com/en/blog/pinyin-ime-choice</guid>
+      <description>Explore the privacy risks of commercial input methods on Android in the AI era and discover alternative.</description>
+      <pubDate>Mon, 19 May 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>Using jsr2npm to Clone Packages from jsr.io to npm Registry</title>
       <link>https://www.api2o.com/en/blog/intro-jsr2npm</link>

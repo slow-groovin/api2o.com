@@ -14,6 +14,16 @@ API: 包含 RESTful, GraphQL等类型
 It's github repo is https://github.com/slow-groovin/api2o.com
 It's website is  is https://www.api2o.com
 
+## Tools
+api2o provide a set of unique online tools:
+1. [object-id-parser](https://www.api2o.com/en/tool/object-id-parser):  Parse/convert ObjectId (of MongoDB) to parts visually: timestamp, random ,counter. (entirely offline)
+2. [elastic-painless-script-format](https://www.api2o.com/en/tool/elastic-painless-script-format): format/beautifier/prettier ElasticSearch Painless script "source" field content, multiline to single line, or single line to multiline, for build elastic request field "source"  (entirely offline)
+
+and a set of OSS tools:
+1. [webpage-summary](https://github.com/slow-groovin/webpage-summary): [description](https://www.api2o.com/zh/blog/intro-webpage-summary) browser extension for summarizing webpages with AI
+2. [jsr2npm](https://github.com/slow-groovin/jsr2npm): [description](https://www.api2o.com/zh/blog/intro-jsr2npm) mirror and clone packages from jsr.io to npm registry
+3. [unstorage-mcp](https://github.com/slow-groovin/unstorage-mcp): [description](https://www.api2o.com/zh/blog/intro-unstorage-mcp) MCP Server for simultaneously operate multiple key-value storage databases (Redis, MongoDB, memory, file system, etc.).
+4. [web2api-ai-provider](https://github.com/slow-groovin/web2api-ai-provider): includes: 1.serveral providers to convert website chat to @ai-sdk usage.2. a suite to convert providers to openai-compatible http api.
 
 ## dev
 for local dev,  create a link of content dir for hot-reload of page in content repo.
@@ -21,87 +31,3 @@ windows(CMD ADMIN):
 ```
  mklink /D content  D:\xxxxxxx\api2o-contents\ 
 ```
-
-## hisotry
-2025-02-28
-re-construct the project, change to nuxt-content@3, repository storaged articles
-
-
-##all articles
-https://www.api2o.com/en/blog/lowcode-platform-compare-dify-n8n-flowise
-https://www.api2o.com/zh/blog/lowcode-platform-compare-dify-n8n-flowise
-https://www.api2o.com/en/blog/why-mcp-but-not-http
-https://www.api2o.com/zh/blog/why-mcp-but-not-http
-https://www.api2o.com/en/blog/windows-client-install-mcp-tutorial
-https://www.api2o.com/zh/blog/windows-client-install-mcp-tutorial
-https://www.api2o.com/en/blog/shelter-usage-summary
-https://www.api2o.com/zh/blog/shelter-usage-summary
-https://www.api2o.com/en/blog/apisix-direct-return-content
-https://www.api2o.com/zh/blog/apisix-direct-return-content
-https://www.api2o.com/en/blog/elastic-bulk-using-jetbrain-http-client
-https://www.api2o.com/zh/blog/elastic-bulk-using-jetbrain-http-client
-https://www.api2o.com/en/blog/sqlite3-concurrent-write-simple-test
-https://www.api2o.com/zh/blog/sqlite3-concurrent-write-simple-test
-https://www.api2o.com/en/blog/gh-action-env-vars-secrets-go-through-everything
-https://www.api2o.com/zh/blog/gh-action-env-vars-secrets-go-through-everything
-https://www.api2o.com/en/blog/local-dev-secure-https-without-modified-certs-file
-https://www.api2o.com/zh/blog/local-dev-secure-https-without-modified-certs-file
-https://www.api2o.com/en/blog/nodejs-proxy
-https://www.api2o.com/zh/blog/nodejs-proxy
-https://www.api2o.com/en/blog/intro-jsr2npm
-https://www.api2o.com/zh/blog/intro-jsr2npm
-https://www.api2o.com/en/blog/intro-unstorage-mcp
-https://www.api2o.com/zh/blog/intro-unstorage-mcp
-https://www.api2o.com/en/blog/intro-webpage-summary
-https://www.api2o.com/zh/blog/intro-webpage-summary
-https://www.api2o.com/en/blog/win10-perfect-doh-best-practice
-https://www.api2o.com/zh/blog/win10-perfect-doh-best-practice
-https://www.api2o.com/en/blog/sandboxie-limit-tencent-scan
-https://www.api2o.com/zh/blog/sandboxie-limit-tencent-scan
-https://www.api2o.com/en/handbook/bun/publish-executable-to-npm-and-bunx
-https://www.api2o.com/zh/handbook/bun/publish-executable-to-npm-and-bunx
-https://www.api2o.com/en/handbook/docker/created-network-cant-connect
-https://www.api2o.com/zh/handbook/docker/created-network-cant-connect
-https://www.api2o.com/en/handbook/nodejs/mongo-client-cause-program-not-exist
-https://www.api2o.com/zh/handbook/nodejs/mongo-client-cause-program-not-exist
-https://www.api2o.com/en/handbook/nodejs/npm-install-no-devDependencies
-https://www.api2o.com/zh/handbook/nodejs/npm-install-no-devDependencies
-https://www.api2o.com/en/handbook/nodejs/own-package-npm-publish-npx-not-executable
-https://www.api2o.com/zh/handbook/nodejs/own-package-npm-publish-npx-not-executable
-https://www.api2o.com/en/handbook/nodejs/pnpm-package-reuse-in-diff-repos
-https://www.api2o.com/zh/handbook/nodejs/pnpm-package-reuse-in-diff-repos
-https://www.api2o.com/en/handbook/typescript/@-replace-relative-path-like-vue
-https://www.api2o.com/zh/handbook/typescript/@-replace-relative-path-like-vue
-https://www.api2o.com/en/handbook/typescript/print-final-config
-https://www.api2o.com/zh/handbook/typescript/print-final-config
-https://www.api2o.com/en/handbook/typescript/tsc-single-file
-https://www.api2o.com/zh/handbook/typescript/tsc-single-file
-https://www.api2o.com/en/handbook/typescript/typescript-prompts
-https://www.api2o.com/zh/handbook/typescript/typescript-prompts
-https://www.api2o.com/en/handbook/ubuntu/nmcli-proxy-not-work-in-server
-https://www.api2o.com/zh/handbook/ubuntu/nmcli-proxy-not-work-in-server
-https://www.api2o.com/en/handbook/vue/nuxt-index-404
-https://www.api2o.com/zh/handbook/vue/nuxt-index-404
-https://www.api2o.com/en/handbook/vue/vscode-cannot-find-module-or-type-declarations-ts2307
-https://www.api2o.com/zh/handbook/vue/vscode-cannot-find-module-or-type-declarations-ts2307
-https://www.api2o.com/en/handbook/windows/multi-machines-single-proxy-management-practice
-https://www.api2o.com/zh/handbook/windows/multi-machines-single-proxy-management-practice
-https://www.api2o.com/en/handbook/windows/powershell-searching-command-history-autocomplete
-https://www.api2o.com/zh/handbook/windows/powershell-searching-command-history-autocomplete
-https://www.api2o.com/zh/tool/elastic-painless-script-format
-https://www.api2o.com/zh/tool/object-id-parser
-https://www.api2o.com/en/tool/elastic-painless-script-format
-https://www.api2o.com/en/tool/object-id-parser
-https://www.api2o.com/zh/api/basic/echo
-https://www.api2o.com/zh/api/basic/json-placeholder
-https://www.api2o.com/zh/api/basic/ping
-https://www.api2o.com/zh/api/basic/post
-https://www.api2o.com/zh/api/basic/rand-thing
-https://www.api2o.com/en/api/basic/echo
-https://www.api2o.com/en/api/basic/json-placeholder
-https://www.api2o.com/en/api/basic/ping
-https://www.api2o.com/en/api/basic/post
-https://www.api2o.com/en/api/basic/rand-thing
-https://www.api2o.com/llm.txt
-
-##

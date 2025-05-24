@@ -22,6 +22,7 @@ const skip = (pageNo - 1) * DEFAULT_PAGE_SIZE
 
 const { data } = await useAsyncData('blog', () => queryCollection('blog')
   .where('_locale', '=', locale.value)
+  .where('disabled', 'IS NULL')
   .select('_id', 'title', 'date', 'tags')
   .order('date', 'DESC')
   .skip(skip)

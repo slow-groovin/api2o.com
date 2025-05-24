@@ -1,20 +1,23 @@
 import { getAllUrls } from "./gen-sitemap-xml";
 import fs from 'node:fs';
 
-genURlsForLLM_txt()
+/**
+ * @deprecated list all urls cause ai crawlers to easily crawl all pages
+ */
+// genURlsForLLM_txt()
 
 
 /**
  * read ./public/llm.txt, find `#all articles` to the next '#**' content, replace it to generated content.(if not find, insert)
  */
-function genURlsForLLM_txt(){
-  const allUrls=getAllUrls()
-  const generatedContent=''+allUrls.join('\n')
+function genURlsForLLM_txt() {
+  const allUrls = getAllUrls()
+  const generatedContent = '' + allUrls.join('\n')
   const path = './public/llm.txt';
   const fileContent = fs.readFileSync(path, 'utf-8');
   const startTag = '##all articles';
   const endTag = '\n##';
-  
+
   const startIndex = fileContent.indexOf(startTag);
   const endIndex = fileContent.indexOf(endTag, startIndex);
 

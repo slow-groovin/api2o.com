@@ -23,9 +23,10 @@ export function getAllUrls() {
     .map((path) => {
       const fileContent = readFileSync(path, "utf-8");
       const parsed = matter(fileContent);
-      const { _locale, _id } = parsed.data;
+      const { _locale, _id, disabled } = parsed.data;
+      if (disabled) return ''
       return `${baseUrl}/${_locale}/blog/${_id}`;
-    });
+    }).filter(Boolean);
 
   //handbook 内容
   const handbookPaths = getMarkdownFilePaths("content/handbook", ".md");
@@ -37,9 +38,11 @@ export function getAllUrls() {
     .map((p) => {
       const fileContent = readFileSync(p.path, "utf-8");
       const parsed = matter(fileContent);
-      const { _locale, _id } = parsed.data;
+      const { _locale, _id, disabled } = parsed.data;
+      if (disabled) return ''
       return `${baseUrl}/${_locale}/handbook/${p.book}/${_id}`;
     })
+    .filter(Boolean)
     .filter((p) => !p.endsWith("/index"));
 
   //从page/tool目录读取

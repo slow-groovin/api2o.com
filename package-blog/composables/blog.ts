@@ -18,6 +18,7 @@ export async function queryBlog(locale: 'zh' | 'en', blogId: string | string[]) 
   const markdownItem = await queryCollection('blog')
     .where('_id', '=', blogId)
     .where('_locale', '=', locale)
+    .where('disabled', 'IS NULL')
     .first()
 
   if (!markdownItem) {
@@ -25,6 +26,7 @@ export async function queryBlog(locale: 'zh' | 'en', blogId: string | string[]) 
   }
   const surroundingItems = await queryCollectionItemSurroundings('blog', markdownItem.path ?? '', { fields: ['_id'] })
     .where('_locale', '=', locale)
+    .where('disabled', 'IS NULL')
     .order('date', 'ASC')
 
   const [previousItem, nextItem] = surroundingItems ?? []

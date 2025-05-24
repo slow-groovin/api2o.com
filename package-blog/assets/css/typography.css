@@ -81,9 +81,7 @@
         }
 
 
-        img {
-            @apply mb-6 shadow-lg block mx-auto;
-        }
+
 
         ul {
             @apply list-disc pl-9 my-4;
@@ -132,10 +130,6 @@
             td {
                 @apply border border-gray-300 p-2 dark:border-gray-200;
             }
-        }
-
-        img {
-            @apply max-w-full h-auto rounded-sm;
         }
 
         /*没有被shiki高亮的代码配置*/

@@ -13,10 +13,11 @@
         <ul class="pl-0">
           <li v-for="(subtitle, index) in toc.links" :key="subtitle.text" class="py-1  "
             :class="{ 'ml-6': subtitle.depth === 3 }">
-            <NuxtLink class="font-normal  hover:text-foreground text-ellipsis  overflow-x-hidden block target:ring-2" :class="{
-              'selected': currentSection === subtitle.id,
-              'text-muted-foreground': currentSection !== subtitle.id,
-            }" :to="'#' + subtitle.id">
+            <NuxtLink class="font-normal  hover:text-foreground text-ellipsis  overflow-x-hidden block target:ring-2"
+              :class="{
+                'selected': currentSection === subtitle.id,
+                'text-muted-foreground': currentSection !== subtitle.id,
+              }" :to="'#' + subtitle.id">
               {{ (1 + index) + '. ' + subtitle.text }}
             </NuxtLink>
             <ul v-if="subtitle.children && showTocChildren" class="my-2 pl-2">
@@ -51,12 +52,12 @@ onMounted(() => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           currentSection.value = entry.target.getAttribute('id') || '';
-        
+
         }
       });
     },
     {
-      rootMargin: '-50% 0px -50% 0px',
+      rootMargin: '-45% 0px -45% 0px',
       threshold: 0
     }
   );

@@ -1,11 +1,11 @@
 import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
-console.log('contentSource:',process.env.CONTENT_SOURCE)
+console.log('contentSource:', process.env.CONTENT_SOURCE)
 
 const buildSource = (path: string) => {
-  const contentSource=process.env.CONTENT_SOURCE
-  if(contentSource!=='local' && contentSource!=='github'){
-    console.error('CONTENT_SOURCE must be "local" or "github", You should not see this error in production running(It can appear in building).','contentSource:',contentSource)
+  const contentSource = process.env.CONTENT_SOURCE
+  if (contentSource !== 'local' && contentSource !== 'github') {
+    console.error('CONTENT_SOURCE must be "local" or "github", You should not see this error in production running(It can appear in building).', 'contentSource:', contentSource)
   }
   const source = process.env.CONTENT_SOURCE !== 'github' ? path : {
     repository: process.env.REMOTE_CONTENT_REPO,
@@ -28,7 +28,10 @@ export default defineContentConfig({
          */
         _id: z.string().min(1),
         tags: z.array(z.string().min(1)),
-        _locale: z.enum(['en', 'zh'])
+        _locale: z.enum(['en', 'zh']),
+        last_updated: z.date().nullish(),
+        disabled: z.boolean().nullish(),
+
       })
     }),
 
@@ -43,7 +46,9 @@ export default defineContentConfig({
         _id: z.string().min(1),
         _group: z.string().nullish(),
         _order: z.number().nullish(),
-        _locale: z.enum(['en', 'zh'])
+        _locale: z.enum(['en', 'zh']),
+        last_updated: z.date().nullish(),
+        disabled: z.boolean().nullish(),
       })
     }),
 

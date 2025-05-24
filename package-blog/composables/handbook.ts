@@ -18,6 +18,7 @@ export async function useHandbook(locale: 'zh' | 'en') {
   const markdownItem = await queryCollectionWithPathLike(book as string)
     .where('_id', '=', id)
     .where('_locale', '=', locale)
+    .where('disabled', 'IS NULL')
     .first()
 
   return {
@@ -39,6 +40,7 @@ export async function useHandbookOutline(locale: 'zh' | 'en') {
   const articles = await queryCollectionWithPathLike(book as string)
     .where('_locale', '=', locale)
     .where('_id', '<>', 'index')
+    .where('disabled', 'IS NULL')
     .select('_id', 'title', '_order', '_group')
     .all()
   articles.sort((a, b) => (a._order ?? 0) - (b._order ?? 0))
@@ -89,7 +91,7 @@ function queryCollectionWithPathLike(book: string) {
   /*
    * using RuntimeConfig but not process.env because browser client-end is query through sqlite wasm (not backend api)
    */
-  const {public: {customContentSource}} = useRuntimeConfig()
+  const { public: { customContentSource } } = useRuntimeConfig()
   return customContentSource === 'github' ?
     queryCollection('handbook').where('path', 'LIKE', `/${book}/%`)
     :
