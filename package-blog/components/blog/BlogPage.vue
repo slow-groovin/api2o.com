@@ -5,7 +5,7 @@ import { Pagination, PaginationEllipsis, PaginationList, PaginationListItem } fr
 import BlogTimeLine from "./BlogTimeLine.vue";
 
 
-const DEFAULT_PAGE_SIZE = 20
+const DEFAULT_PAGE_SIZE = 16
 const { locale, t } = useI18n()
 
 const props = defineProps<{ pageNo: number }>()

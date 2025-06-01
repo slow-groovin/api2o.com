@@ -73,7 +73,7 @@
         }
 
         p {
-            @apply mt-4 tracking-tight text-xl/8 font-blog;
+            @apply mt-4  text-xl/8 font-blog;
         }
 
         p:lang(zh){
@@ -168,6 +168,9 @@
         code {
             counter-reset: step;
             counter-increment: step 0;
+            span .line{
+                display: inline;
+            }
         }
 
         code .line::before {

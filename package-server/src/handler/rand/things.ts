@@ -1,173 +1,111 @@
+import { createOpenRouter } from '@openrouter/ai-sdk-provider';
+import { generateObject } from 'ai';
+import 'dotenv/config';
 import { type Context } from 'hono';
-
+import z from 'zod';
 // server/api/v1/rand/thing.ts
+import { db2 } from '@/clients/drizzle-pg.js';
+import getRedisClient, { acquireAsyncLock } from "@/clients/redis.js";
+import { randThings } from '@/db/schema/random-topics.js';
+import { sql } from 'drizzle-orm';
+type RandThing = {
+  type: string,
+  value: string
+}
+const LOCK_KEY = 'lock:generate-random-things'
+const AT_KEY = 'time:last-generate-random-things'
 
+export const getRandomThing = async (c: Context) => {
 
-const things = [
-  // 动物类
-  { type: 'animal', value: 'cat' },
-  { type: 'animal', value: 'dog' },
-  { type: 'animal', value: 'elephant' },
-  { type: 'animal', value: 'lion' },
-  { type: 'animal', value: 'tiger' },
-  { type: 'animal', value: 'rabbit' },
-  { type: 'animal', value: 'horse' },
-  { type: 'animal', value: 'giraffe' },
-  { type: 'animal', value: 'penguin' },
-  { type: 'animal', value: 'koala' },
+  if (await isNeedAppend()) {
+    const acquired = await acquireAsyncLock(LOCK_KEY, '', 600_000)
+    if (acquired) {
+      (async function () {
+        const condition = genRandomCondition(c)
+        const newGeneratedData = await generateRandomDataThroughLLM(condition)
+        if (newGeneratedData) {
+          await saveNewDataToDB(newGeneratedData)
+        }
+        // await releaseAsyncLock(LOCK_KEY, '')
+        await getRedisClient().set(AT_KEY, Date.now())
+      })();
+    }
+  }
 
-  // 车辆类
-  { type: 'vehicle', value: 'car' },
-  { type: 'vehicle', value: 'bike' },
-  { type: 'vehicle', value: 'train' },
-  { type: 'vehicle', value: 'plane' },
-  { type: 'vehicle', value: 'boat' },
-  { type: 'vehicle', value: 'motorcycle' },
-  { type: 'vehicle', value: 'helicopter' },
-  { type: 'vehicle', value: 'truck' },
-  { type: 'vehicle', value: 'bus' },
-  { type: 'vehicle', value: 'scooter' },
-
-  // 水果类
-  { type: 'fruit', value: 'apple' },
-  { type: 'fruit', value: 'banana' },
-  { type: 'fruit', value: 'orange' },
-  { type: 'fruit', value: 'grape' },
-  { type: 'fruit', value: 'watermelon' },
-  { type: 'fruit', value: 'pineapple' },
-  { type: 'fruit', value: 'mango' },
-  { type: 'fruit', value: 'strawberry' },
-  { type: 'fruit', value: 'kiwi' },
-  { type: 'fruit', value: 'blueberry' },
-
-  // 家具类
-  { type: 'furniture', value: 'chair' },
-  { type: 'furniture', value: 'table' },
-  { type: 'furniture', value: 'sofa' },
-  { type: 'furniture', value: 'bed' },
-  { type: 'furniture', value: 'lamp' },
-  { type: 'furniture', value: 'bookshelf' },
-  { type: 'furniture', value: 'desk' },
-  { type: 'furniture', value: 'cabinet' },
-  { type: 'furniture', value: 'wardrobe' },
-  { type: 'furniture', value: 'mirror' },
-
-  // 颜色类
-  { type: 'color', value: 'blue' },
-  { type: 'color', value: 'red' },
-  { type: 'color', value: 'green' },
-  { type: 'color', value: 'yellow' },
-  { type: 'color', value: 'purple' },
-  { type: 'color', value: 'orange' },
-  { type: 'color', value: 'pink' },
-  { type: 'color', value: 'black' },
-  { type: 'color', value: 'white' },
-  { type: 'color', value: 'brown' },
-
-  // 城市类
-  { type: 'city', value: 'New York' },
-  { type: 'city', value: 'London' },
-  { type: 'city', value: 'Paris' },
-  { type: 'city', value: 'Tokyo' },
-  { type: 'city', value: 'Berlin' },
-  { type: 'city', value: 'Sydney' },
-  { type: 'city', value: 'Moscow' },
-  { type: 'city', value: 'Los Angeles' },
-  { type: 'city', value: 'Beijing' },
-  { type: 'city', value: 'Mumbai' },
-
-  // 电子设备类
-  { type: 'gadget', value: 'phone' },
-  { type: 'gadget', value: 'laptop' },
-  { type: 'gadget', value: 'tablet' },
-  { type: 'gadget', value: 'smartwatch' },
-  { type: 'gadget', value: 'camera' },
-  { type: 'gadget', value: 'headphones' },
-  { type: 'gadget', value: 'drone' },
-  { type: 'gadget', value: 'TV' },
-  { type: 'gadget', value: 'gaming console' },
-  { type: 'gadget', value: 'speaker' },
-
-  // 昆虫类
-  { type: 'insect', value: 'butterfly' },
-  { type: 'insect', value: 'bee' },
-  { type: 'insect', value: 'ant' },
-  { type: 'insect', value: 'spider' },
-  { type: 'insect', value: 'dragonfly' },
-  { type: 'insect', value: 'ladybug' },
-  { type: 'insect', value: 'mosquito' },
-  { type: 'insect', value: 'fly' },
-  { type: 'insect', value: 'beetle' },
-  { type: 'insect', value: 'cricket' },
-
-  // 植物类
-  { type: 'plant', value: 'rose' },
-  { type: 'plant', value: 'tulip' },
-  { type: 'plant', value: 'cactus' },
-  { type: 'plant', value: 'bamboo' },
-  { type: 'plant', value: 'orchid' },
-  { type: 'plant', value: 'fern' },
-  { type: 'plant', value: 'sunflower' },
-  { type: 'plant', value: 'oak tree' },
-  { type: 'plant', value: 'pine tree' },
-  { type: 'plant', value: 'lily' },
-
-  // 星球类
-  { type: 'planet', value: 'Mars' },
-  { type: 'planet', value: 'Earth' },
-  { type: 'planet', value: 'Venus' },
-  { type: 'planet', value: 'Jupiter' },
-  { type: 'planet', value: 'Saturn' },
-  { type: 'planet', value: 'Neptune' },
-  { type: 'planet', value: 'Mercury' },
-  { type: 'planet', value: 'Uranus' },
-  { type: 'planet', value: 'Pluto' },
-  { type: 'planet', value: 'Exoplanet X' },
-
-  // 书籍类
-  { type: 'book', value: '1984' },
-  { type: 'book', value: 'Harry Potter' },
-  { type: 'book', value: 'Pride and Prejudice' },
-  { type: 'book', value: 'Moby Dick' },
-  { type: 'book', value: 'The Hobbit' },
-  { type: 'book', value: 'To Kill a Mockingbird' },
-  { type: 'book', value: 'The Great Gatsby' },
-  { type: 'book', value: 'War and Peace' },
-  { type: 'book', value: 'Crime and Punishment' },
-  { type: 'book', value: 'The Catcher in the Rye' },
-
-  // 乐器类
-  { type: 'instrument', value: 'guitar' },
-  { type: 'instrument', value: 'piano' },
-  { type: 'instrument', value: 'violin' },
-  { type: 'instrument', value: 'drums' },
-  { type: 'instrument', value: 'flute' },
-  { type: 'instrument', value: 'saxophone' },
-  { type: 'instrument', value: 'trumpet' },
-  { type: 'instrument', value: 'harmonica' },
-  { type: 'instrument', value: 'cello' },
-  { type: 'instrument', value: 'ukulele' },
-
-  // 运动类
-  { type: 'sport', value: 'soccer' },
-  { type: 'sport', value: 'basketball' },
-  { type: 'sport', value: 'tennis' },
-  { type: 'sport', value: 'cricket' },
-  { type: 'sport', value: 'swimming' },
-  { type: 'sport', value: 'baseball' },
-  { type: 'sport', value: 'golf' },
-  { type: 'sport', value: 'cycling' },
-  { type: 'sport', value: 'skiing' },
-  { type: 'sport', value: 'boxing' },
-];
-
-
-
-export const getRandomThing = (c: Context) => {
-  const randomThing = things[Math.floor(Math.random() * things.length)];
-
+  const randomThing = await queryRandomOne()
+  const { type, value } = randomThing
   return c.json({
-    type: randomThing.type,
-    value: randomThing.value,
+    type,
+    value
   });
 };
+
+async function isNeedAppend() {
+  const lastAppendAtStr = await getRedisClient().get(AT_KEY)
+  if (!lastAppendAtStr) return true
+  const lastAppendAt = Number.parseInt(lastAppendAtStr)
+  if (Date.now() - lastAppendAt > 7 * 24 * 60 * 60 * 1000) {
+    return true
+  }
+  return false
+}
+
+async function queryRandomOne() {
+  const result = await db2
+    .select()
+    .from(randThings)
+    .orderBy(sql`RANDOM()`)
+    .limit(1);
+  return result[0]
+}
+
+async function saveNewDataToDB(randThingsData: RandThing[]) {
+  const ret = await db2
+    .insert(randThings)
+    .values(randThingsData.map(t => ({ ...t, created_at: new Date() })))
+    .onConflictDoNothing();
+
+  console.debug('insert new randthings:', `${ret.rowCount}/${randThingsData.length}`)
+}
+
+async function generateRandomDataThroughLLM(conditonText: string) {
+  const provider = createOpenRouter({
+    apiKey: process.env.OPENROUTER_KEY,
+  });
+
+  const chatModel = provider.chat('openai/gpt-4.1');
+
+  try {
+    const { object, finishReason, response, usage, warnings } = await generateObject({
+      model: chatModel,
+      seed: Date.now(),
+      temperature: 1,
+      prompt: `Generate some(count:10~50) randthings (${conditonText}), every item have a type(such as food/book/game/site/city/country/device/phone/car/brand/mountain/movie/app/Music, or any category you could image) and its value`,
+      schema: z.object({
+        randthings:
+          z.array(z.object({
+            type: z.string({ description: 'type name of a rand thing' }),
+            value: z.string().describe('value of the rand thing')
+          }))
+      })
+    })
+    return object.randthings
+  } catch (e) {
+    console.log('error:', e)
+    return
+  }
+}
+
+function genRandomCondition(ctx: Context) {
+  const countryCode = ctx.req.header('CF-IPCountry')
+  let year = Math.floor(Math.random() * (new Date().getFullYear() - 1800 + 1)) + 1800;
+  year = Math.floor(year / 10) * 10;
+  let text = ''
+  if (countryCode) {
+    text += 'country: ' + countryCode
+  }
+  if (year) {
+    text += 'year: ' + year + 's'  //eg: 1980s 1990s 
+  }
+  return text
+}

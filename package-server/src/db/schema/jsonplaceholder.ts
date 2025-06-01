@@ -1,12 +1,8 @@
-import { text, json } from "drizzle-orm/pg-core";
-import {
-  integer,
-  pgTable,
-  varchar,
-  boolean,
-  serial,
-} from "drizzle-orm/pg-core";
+import { boolean, integer, json, pgTable, serial, text, varchar } from "drizzle-orm/pg-core";
 
+/*
+ * jsonplaceholder
+ */
 export const post = pgTable("jsonplaceholder_post", {
   id: serial("id").primaryKey(),
   userId: integer("userId").notNull(),
@@ -64,15 +60,3 @@ export const photo = pgTable("jsonplaceholder_photo", {
   // album: Album @relation(fields: [albumId], references: [id])
 });
 
-// export const comments = pgTable("jsonplaceholder_comments", {
-//   id: integer().primaryKey().generatedAlwaysAsIdentity(),
-//   title: text().notNull(),
-//   slug: varchar({ length: 16 }).$default(() => generateUniqueString(16)),
-//   content: varchar({ length: 255 }).notNull(),
-//   owner_id: integer().references(() => users.id),
-//   ...timestamps,
-// })
-
-// export const commentsRelations = relations(comments, ({ one }) => ({
-//   owner: one(users, { fields: [comments.owner_id], references: [users.id] })
-// }))

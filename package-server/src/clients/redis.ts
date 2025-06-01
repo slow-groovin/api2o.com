@@ -25,3 +25,21 @@ function getRedisClient() {
 }
 
 export default getRedisClient
+
+
+export async function acquireAsyncLock(key: string, value: string, ttl: number) {
+  const result = await getRedisClient().set(key, value, 'PX', ttl, 'NX');
+  return result === 'OK';
+}
+
+export async function releaseAsyncLock(key: string, value: string) {
+  const script = `
+    if redis.call("get", KEYS[1]) == ARGV[1]
+    then
+      return redis.call("del", KEYS[1])
+    else
+      return 0
+    end
+  `;
+  return await getRedisClient().eval(script, 1, key, value);
+}
