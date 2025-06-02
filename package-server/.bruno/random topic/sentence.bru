@@ -1,0 +1,15 @@
+meta {
+  name: sentence
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{endpoint}}/rand/sentence?lang=zh
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: zh
+}

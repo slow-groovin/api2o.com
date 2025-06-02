@@ -14,7 +14,11 @@ type RandThing = {
 }
 const LOCK_KEY = 'lock:generate-random-things'
 const AT_KEY = 'time:last-generate-random-things'
-
+/**
+ * `rand/thing` handler
+ * @param c 
+ * @returns 
+ */
 export const getRandomThing = async (c: Context) => {
 
   if (await isNeedAppend()) {
@@ -40,6 +44,11 @@ export const getRandomThing = async (c: Context) => {
   });
 };
 
+/**
+ * if there is need to re-generate some data and insert them into DB
+ * current conditon: interval > 7 days
+ * @returns 
+ */
 async function isNeedAppend() {
   const lastAppendAtStr = await getRedisClient().get(AT_KEY)
   if (!lastAppendAtStr) return true
@@ -50,6 +59,10 @@ async function isNeedAppend() {
   return false
 }
 
+/**
+ * query one rand thing from DB
+ * @returns 
+ */
 async function queryRandomOne() {
   const result = await db2
     .select()
@@ -59,6 +72,10 @@ async function queryRandomOne() {
   return result[0]
 }
 
+/**
+ * save data to DB
+ * skip repeat type-value items
+ */
 async function saveNewDataToDB(randThingsData: RandThing[]) {
   const ret = await db2
     .insert(randThings)
@@ -68,6 +85,10 @@ async function saveNewDataToDB(randThingsData: RandThing[]) {
   console.debug('insert new randthings:', `${ret.rowCount}/${randThingsData.length}`)
 }
 
+/**
+ * generate rand things by llm
+ * with {country of request, a random year} as `conditionText`
+ */
 async function generateRandomDataThroughLLM(conditonText: string) {
   const provider = createOpenRouter({
     apiKey: process.env.OPENROUTER_KEY,
@@ -78,8 +99,8 @@ async function generateRandomDataThroughLLM(conditonText: string) {
   try {
     const { object, finishReason, response, usage, warnings } = await generateObject({
       model: chatModel,
-      seed: Date.now(),
-      temperature: 1,
+      // temperature: 1,
+      topP: 1,
       prompt: `Generate some(count:10~50) randthings (${conditonText}), every item have a type(such as food/book/game/site/city/country/device/phone/car/brand/mountain/movie/app/Music, or any category you could image) and its value`,
       schema: z.object({
         randthings:
@@ -96,16 +117,19 @@ async function generateRandomDataThroughLLM(conditonText: string) {
   }
 }
 
-function genRandomCondition(ctx: Context) {
+/**
+ * eg: `'country: US, year: 1980s '`, `'country: DE, year: 2010s'`
+ */
+function genRandomCondition(ctx: Context): string {
   const countryCode = ctx.req.header('CF-IPCountry')
   let year = Math.floor(Math.random() * (new Date().getFullYear() - 1800 + 1)) + 1800;
   year = Math.floor(year / 10) * 10;
   let text = ''
   if (countryCode) {
-    text += 'country: ' + countryCode
+    text += 'country: ' + countryCode + ', '
   }
   if (year) {
-    text += 'year: ' + year + 's'  //eg: 1980s 1990s 
+    text += 'year: ' + year + 's, '  //eg: 1980s 1990s 
   }
   return text
 }

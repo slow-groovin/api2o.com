@@ -10,6 +10,7 @@ import { jsonPlaceholderHandlers } from "./handler/graphql/jsonplaceholder/jsonp
 import { apiVisitCounter } from "./middlewares/visit-counter.js";
 import { pageVisitsCounter } from "./handler/counter/page-visits-counter.js";
 import { bearerAuth } from "hono/bearer-auth";
+import { getRandomTodaySentence } from "./handler/rand/today-sentence.js";
 
 export const app = new Hono();
 
@@ -49,6 +50,7 @@ publicApp.route("/", echo);
 publicApp.route("/", ping);
 publicApp.route("/", postHandler);
 publicApp.get("/rand/thing", getRandomThing);
+publicApp.get("/rand/sentence", getRandomTodaySentence);
 publicApp.post("/jsonplaceholder/graphql", jsonPlaceholderHandlers);
 
 app.post(
