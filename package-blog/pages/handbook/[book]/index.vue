@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import { useAsyncData } from '#app';
-import { useI18n } from '#imports';
+import { useI18n, useSeoMeta } from '#imports';
 import { useHandbookOutline } from '~/composables/handbook';
 import { useRoute } from 'vue-router';
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const { data } = useAsyncData('handbook-outline', () => useHandbookOutline(locale.value))
+useSeoMeta({
+  title: () => (data?.value?.book ?? 'book') + ' ' + t('handbook'),
+  description: () => `${data?.value?.book} ${t('handbook')} : ${t('handbookDesc')}`
+
+})
 </script>
 
 <template>
@@ -17,10 +22,10 @@ const { data } = useAsyncData('handbook-outline', () => useHandbookOutline(local
       <div v-for="group in data.chapterGroups" :key="group.name" class="mb-8">
         <div class="font-bold ">{{ group.name }}</div>
         <div class="flex flex-col gap-4">
-          <Nuxtlink v-for="chapter in group.chapters" :key="chapter.name" :to="chapter.path" :title="chapter.name"
+          <NuxtLink v-for="chapter in group.chapters" :key="chapter.name" :to="chapter.path" :title="chapter.name"
             class="text-green-500 hover:text-green-700 underline">
             {{ chapter.name }}
-          </Nuxtlink>
+          </NuxtLink>
         </div>
       </div>
     </div>

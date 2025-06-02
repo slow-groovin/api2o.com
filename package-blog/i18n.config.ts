@@ -21,7 +21,7 @@ export default defineI18nConfig(() => ({
       constructingTitle: "页面建设中",
       constructingContent: "我们正在努力建设这个页面，敬请期待。",
       handbookDesc:
-        "技术主题的文章集合，涵盖了实用指南、模式、故障排除、技巧等内容。",
+        "技术主题的文章集合，涵盖了不同技术主题的实用指南、模式、故障排除、技巧等内容。",
       toolDesc:
         "api2o.com原创开发的一系列网页版工具， 提供简单方便便捷的功能, 帮助用户提升效率，节省时间.",
       apiDesc:

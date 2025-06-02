@@ -5,7 +5,8 @@ import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import HandbookPage from '~/components/handbook/HandbookPage.vue';
 const walineServerURL = 'https://waline.api2o.com';
-const path = computed(() => useRoute().path);
+const route = useRoute()
+const path = computed(() => route?.path);
 const { locale } = useI18n()
 </script>
 

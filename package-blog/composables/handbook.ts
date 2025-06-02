@@ -72,7 +72,7 @@ export async function useHandbookOutline(locale: 'zh' | 'en') {
 
 
   return {
-    book: book,
+    book: book as string,
     /**
      * chapter groups
      */

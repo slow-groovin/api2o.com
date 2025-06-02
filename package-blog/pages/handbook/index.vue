@@ -40,14 +40,16 @@
 <script setup lang="ts">
 import { onMounted, type HTMLAttributes } from 'vue'
 import { cn } from '~/lib/utils'
-import { queryCollection, useAsyncData, useHead, useI18n } from '#imports'
+import { queryCollection, useAsyncData, useHead, useI18n, useSeoMeta } from '#imports';
 const { t, locale } = useI18n()
 
 
 useHead({
   title: t('handbook')
 })
-
+useSeoMeta({
+  description: t('handbookDesc')
+})
 // 组件属性接口
 interface Props {
   class?: HTMLAttributes['class']

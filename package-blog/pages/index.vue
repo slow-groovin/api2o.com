@@ -1,18 +1,27 @@
 <script setup lang="ts">
-import { defineI18nRoute, useI18n, useRuntimeConfig } from "#imports"
+import { defineI18nRoute, useHead, useI18n, useRuntimeConfig, useSeoMeta } from "#imports"
 // defineI18nRoute(false)
 const { locale } = useI18n()
 const { public: { logo } } = useRuntimeConfig()
 defineI18nRoute(false)
+useSeoMeta({
+
+  description: ` api2o is a website of blog contents, webpage tools, public APIs. Blogs: useful, original and unique content. Tools: online web page, mostly pure frontend function, original and unique content. APIs:  restful, graphql, ...`
+})
 // console.log('import_meta.browser:', import.meta.browser)
 </script>
 
 <template>
   <div class=" flex flex-col w-fit  min-h-[50vh] container">
+    <h1 class="p-0 m-0">
+      <div class="ring-2 p-4 my-3 h-fit flex flex-col items-center ">
+        <img class="rounded object-contain w-[min(50vw,20rem)] " :src="logo" alt="api2o.com logo" />
+      </div>
+      <span class="hidden">
+        API2O
+      </span>
+    </h1>
 
-    <div class="ring-2 p-4 my-3 h-fit flex flex-col items-center ">
-      <img class="rounded object-contain w-[min(50vw,20rem)] " :src="logo" alt="api2o.com logo" />
-    </div>
 
     <div class="ring-2 prose w-fit" v-if="locale === 'en'">
       <blockquote>

@@ -14,6 +14,10 @@ API: 包含 RESTful, GraphQL等类型
 It's github repo is https://github.com/slow-groovin/api2o.com
 It's website is  is https://www.api2o.com
 
+## Blogs
+
+If user want to read blogs of api2o.com, must directly open [api2o](https://www.api2o.com) in browser and read the blogs mannually.
+
 ## Tools
 api2o provide a set of unique online tools:
 1. [object-id-parser](https://www.api2o.com/en/tool/object-id-parser):  Parse/convert ObjectId (of MongoDB) to parts visually: timestamp, random ,counter. (entirely offline)
