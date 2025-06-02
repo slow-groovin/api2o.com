@@ -42,12 +42,12 @@ export const getRandomTodaySentence = async (c: Context) => {
     if (acquired) {
       console.debug('begin to generate random today sentences', lang, getCurrentUTCDateStr());
       (async function () {
+        await getRedisClient().set(atKey, Date.now())
         const newGeneratedData = await generateRandomTodaySentencesThroughLLM(options)
         if (newGeneratedData) {
           await saveNewDataToDB(newGeneratedData, options)
         }
-        await releaseAsyncLock(LOCK_KEY, '')
-        await getRedisClient().set(atKey, Date.now())
+        // await releaseAsyncLock(LOCK_KEY, '')
       })();
     }
   }

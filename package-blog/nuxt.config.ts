@@ -46,12 +46,6 @@ export default defineNuxtConfig({
         swr: 5400,
         cors: true,
       },
-      '/zh/blog/apisix-direct-return-content': {
-        redirect: '/zh/handbook/apisix/apisix-direct-return-content'
-      },
-      '/en/blog/apisix-direct-return-content': {
-        redirect: '/en/handbook/apisix/apisix-direct-return-content'
-      }
       // '/':{
       // 	redirect:'/index',  //current version of nuxt and nuxt/i18n has bugs in handling `/` route, so mannually redirect it here
       // },

@@ -2,17 +2,18 @@
   <div class="cur-container p-8 ">
     <div class="flex flex-col gap-y-4">
       <div class="flex flex-row items-center flex-wrap">
-        <GraphqlSvg class="w-8 h-8 mr-4 bg-pink-600 text-white p-1 font-bold rounded"/>
+        <GraphqlSvg class="w-8 h-8 mr-4 bg-pink-600 text-white p-1 font-bold rounded" />
 
         <h1 class="text-5xl font-semibold block">{{ desc.name }}</h1>
         <div class="ml-16 mr-4 flex flex-row gap-x-2 items-center font-semibold text-xl text-primary ">
-          <CodeBlock id="endpoint" :code="apiBaseUrl+endpoint" lang="shell" :show-line-number="false" class="w-fit "/>
+          <CodeBlock id="endpoint" :code="apiBaseUrl + endpoint" lang="shell" :show-line-number="false"
+            class="w-fit " />
         </div>
       </div>
       <blockquote>
-        <slot name="before-desc"/>
+        <slot name="before-desc" />
         {{ desc.desc }}
-        <slot name="after-desc"/>
+        <slot name="after-desc" />
       </blockquote>
 
       <hr class="mx-4">
@@ -22,9 +23,9 @@
           <details :open="toggleOnlineRequestBuilderOpenRef">
             <summary><span class="inline-block">🌐{{ tPage.InPageReq }}</span></summary>
             <div>
-              <GitHubStyleTabs :names="desc.samples.map(s=>s.title)">
+              <GitHubStyleTabs :names="desc.samples.map(s => s.title)">
                 <template v-for="s in desc.samples" #[s.title]>
-                  <TryItBlock :sample="s" :endpoint="endpoint"/>
+                  <TryItBlock :sample="s" :endpoint="endpoint" />
                 </template>
               </GitHubStyleTabs>
               <!--              <InPageRequestSender :req-sample="desc.sample"/>-->
@@ -32,7 +33,7 @@
 
             <div class="flex text-lg font-normal border-dashed  p-2 border-2 gap-2 items-center">
               {{ tPage.toggleInPageReqOpenDefault }}:
-              <Switch v-model:checked="toggleOnlineRequestBuilderOpen"/>
+              <Switch v-model:model-value="toggleOnlineRequestBuilderOpen" />
             </div>
           </details>
         </div>
@@ -43,15 +44,15 @@
           <h2>🚀{{ tPage.def }}</h2>
         </div>
 
-        <slot name="details-start-area"/>
+        <slot name="details-start-area" />
 
         <h2>{{ tPage.operations }}</h2>
         <div class="flex flex-col gap-4">
           <div v-for="op in desc.operations" class="flex flex-nowrap items-center gap-2 ">
-            <GraphqlMethodBadge :type="op.type" class="px-1 py-0.5"/>
+            <GraphqlMethodBadge :type="op.type" class="px-1 py-0.5" />
             <div class="flex items-center px-2 py-1.5 rounded-lg shadow-lg">
               <div v-html="renderGraphQLType(op.content)"></div>
-              <CopyButton :value="op.content" class="ml-2 w-6 h-6 text-muted-foreground bg-muted/50 border"/>
+              <CopyButton :value="op.content" class="ml-2 w-6 h-6 text-muted-foreground bg-muted/50 border" />
             </div>
             <div v-if="op.annotation" class="ml-4 text-neutral-500 text-sm italic font-extralight">
               #{{ op.annotation }}
@@ -62,39 +63,33 @@
 
 
         <h2>{{ tPage.types }}</h2>
-        <CodeGroup :codeBlocks="types2CodeGroup(desc.types)"/>
-
-        <!--        -->
-        <!--        <div class="flex text-lg font-normal border-dashed  p-2 border-2 gap-2 items-center">-->
-        <!--          {{ curI18n('showDescAnno') }}:-->
-        <!--          <Switch id="airplane-mode" v-model:checked="toggleDescAnnotation"/>-->
-        <!--        </div>-->
+        <CodeGroup :codeBlocks="types2CodeGroup(desc.types)" />
 
 
-        <slot name="req-end-area"/>
+        <slot name="req-end-area" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue';
-import {type GraphqlReqDesc} from "~/lib/models/api-request";
-import {Switch} from "~/components/ui/switch";
-import {useLocalStorage} from "@vueuse/core"
+import { ref } from 'vue';
+import { type GraphqlReqDesc } from "~/lib/models/api-request";
+import { Switch } from "~/components/ui/switch";
+import { useLocalStorage } from "@vueuse/core"
 import GraphqlMethodBadge from "~/components/api/GraphqlMethodBadge.vue";
 import GraphqlSvg from "~/components/svg/GraphqlSvg.vue";
 import CopyButton from "~/components/code/CopyButton.vue";
 import GitHubStyleTabs from "~/components/container/GitHubStyleTabs.vue";
 import TryItBlock from "~/components/api/graphql/TryItBlock.vue";
-import {usePageScopedI18n} from "~/lib/i18n";
+import { usePageScopedI18n } from "~/lib/i18n";
 import { useRuntimeConfig } from '#imports';
 
 
-const {public: {apiBaseUrl}} = useRuntimeConfig()
+const { public: { apiBaseUrl } } = useRuntimeConfig()
 
 
-defineProps<{ desc: GraphqlReqDesc, endpoint:string }>()
+defineProps<{ desc: GraphqlReqDesc, endpoint: string }>()
 
 
 function types2CodeGroup(items: { content: string, title: string }[]) {
@@ -107,23 +102,23 @@ function types2CodeGroup(items: { content: string, title: string }[]) {
 
 const toggleOnlineRequestBuilderOpen = useLocalStorage('toggleOnlineRequestBuilderOpen', false)
 const toggleOnlineRequestBuilderOpenRef = ref(toggleOnlineRequestBuilderOpen.value)
-const {tPage} = usePageScopedI18n(
-    {
-      en: {
-        InPageReq: 'Try It',
-        def: 'Definition:',
-        operations: 'operations:',
-        types: 'types:',
-        toggleInPageReqOpenDefault: 'open this by default',
-      },
-      zh: {
-        InPageReq: 'Try It',
-        def: '定义:',
-        operations: '操作operations:',
-        types: '类型types:',
-        toggleInPageReqOpenDefault: '默认打开`Try it`页',
-      }
+const { tPage } = usePageScopedI18n(
+  {
+    en: {
+      InPageReq: 'Try It',
+      def: 'Definition:',
+      operations: 'operations:',
+      types: 'types:',
+      toggleInPageReqOpenDefault: 'open this by default',
+    },
+    zh: {
+      InPageReq: 'Try It',
+      def: '定义:',
+      operations: '操作operations:',
+      types: '类型types:',
+      toggleInPageReqOpenDefault: '默认打开`Try it`页',
     }
+  }
 )
 
 /**
@@ -152,13 +147,13 @@ function renderGraphQLType(typeString: string): string {
   const formattedName = `<span style="color: hsl(208, 100%, 72%);">${name}</span>`;
 
   const formattedParams = params
-      .slice(0, -1) // 去掉最后的')'
-      .split(',')
-      .map(param => {
-        const [key, value] = param.trim().split(/:\s*/);
-        return `<span style="color: hsl(242, 51%, 61%);">${key.trim()}:</span> <span style="color: hsl(36, 100%, 41%);">${value.trim().replace(/!$/, '')}</span>${value.trim().endsWith('!') ? '!' : ''}`;
-      })
-      .join(', ');
+    .slice(0, -1) // 去掉最后的')'
+    .split(',')
+    .map(param => {
+      const [key, value] = param.trim().split(/:\s*/);
+      return `<span style="color: hsl(242, 51%, 61%);">${key.trim()}:</span> <span style="color: hsl(36, 100%, 41%);">${value.trim().replace(/!$/, '')}</span>${value.trim().endsWith('!') ? '!' : ''}`;
+    })
+    .join(', ');
 
   // 处理 returnType，识别开头和结尾
 
@@ -172,10 +167,10 @@ function renderGraphQLType(typeString: string): string {
 </script>
 
 <style scoped lang="postcss">
-
-.cur-container{
+.cur-container {
   position: relative;
 }
+
 .cur-container::before {
   content: '';
   position: absolute;
@@ -189,7 +184,7 @@ function renderGraphQLType(typeString: string): string {
 }
 
 .cur-block {
-  @apply border rounded-xl bg-github-card px-4 py-4 ;
+  @apply border rounded-xl bg-github-card px-4 py-4;
 }
 
 h2 {

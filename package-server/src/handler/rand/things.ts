@@ -24,14 +24,15 @@ export const getRandomThing = async (c: Context) => {
   if (await isNeedAppend()) {
     const acquired = await acquireAsyncLock(LOCK_KEY, '', 600_000)
     if (acquired) {
+      console.debug('begin to generate random things');
       (async function () {
+        await getRedisClient().set(AT_KEY, Date.now())
         const condition = genRandomCondition(c)
         const newGeneratedData = await generateRandomDataThroughLLM(condition)
         if (newGeneratedData) {
           await saveNewDataToDB(newGeneratedData)
         }
         // await releaseAsyncLock(LOCK_KEY, '')
-        await getRedisClient().set(AT_KEY, Date.now())
       })();
     }
   }
