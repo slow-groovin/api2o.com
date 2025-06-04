@@ -16,7 +16,7 @@ type RandTodaySentence = {
 }
 
 type Option = { language: string }
-const LOCK_KEY = 'lock:generate-random-sentences'
+const LOCK_KEY = (lang: string) => `lock:generate-random-sentences:${lang}`
 const AT_KEY = (lang: string) => `time:last-generate-random-sentences:${lang}`
 const GENERATE_INTERVAL = 24 * 60 * 60 * 1000
 
@@ -36,9 +36,10 @@ export const getRandomTodaySentence = async (c: Context) => {
 
 
   const atKey = AT_KEY(lang)
+  const lockKey = LOCK_KEY(lang)
   const options = { language: lang }
   if (await isNeedAppend(atKey)) {
-    const acquired = await acquireAsyncLock(LOCK_KEY, '', 600_000)
+    const acquired = await acquireAsyncLock(lockKey, '', 600_000)
     if (acquired) {
       console.debug('begin to generate random today sentences', lang, getCurrentUTCDateStr());
       (async function () {
@@ -47,7 +48,7 @@ export const getRandomTodaySentence = async (c: Context) => {
         if (newGeneratedData) {
           await saveNewDataToDB(newGeneratedData, options)
         }
-        // await releaseAsyncLock(LOCK_KEY, '')
+        // await releaseAsyncLock(lockKey, '')
       })();
     }
   }
