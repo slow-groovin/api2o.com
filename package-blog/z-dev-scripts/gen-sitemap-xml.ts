@@ -2,6 +2,13 @@ import { readdirSync, statSync, writeFileSync, readFileSync } from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 /**
+ * these paths may be redirect urls, should be filtered.
+ */
+const BLACKLIST_PATHS = [
+  'api/basic/rand-thing'
+]
+
+/**
  * Mannually generate sitemap.xml
  */
 
@@ -12,6 +19,7 @@ function beginGenSitemap() {
   const sitemap = generateSitemap(allUrls);
   writeFileSync("public/sitemap.xml", sitemap);
 }
+
 
 export function getAllUrls() {
   const baseUrl = "https://www.api2o.com";
@@ -64,7 +72,7 @@ export function getAllUrls() {
     .map((path) => `${baseUrl}/en/api/${path}`);
 
   const otherUrls = ["llm.txt"].map((url) => `${baseUrl}/${url}`);
-  return [
+  let allUrls = [
     ...blogUrls,
     ...handbookUrls,
     ...zhToolUrls,
@@ -73,6 +81,15 @@ export function getAllUrls() {
     ...enApiUrls,
     ...otherUrls,
   ];
+  allUrls = allUrls.filter((url) => {
+    for (const path of BLACKLIST_PATHS) {
+      if (url.endsWith(path)) {
+        return false
+      }
+    }
+    return true
+  })
+  return allUrls
 }
 
 function generateSitemap(urls: string[]) {

@@ -29,6 +29,14 @@ and a set of OSS tools:
 3. [unstorage-mcp](https://github.com/slow-groovin/unstorage-mcp): [description](https://www.api2o.com/zh/blog/intro-unstorage-mcp) MCP Server for simultaneously operate multiple key-value storage databases (Redis, MongoDB, memory, file system, etc.).
 4. [web2api-ai-provider](https://github.com/slow-groovin/web2api-ai-provider): includes: 1.serveral providers to convert website chat to @ai-sdk usage.2. a suite to convert providers to openai-compatible http api.
 
+## APIs
+api2o provide a set of public API.
+### AI-BASED API
+- https://www.api2o.com/api/rand/thing
+- https://www.api2o.com/api/rand/sentence
+
+these two API response random contents based on a AI Agent workflow .
+
 ## dev
 for local dev,  create a link of content dir for hot-reload of page in content repo.
 windows(CMD ADMIN):

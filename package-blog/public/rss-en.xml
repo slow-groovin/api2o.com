@@ -5,7 +5,14 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com blogs RSS Feed</description>
   <language>en-US</language> 
-  <pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate>
+  <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>Make voice input directly connect to AI Agent</title>
+      <link>https://www.api2o.com/en/blog/voice-input-methods-access-to-agent</link>
+      <guid>https://www.api2o.com/en/blog/voice-input-methods-access-to-agent</guid>
+      <description>Discusses the limitations of stt IME, LLM dictate button or voice mode, Windows voice typing, smart speakers, and smartphone voice assistants. Explores methods of directly integrating voice input into AI Agents implemented in n8n/dify/coze using xiaozhi-ai and Home Assistant Voice Assistant and so on.</description>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>n8n Advanced Usage Record</title>
       <link>https://www.api2o.com/en/blog/n8n-advanced-usage-record</link>

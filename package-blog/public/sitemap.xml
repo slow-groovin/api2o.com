@@ -13,6 +13,12 @@
     <loc>https://www.api2o.com/zh/blog/n8n-advanced-usage-record</loc>
   </url>
   <url>
+    <loc>https://www.api2o.com/en/blog/voice-input-methods-access-to-agent</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/blog/voice-input-methods-access-to-agent</loc>
+  </url>
+  <url>
     <loc>https://www.api2o.com/en/blog/why-mcp-but-not-http</loc>
   </url>
   <url>
@@ -229,7 +235,10 @@
     <loc>https://www.api2o.com/zh/api/basic/post</loc>
   </url>
   <url>
-    <loc>https://www.api2o.com/zh/api/basic/rand-thing</loc>
+    <loc>https://www.api2o.com/zh/api/rand/sentence</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/api/rand/thing</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/api/basic/echo</loc>
@@ -244,7 +253,10 @@
     <loc>https://www.api2o.com/en/api/basic/post</loc>
   </url>
   <url>
-    <loc>https://www.api2o.com/en/api/basic/rand-thing</loc>
+    <loc>https://www.api2o.com/en/api/rand/sentence</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/api/rand/thing</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/llm.txt</loc>

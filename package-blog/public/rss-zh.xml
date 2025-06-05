@@ -5,7 +5,14 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com 博客 RSS Feed</description>
   <language>zh-CN</language> 
-  <pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate>
+  <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>语音输入接入 AI Agent 的多种方式</title>
+      <link>https://www.api2o.com/zh/blog/voice-input-methods-access-to-agent</link>
+      <guid>https://www.api2o.com/zh/blog/voice-input-methods-access-to-agent</guid>
+      <description>探讨了语音输入法、 大模型语音转写和语音模式、Windows语音键入、智能音箱、 智能手机语音助手等语音输入方案的局限性， 探索了使用xiaozhi-ai、 Home Assistant Voice Assitant将语音输入直接介入到 n8n/dify/coze 实现的 AI Agent 中的方法。</description>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>n8n进阶使用记录</title>
       <link>https://www.api2o.com/zh/blog/n8n-advanced-usage-record</link>
