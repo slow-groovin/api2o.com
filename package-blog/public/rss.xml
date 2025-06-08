@@ -5,7 +5,14 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com blogs RSS Feed</description>
   <language>en-US</language> 
-  <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+  <item>
+      <title>Android 16 New Feature Terminal (Debian 12) Actual Test: Network Configuration and Software Installation</title>
+      <link>https://www.api2o.com/en/blog/android16-new-terminal</link>
+      <guid>https://www.api2o.com/en/blog/android16-new-terminal</guid>
+      <description>Your next computer is not a computer? - Actual test of Terminal Debian12 linux terminal in Android 16. Although the network configuration is not perfect, it is basically a complete Arm64 virtual machine in use.</description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>Make voice input directly connect to AI Agent</title>
       <link>https://www.api2o.com/en/blog/voice-input-methods-access-to-agent</link>

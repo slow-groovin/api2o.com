@@ -5,7 +5,14 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com 博客 RSS Feed</description>
   <language>zh-CN</language> 
-  <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
+  <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+  <item>
+      <title>安卓16新特性Terminal(Debian12)实测: 网络配置和软件安装</title>
+      <link>https://www.api2o.com/zh/blog/android16-new-terminal</link>
+      <guid>https://www.api2o.com/zh/blog/android16-new-terminal</guid>
+      <description>你的下一台电脑, 何必是电脑 - 实测 Android 16 中的 Terminal Debian12 linux 终端, 虽然在网络配置上还不太完善, 但是在使用上基本上是一台完整的Arm64虚拟机了</description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>语音输入接入 AI Agent 的多种方式</title>
       <link>https://www.api2o.com/zh/blog/voice-input-methods-access-to-agent</link>
