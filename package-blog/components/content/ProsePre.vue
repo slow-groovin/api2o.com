@@ -1,9 +1,10 @@
 <template>
   <div class="relative max-w-full max-lg:max-w-full mb-3">
-    <div v-if="filename && !hideHeader" class="text-sm bg-neutral-200 dark:bg-neutral-500 rounded-t py-1 px-4  italic">
+    <div v-if="filename && !hideHeader"
+      class="text-sm bg-neutral-200 dark:bg-neutral-500 py-1 px-4 rounded-t-lg italic">
       {{ filename }}
     </div>
-    <div v-if="isSupported" class="absolute top-0.5 right-2.5">
+    <div v-if="isSupported" class="absolute top-1.5 right-1.5">
       <div class="flex rounded-lg ">
         <button type="button" class="p-1 inline-flex justify-center items-center gap-2 rounded-lg font-medium bg-white text-gray-700
                   hover:bg-gray-100 focus:outline-none focus:bg-gray-50 text-xs
@@ -23,7 +24,8 @@
         </button>
       </div>
     </div>
-    <pre class="show-line-number shiki"><slot/></pre>
+    <pre class="show-line-number rounded-b-lg shiki"
+      :class="{ 'rounded-t-lg': !(filename && !hideHeader) }"><slot/></pre>
   </div>
 </template>
 
