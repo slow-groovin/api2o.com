@@ -54,8 +54,8 @@ export default defineI18nConfig(() => ({
           result: "结果",
         },
         "ai-sse-result-parse": {
-          title: "AI大模型流式输出 SSE 结果解析",
-          description: "将AI大模型API的流式输出(SSE)中的内容提取并展示, 方便使用者直接阅读."
+          title: "AI输出SSE结果在线解析",
+          description: "将大模型API的SSE输出中的内容提取并展示,方便使用者直接阅读."
         }
       },
     },
@@ -109,8 +109,8 @@ export default defineI18nConfig(() => ({
           placeholder: "please input Painless script",
         },
         "ai-sse-result-parse": {
-          title: "AI SSE Result Parse",
-          description: "parse SSE Response of AI API (OpenAI, Claude, Gemini, Grok, ...). transfer text delta (choices, ...) to full content for human reading."
+          title: "AI SSE Result Parser",
+          description: "(Online) parse SSE Response of AI API (OpenAI, Claude, Gemini, Grok, ...). transfer text delta (choices, ...) to full content for human reading."
         }
       },
     },
