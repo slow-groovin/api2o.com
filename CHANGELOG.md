@@ -1,3 +1,8 @@
+## 2025-06-10
+### blog: 0.0.5
+1. improve styles
+2. feature: add `ai-sse-result-parse` tool
+
 ## 2025-06-02
 ### blog: 0.0.4
 1. implement `/rand/sentence` api page

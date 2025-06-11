@@ -53,6 +53,10 @@ export default defineI18nConfig(() => ({
           placeholder: "请输入 Painless code",
           result: "结果",
         },
+        "ai-sse-result-parse": {
+          title: "AI大模型流式输出 SSE 结果解析",
+          description: "将AI大模型API的流式输出(SSE)中的内容提取并展示, 方便使用者直接阅读."
+        }
       },
     },
     en: {
@@ -104,6 +108,10 @@ export default defineI18nConfig(() => ({
           multilineFormat: "Multiline -> SingleLine",
           placeholder: "please input Painless script",
         },
+        "ai-sse-result-parse": {
+          title: "AI SSE Result Parse",
+          description: "parse SSE Response of AI API (OpenAI, Claude, Gemini, Grok, ...). transfer text delta (choices, ...) to full content for human reading."
+        }
       },
     },
   },

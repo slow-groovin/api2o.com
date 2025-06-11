@@ -75,11 +75,15 @@ useSeoMeta({
 })
 const toolItems = [
   {
+    id: "ai-sse-result-parse",
+  },
+  {
     id: "object-id-parser",
   },
   {
     id: "elastic-painless-script-format",
   },
+
 ]
 
 const ossItems = [
