@@ -63,10 +63,10 @@
       <pubDate>Tue, 25 Mar 2025 00:00:00 GMT</pubDate>
     </item>
   <item>
-      <title>Webpage-summary：一款基于AI的网页总结浏览器扩展. 开源免费，使用自配置大模型API而不是订阅或者用量付费</title>
+      <title>webpage-summary：一款开源AI网页总结浏览器扩展, 使用自配置大模型API而不是订阅或者用量付费</title>
       <link>https://www.api2o.com/zh/blog/intro-webpage-summary</link>
       <guid>https://www.api2o.com/zh/blog/intro-webpage-summary</guid>
-      <description>webpage-summary 是一款开源的AI网页总结浏览器扩展插件，它是一个使用用户配置的API的工具，而不是需要登录和订阅付费的大型商业插件， 它只完成网页总结的职责，因此具有轻量、隐私安全、配置灵活等特点， 可以作为sider.ai, briefy.ai, monica.ai等插件中的总结功能的开源替代品。本文介绍了 webpage-summary 的使用方式， 项目产生历史， 开发难点等信息。</description>
+      <description>webpage-summary 是一款开源的AI网页总结浏览器扩展插件, 它只完成网页总结的职责，轻量、隐私安全、配置灵活, 是一款纯粹的工具, 完全在浏览器中运行, 没有服务端和登录注册订阅付费，完全由用户自己配置大模型和提示词, 可以作为sider.ai, briefy.ai, monica.ai等插件中的总结功能的开源替代品。本文介绍了 webpage-summary 的使用方式， 项目产生历史， 开发难点等信息。</description>
       <pubDate>Thu, 20 Mar 2025 00:00:00 GMT</pubDate>
     </item>
   <item>

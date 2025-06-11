@@ -217,10 +217,16 @@
     <loc>https://www.api2o.com/zh/handbook/windows/powershell-searching-command-history-autocomplete</loc>
   </url>
   <url>
+    <loc>https://www.api2o.com/zh/tool/ai-sse-result-parse</loc>
+  </url>
+  <url>
     <loc>https://www.api2o.com/zh/tool/elastic-painless-script-format</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/zh/tool/object-id-parser</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/tool/ai-sse-result-parse</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/tool/elastic-painless-script-format</loc>
