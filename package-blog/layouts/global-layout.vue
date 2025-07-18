@@ -39,7 +39,7 @@
 
 
           <!--          color switch dark/light-->
-          <div class="flex-grow justify-end flex items-center">
+          <div class="flex-grow justify-end flex items-center gap-2">
 
             <ColorSwitchButton class="w-8 h-8 border" />
             <!--          language switch-->
