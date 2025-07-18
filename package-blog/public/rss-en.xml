@@ -5,13 +5,34 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com blogs RSS Feed</description>
   <language>en-US</language> 
-  <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+  <pubDate>Sun, 20 Jul 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>Claude Code Implementation Dive: Prompts, Tools, and Agent Flow</title>
+      <link>https://www.api2o.com/en/blog/claude-code-prompts-tools-structure</link>
+      <guid>https://www.api2o.com/en/blog/claude-code-prompts-tools-structure</guid>
+      <description>By capturing Claude Code's requests via mitmproxy, explores its underlying prompts, tool usage, and agent structrue, revealing the simple design behind its powerful code generation capabilities.</description>
+      <pubDate>Sun, 20 Jul 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Visualize AI API Request Content in mitmweb</title>
+      <link>https://www.api2o.com/en/blog/llm-request-visualization-in-mitmweb</link>
+      <guid>https://www.api2o.com/en/blog/llm-request-visualization-in-mitmweb</guid>
+      <description>Tired of struggling with inconvenient JSON formats for prompts and hard-to-read SSE responses when inspecting AI requests in mitmproxy? Check out mitmproxy-llm-better-view, a Tampermonkey script that beautifies JSON and SSE data for AI requests in mitmweb, making your debugging workflow smoother and more efficient.</description>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>n8n Advanced Usage Record</title>
+      <link>https://www.api2o.com/en/blog/n8n-advanced-usage-record</link>
+      <guid>https://www.api2o.com/en/blog/n8n-advanced-usage-record</guid>
+      <description>n8n advanced usage record: deployment, configuration, proxy (mitmproxy, https_proxy), extensions (HTTP, MCP, Agent Tool, custom nodes) and other integrations.</description>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>Android 16 New Feature Terminal (Debian 12) Actual Test: Network Configuration and Software Installation</title>
       <link>https://www.api2o.com/en/blog/android16-new-terminal</link>
       <guid>https://www.api2o.com/en/blog/android16-new-terminal</guid>
       <description>Your next computer is not a computer? - Actual test of Terminal Debian12 linux terminal in Android 16. Although the network configuration is not perfect, it is basically a complete Arm64 virtual machine in use.</description>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 GMT</pubDate>
     </item>
   <item>
       <title>Make voice input directly connect to AI Agent</title>
@@ -19,13 +40,6 @@
       <guid>https://www.api2o.com/en/blog/voice-input-methods-access-to-agent</guid>
       <description>Discusses the limitations of stt IME, LLM dictate button or voice mode, Windows voice typing, smart speakers, and smartphone voice assistants. Explores methods of directly integrating voice input into AI Agents implemented in n8n/dify/coze using xiaozhi-ai and Home Assistant Voice Assistant and so on.</description>
       <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
-    </item>
-  <item>
-      <title>n8n Advanced Usage Record</title>
-      <link>https://www.api2o.com/en/blog/n8n-advanced-usage-record</link>
-      <guid>https://www.api2o.com/en/blog/n8n-advanced-usage-record</guid>
-      <description>Advanced n8n usage record: deployment, configuration, proxy (mitmproxy, https_proxy), extensions (HTTP, MCP, Agent Tool, custom nodes) and other integrations.</description>
-      <pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate>
     </item>
   <item>
       <title>Android Input Method Choice in the AI Era</title>

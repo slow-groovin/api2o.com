@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.api2o.com/en/blog/claude-code-prompts-tools-structure</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/blog/claude-code-prompts-tools-structure</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/blog/llm-request-visualization-in-mitmweb</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/blog/llm-request-visualization-in-mitmweb</loc>
+  </url>
+  <url>
     <loc>https://www.api2o.com/en/blog/lowcode-platform-compare-dify-n8n-flowise</loc>
   </url>
   <url>

@@ -5,13 +5,34 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com 博客 RSS Feed</description>
   <language>zh-CN</language> 
-  <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+  <pubDate>Sun, 20 Jul 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>Claude Code 实现原理: 提示词、工具、Agent流程探究</title>
+      <link>https://www.api2o.com/zh/blog/claude-code-prompts-tools-structure</link>
+      <guid>https://www.api2o.com/zh/blog/claude-code-prompts-tools-structure</guid>
+      <description>通过中间代理捕获 Claude Code 的请求，本文探究了其背后的提示词、工具使用和 Agent 工作流程，揭露强大的代码生成能力背后的简单的设计。</description>
+      <pubDate>Sun, 20 Jul 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>在 mitmweb 中，可视化大模型 API 请求内容</title>
+      <link>https://www.api2o.com/zh/blog/llm-request-visualization-in-mitmweb</link>
+      <guid>https://www.api2o.com/zh/blog/llm-request-visualization-in-mitmweb</guid>
+      <description>还在为mitmproxy中查看大模型请求时, json格式不查看提示词不方便, sse响应更是难以查看内容的问题而烦恼吗？了解一下 mitmproxy-llm-better-view，这个油猴脚本可以美化 mitmweb 中大模型请求的 JSON 和 SSE 数据，让你的调试工作流更顺畅、更高效。</description>
+      <pubDate>Tue, 01 Jul 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>n8n进阶使用记录</title>
+      <link>https://www.api2o.com/zh/blog/n8n-advanced-usage-record</link>
+      <guid>https://www.api2o.com/zh/blog/n8n-advanced-usage-record</guid>
+      <description>n8n 进阶使用记录：掌握 n8n 的部署、配置、数据库、代理、扩展和封装等方面的细节，利用 mitmproxy 调试 AI Agent，并通过 HTTP 和 MCP 扩展 n8n 功能。</description>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>安卓16新特性Terminal(Debian12)实测: 网络配置和软件安装</title>
       <link>https://www.api2o.com/zh/blog/android16-new-terminal</link>
       <guid>https://www.api2o.com/zh/blog/android16-new-terminal</guid>
       <description>你的下一台电脑, 何必是电脑 - 实测 Android 16 中的 Terminal Debian12 linux 终端, 虽然在网络配置上还不太完善, 但是在使用上基本上是一台完整的Arm64虚拟机了</description>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 GMT</pubDate>
     </item>
   <item>
       <title>语音输入接入 AI Agent 的多种方式</title>
@@ -19,13 +40,6 @@
       <guid>https://www.api2o.com/zh/blog/voice-input-methods-access-to-agent</guid>
       <description>探讨了语音输入法、 大模型语音转写和语音模式、Windows语音键入、智能音箱、 智能手机语音助手等语音输入方案的局限性， 探索了使用xiaozhi-ai、 Home Assistant Voice Assitant将语音输入直接介入到 n8n/dify/coze 实现的 AI Agent 中的方法。</description>
       <pubDate>Mon, 02 Jun 2025 00:00:00 GMT</pubDate>
-    </item>
-  <item>
-      <title>n8n进阶使用记录</title>
-      <link>https://www.api2o.com/zh/blog/n8n-advanced-usage-record</link>
-      <guid>https://www.api2o.com/zh/blog/n8n-advanced-usage-record</guid>
-      <description>n8n 进阶使用记录：掌握 n8n 的部署、配置、数据库、代理、扩展和封装等方面的细节，利用 mitmproxy 调试 AI Agent，并通过 HTTP 和 MCP 扩展 n8n 功能。</description>
-      <pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate>
     </item>
   <item>
       <title>AI时代的Android输入法选择</title>
@@ -74,13 +88,6 @@
       <link>https://www.api2o.com/zh/blog/coze-first-time-exploration</link>
       <guid>https://www.api2o.com/zh/blog/coze-first-time-exploration</guid>
       <description>为了针对ai应用进行原型快速构建和验证调试, 作者尝试使用了不同的AI低代码平台: Dify, n8n, Flowise. 这篇文章是从开发者的角度对这几款产品的评价</description>
-      <pubDate>Wed, 05 Mar 2025 00:00:00 GMT</pubDate>
-    </item>
-  <item>
-      <title>Coze空间 扣子空间初探</title>
-      <link>https://www.api2o.com/zh/blog/coze-space-preview-exploration</link>
-      <guid>https://www.api2o.com/zh/blog/coze-space-preview-exploration</guid>
-      <description></description>
       <pubDate>Wed, 05 Mar 2025 00:00:00 GMT</pubDate>
     </item>
   <item>
