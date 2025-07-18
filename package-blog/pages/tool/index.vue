@@ -131,6 +131,16 @@ const ossItems = [
     description: `includes: 
 1.serveral providers to convert website chat to @ai-sdk usage.
 2. a suite to convert providers to openai-compatible http api.`,
+  },
+
+  {
+    id: "mitmproxy-llm-better-view",
+    url: "https://github.com/slow-groovin/mitmproxy-llm-better-view",
+    article: localePath('/blog/llm-request-visualization-in-mitmweb'),
+    rightIcons: [
+      "https://www.tampermonkey.net/favicon.ico"
+    ],
+    description: `beautifies JSON and SSE data for AI requests in mitmweb`,
   }
 ]
 const getI18nVal = (id: string, subKey: string) => t(`tools.${id}.${subKey}`)
