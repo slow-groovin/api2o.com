@@ -1,6 +1,4 @@
 name: (Sample) Build and push image
-
-#
 on:
   push:
     tags:
@@ -26,7 +24,7 @@ jobs:
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
-        env:
+        # env:
         with:
           platforms: linux/amd64
           cache-from: type=gha
