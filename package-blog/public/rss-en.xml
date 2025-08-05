@@ -5,7 +5,14 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com blogs RSS Feed</description>
   <language>en-US</language> 
-  <pubDate>Sun, 20 Jul 2025 00:00:00 GMT</pubDate>
+  <pubDate>Sat, 02 Aug 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>Nuxt Serverless SSR Pitfalls</title>
+      <link>https://www.api2o.com/en/blog/nuxt-serverless-ssr-pitfalls</link>
+      <guid>https://www.api2o.com/en/blog/nuxt-serverless-ssr-pitfalls</guid>
+      <description>This article documents a series of issues and solutions encountered when deploying Nuxt v3 with Serverless for SSR (Server-Side Rendering), covering practical experiences in Cloudflare Workers deployment, caching strategies, API Endpoint configuration, handling long-polling, and loading third-party libraries.</description>
+      <pubDate>Sat, 02 Aug 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>Claude Code Implementation Dive: Prompts, Tools, and Agent Flow</title>
       <link>https://www.api2o.com/en/blog/claude-code-prompts-tools-structure</link>
@@ -89,6 +96,13 @@
       <guid>https://www.api2o.com/en/blog/lowcode-platform-compare-dify-n8n-flowise</guid>
       <description>To quickly prototype, validate, and debug AI applications, the author experimented with different AI low-code platforms: Dify, n8n, and Flowise. This article is an evaluation of these products from a developer perspective.</description>
       <pubDate>Wed, 05 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>Hands-on Testing of Search SaaS Services for AI Integration</title>
+      <link>https://www.api2o.com/en/blog/ai-search-service-test</link>
+      <guid>https://www.api2o.com/en/blog/ai-search-service-test</guid>
+      <description>This article provides a comparative test of several mainstream Search as a Service (SaaS) platforms suitable for AI integration, including `searxng`, `serpApi`, `tavily`, `exa`, and `bochaai`. The analysis covers multiple dimensions such as cost, ease of use, and search capabilities.</description>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 GMT</pubDate>
     </item>
   <item>
       <title>Environment Variables/Variables/Secrets in GitHub Actions: Configuration, Reading, and Passing</title>

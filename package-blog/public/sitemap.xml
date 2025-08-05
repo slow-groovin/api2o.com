@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.api2o.com/en/blog/ai-search-service-test</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/blog/ai-search-service-test</loc>
+  </url>
+  <url>
     <loc>https://www.api2o.com/en/blog/claude-code-prompts-tools-structure</loc>
   </url>
   <url>
@@ -97,6 +103,12 @@
     <loc>https://www.api2o.com/zh/blog/nodejs-proxy</loc>
   </url>
   <url>
+    <loc>https://www.api2o.com/zh/blog/nuxt-serverless-ssr-pitfalls</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/blog/nuxt-serverless-ssr-pitfalls</loc>
+  </url>
+  <url>
     <loc>https://www.api2o.com/en/blog/intro-jsr2npm</loc>
   </url>
   <url>
@@ -137,6 +149,12 @@
   </url>
   <url>
     <loc>https://www.api2o.com/zh/handbook/apisix/apisix-push-log-to-grafana-cloud-loki</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/en/handbook/bun/http-empty-resonse</loc>
+  </url>
+  <url>
+    <loc>https://www.api2o.com/zh/handbook/bun/http-empty-resonse</loc>
   </url>
   <url>
     <loc>https://www.api2o.com/en/handbook/bun/publish-executable-to-npm-and-bunx</loc>

@@ -5,7 +5,14 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com 博客 RSS Feed</description>
   <language>zh-CN</language> 
-  <pubDate>Sun, 20 Jul 2025 00:00:00 GMT</pubDate>
+  <pubDate>Sat, 02 Aug 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>Nuxt Serverless SSR 踩坑记录</title>
+      <link>https://www.api2o.com/zh/blog/nuxt-serverless-ssr-pitfalls</link>
+      <guid>https://www.api2o.com/zh/blog/nuxt-serverless-ssr-pitfalls</guid>
+      <description>本文记录了在使用 Nuxt v3 结合 Serverless 进行 SSR (服务端渲染) 部署时遇到的一系列问题和解决方案，涵盖了 Cloudflare Workers 部署、缓存策略、API Endpoint 配置、长连接处理以及第三方库加载等方面的实践经验。</description>
+      <pubDate>Sat, 02 Aug 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>Claude Code 实现原理: 提示词、工具、Agent流程探究</title>
       <link>https://www.api2o.com/zh/blog/claude-code-prompts-tools-structure</link>
@@ -96,6 +103,13 @@
       <guid>https://www.api2o.com/zh/blog/lowcode-platform-compare-dify-n8n-flowise</guid>
       <description>为了针对ai应用进行原型快速构建和验证调试, 作者尝试使用了不同的AI低代码平台: Dify, n8n, Flowise. 这篇文章是从开发者的角度对这几款产品的评价</description>
       <pubDate>Wed, 05 Mar 2025 00:00:00 GMT</pubDate>
+    </item>
+  <item>
+      <title>可供AI接入的搜索SaaS服务实际测试</title>
+      <link>https://www.api2o.com/zh/blog/ai-search-service-test</link>
+      <guid>https://www.api2o.com/zh/blog/ai-search-service-test</guid>
+      <description>本文对市面上几款主流的可供 AI 接入的搜索 SaaS 服务进行了横向对比测试，包括 `searxng`、`serpApi`、`tavily`、`exa` 和 `博查`，从费用、上手成本、搜索能力等多个维度进行分析。</description>
+      <pubDate>Wed, 26 Feb 2025 00:00:00 GMT</pubDate>
     </item>
   <item>
       <title>GitHub Actions 中环境变量使用总结: 配置,读取,传递</title>
