@@ -5,7 +5,14 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com blogs RSS Feed</description>
   <language>en-US</language> 
-  <pubDate>Sat, 02 Aug 2025 00:00:00 GMT</pubDate>
+  <pubDate>Wed, 13 Aug 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>My AI-Assisted Coding Experience</title>
+      <link>https://www.api2o.com/en/blog/my-ai-coding-experience</link>
+      <guid>https://www.api2o.com/en/blog/my-ai-coding-experience</guid>
+      <description>After years of using AI-assisted programming, I primarily use `cline` now. I don't pursue 'Vibe Coding,' but rather leverage `cline` as a context assembler, improving result accuracy through 'minimal tasks' and 'minimal conversation count.' This article also discusses thoughts on model capabilities, costs, and their effectiveness for different tasks.</description>
+      <pubDate>Wed, 13 Aug 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>Nuxt Serverless SSR Pitfalls</title>
       <link>https://www.api2o.com/en/blog/nuxt-serverless-ssr-pitfalls</link>

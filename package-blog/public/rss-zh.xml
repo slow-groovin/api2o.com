@@ -5,7 +5,14 @@
   <link>https://www.api2o.com</link>
   <description>api2o.com 博客 RSS Feed</description>
   <language>zh-CN</language> 
-  <pubDate>Sat, 02 Aug 2025 00:00:00 GMT</pubDate>
+  <pubDate>Wed, 13 Aug 2025 00:00:00 GMT</pubDate>
+  <item>
+      <title>AI 辅助编程经验分享</title>
+      <link>https://www.api2o.com/zh/blog/my-ai-coding-experience</link>
+      <guid>https://www.api2o.com/zh/blog/my-ai-coding-experience</guid>
+      <description>经过多年使用AI辅助编程之后, 目前主要使用`cline`, 不追求'Vibe Coding', 而是将`cline`作为上下文组装器, 通过“最小任务”和“减少对话轮次”来提高结果准确率。文章还探讨了模型能力和成本和对于不同任务的效果的思考。</description>
+      <pubDate>Wed, 13 Aug 2025 00:00:00 GMT</pubDate>
+    </item>
   <item>
       <title>Nuxt Serverless SSR 踩坑记录</title>
       <link>https://www.api2o.com/zh/blog/nuxt-serverless-ssr-pitfalls</link>
